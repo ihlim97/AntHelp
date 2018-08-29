@@ -18,6 +18,9 @@
   "homepage": "https://github.com/ihlim97/SoftwareEngineeringS3#readme",
   "dependencies": {
     "bootstrap": "^4.1.3",
+    "browsersync": "0.0.1-security",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1",
     "jquery": "^3.3.1"
   }
 }
