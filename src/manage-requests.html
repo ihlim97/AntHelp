@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AntHelp - Manage Requests</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- css -->
+  <style type="text/css">
+  	body#manage-request div.container > div {
+  		background-color: #ECECEC;
+  	}
+  	body#manage-request div.filter {
+  		text-align: right;
+  		padding: 10px 10px 0 0;
+  	}
+  	body#manage-request table {
+  		width: 100%;
+  		padding: 20px;
+  	}
+  	tr {
+  		border-bottom: 1px solid #ddd;
+  	}
+  	td,th {
+  		padding: 10px 15px;  	
+  	}
+  	body#manage-request table tr:nth-child(odd) {
+  		background-color: #F2F1F1;
+  	}
+  </style>
+
+</head>
+<body id="manage-request">
+	<div class="container">
+  <h1>Manage Requests</h1>
+  <div> 
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#all-request">All Requests</a></li>
+    <li><a data-toggle="tab" href="#pending-requests">Pending Requests</a></li>
+    <li><a data-toggle="tab" href="#accepted-requests">Accepted Requests</a></li>
+  </ul>
+
+  <!-- Tab -->
+  <div class="tab-content">
+    <div id="all-request" class="tab-pane fade in active">
+    	<div class="filter">
+    		<p>SORT BY</p>
+    	</div>
+    	<table>
+    		
+    			<tr>
+    				<td>Request ID</td>
+    				<td>Request By</td>
+    				<td>Request On</td>
+    			</tr>
+
+
+    		
+    		
+    			<tr>
+    				<td>xxxxxxx</td>
+    				<td>xxxxxxx</td>
+    				<td>xxxxxxx</td>
+    			</tr>
+    			<tr>
+    				<td>xxxxxxx</td>
+    				<td>xxxxxxx</td>
+    				<td>xxxxxxx</td>
+    			</tr>
+    		
+    	</table>
+    </div>
+    <div id="pending-requests" class="tab-pane fade">
+      <h3>tab2</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div id="accepted-requests" class="tab-pane fade">
+      <h3>tab 3</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>
