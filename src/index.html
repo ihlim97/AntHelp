@@ -1,13 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Test</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>The Best Services Platform Provide For You</title>
+
+
+    <style type="text/css">
+        /* Navigation */
+        .nav-anthelp-logo{
+            position: relative;
+            font-size: 20px;
+            color: #E63E4C !important;
+            font-weight: 900;
+            padding-left: 63px;
+        }
+        .nav-anthelp-logo > span{
+            color:#FF5E6B;
+        }
+        .nav-anthelp-logo:after {
+            width: 43px;
+            height: 37px;
+            content: "";
+            background: url(img/ant.png) no-repeat 0 0;
+            position: absolute;
+            top: 2px;
+            left: 18px;
+            -webkit-background-size: 50px;
+            background-size: 37px;
+        }
+        .navbar {
+            border-radius: initial !important;
+        }
+
+        .danger-btn {
+            color: #fff;
+            background-color: #FF5E6B;
+            border-color: #d43f3a;
+        }
+    </style>
 </head>
+
 <body>
+    <!-- Navigation Tab -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand nav-anthelp-logo" href="index.html">ANT<span>HELP</span></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">HOME</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="#">ABOUT US</a></li>
+                <li><a href="#">CONTACT US</a></li>
+            </ul>
+            <div class="pull-right">
+                <ul class="nav navbar-nav">
+                    <li><button type="button" class="btn navbar-btn danger-btn" id="btn-signup">SIGN IN</button></li>
+                </ul>     
+            </div>
+           
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Navbar Button</h2>
+        <p>Use the navbar-btn class on a button to vertically align (same padding as links) it inside the navbar.</p>
+    </div>
+
+
     <h1>Hello there!</h1>
     <div class="jumbotron">
         <h4>some sample text here</h4>
@@ -23,5 +91,14 @@
             </div>
         </div>
     </div>
+
+<script type="text/javascript">
+// Redirect to other page
+document.getElementById("btn-signup").onclick = function () {
+    location.href = "login-page.html";
+};
+</script>    
+    
 </body>
+
 </html>
