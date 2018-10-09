@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<!-- CSS here -->
+<style type="text/css">
+
+
+	/* AntHELP Logo */
+	.anthelp-logo{
+		text-align: center;
+		margin: 20px 20px 20px 0;
+	}
+	.anthelp-logo-styling{
+	    position: relative;
+	    font-size: 25px;
+	    color: #E63E4C;
+	    font-weight: 900;
+	    padding-left: 73px;
+	}
+	.anthelp-logo-styling > span{
+		color:#FF5E6B;
+	}
+
+	.anthelp-logo-styling:after {
+		width: 52px;
+	    height: 44px;
+	    content: "";
+	    background: url(ant.png) no-repeat 0 0;
+	    position: absolute;
+	    top: -14px;
+	    left: 10px;
+	    -webkit-background-size: 50px;
+	    background-size: 50px;
+		
+	}
+	
+	@media (min-width: 768px){
+		body#login-popup-modal .modal-dialog {
+			width: 560px;
+		}
+	}
+
+	@media (max-width: 767px){
+		body#login-popup-modal .modal-dialog {
+			margin: 25px;
+		}
+	}
+
+	body#login-popup-modal .modal-content {
+		padding: 15px 40px;
+	}
+	body#login-popup-modal h4 {
+		text-align: center;
+		position: relative;
+		margin: 25px;
+	}
+
+	body#login-popup-modal h4:before, h4:after {
+		content: "";
+		width: 30%;
+		height: 1px;
+		background-color: #000;
+		position: absolute;
+		left: 0;
+		top: 50%;
+	}
+	body#login-popup-modal h4:after {
+		right: 0;
+    	left: auto;
+	}
+
+	body#login-popup-modal .m-body form input {
+		display: block;
+		margin-bottom: 25px;
+		width: 100%;
+    	height: 40px;
+    	padding-left: 15px;
+	}
+
+	body#login-popup-modal .m-body form button {
+		width: 100%;
+	    height: 35px;
+	    background-color: #FF5E6B;
+	    border-radius: 5px;
+	    border: none;
+	    color: #fff;
+	    margin-bottom: 20px;
+	}
+	body#login-popup-modal .modal-content > span:first-child {
+		height: 50px;
+	    width: 50px;
+	    background-color: #FF5E6B;
+	    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	    border-radius: 50%;
+	    position: absolute;
+	    top: -15px;
+	    right: -19px;
+	    cursor: pointer;
+	}
+	body#login-popup-modal .modal-content > span:first-child:before{
+		content: "\274c";
+    	position: absolute;
+    	top: 8px;
+    	right: 12px;
+    	font-size: 24px;
+    	color: #fff;
+	}
+	body#login-popup-modal .modal-content > p {
+		text-align: right;
+	}
+	body#login-popup-modal a{
+	    color: #E63E4C;
+	    font-weight: bold;
+	    line-height: normal;
+	    text-decoration: none;
+	}
+    body#login-popup-modal .m-footer {
+		border-top: 1px solid #e5e5e5;
+	    padding: 15px 0;
+	    text-align: center;
+    }
+    body#login-popup-modal .m-footer > p span {
+    	color:#008489;
+    }
+    body#login-popup-modal .m-footer a {
+    	color:#008489;
+    }
+</style>
+</head>
+
+<body id="login-popup-modal">
+<div class="container">
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" id="myBtn">Open Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="signupModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+
+      	<span data-dismiss="modal"></span>
+      	<div class="anthelp-logo"><span class="anthelp-logo-styling">ANT<span>HELP</span></span></div>
+          <h4>Login</h4>
+
+		<div class="m-body">
+			<form action="">
+			  <input type="text" id="lgEmail" name="email" placeholder="Email">
+			  <input type="password" id="lgPassword" name="password" placeholder="Password">
+			  <button type="button" onclick="validateEmail()">Login</button>
+			</form> 
+		</div>
+		<p><a href="#">Forgot Password?</a></p>
+
+        <div class="m-footer">
+          <p>Don’t have an account? <span><a href="#">Sign up</a></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript here -->
+<script>
+// Open sign up modal
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#signupModal").modal();
+    });
+});
+
+
+// Email validation
+function validateEmail() {
+	var email = document.getElementById("lgEmail").value;
+	var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
+
+	if (!filter.test(email)) {
+    alert('Please provide a valid email address');
+    email.focus;
+    return false;
+}
+    else {
+    	alert('good');
+    	return true
+    }
+}
+
+// clear text field when modal close
+$(".modal").on("hidden.bs.modal", function () {
+    $("#lgEmail").val("");
+      $("#lgPassword").val("");
+});
+</script>
+
+</body>
+</html>
