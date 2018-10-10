@@ -1,10 +1,21 @@
 # AntHELP
+This is a Core PHP implementation for the AntHELP project. 
 
-Welcome to Software Engineering Semester 3, August 2018.
-This is a sample GIT project
+## Modules
+This project is divided into 2 modules:
+- Front-end - HTML, CSS, JS, gulp
+- Back-end: PHP
 
-To build the web app
-`gulp build`
+## Requirements
+- node.js
+- NPM
 
-To run the web app with browsersync 
-`gulp`
+## Downloads
+- node.js - https://nodejs.org/en/
+- Visual Studio Code - https://code.visualstudio.com/
+
+## Building
+To build the front-end and launch a browser for debugging
+```
+gulp
+```
