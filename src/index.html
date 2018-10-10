@@ -7,38 +7,55 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+
     <title>The Best Services Platform Provide For You</title>
 </head>
 
 <body>
-    <!-- Navigation Tab -->
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand nav-anthelp-logo" href="index.html">ANT<span>HELP</span></a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="index.html">HOME</a></li>
-                <li><a href="#">SERVICES</a></li>
-                <li><a href="#">ABOUT US</a></li>
-                <li><a href="#">CONTACT US</a></li>
-            </ul>
-            <div class="pull-right">
-                <ul class="nav navbar-nav">
-                    <li><button type="button" class="btn navbar-btn danger-btn" id="btn-signup">SIGN IN</button></li>
-                </ul>     
-            </div>
-           
-        </div>
-    </nav>
 
-    <div class="container">
-        <h2>Navbar Button</h2>
-        <p>Use the navbar-btn class on a button to vertically align (same padding as links) it inside the navbar.</p>
+    <div class="header">
+        <nav class="navbar navbar-expand-md text-uppercase navbar-light position-absolute w-100">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/logo-primary.svg" width="100" alt="AntHELP Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"><b>Home <span class="sr-only">(current)</span></b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><b>Services</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><b>About Us</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#"><b>Contact Us</b></a>
+                    </li>
+                </ul>
+            </div>
+    
+            <a href="login-page.html" class="btn btn-danger">SIGNUP</a>
+        </nav>
+
+        <div class="banner d-flex align-items-center" style="background-image: url('assets/img/banners/sunset.jpg')">
+            <div class="wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h1>hello</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 
 
     <h1>Hello there!</h1>
@@ -56,6 +73,9 @@
             </div>
         </div>
     </div>
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
 // Redirect to other page
