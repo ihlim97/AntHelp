@@ -15,6 +15,11 @@ This project is divided into 2 modules:
 - Visual Studio Code - https://code.visualstudio.com/
 
 ## Building
+Before running anything, please install all the npm dependencies.
+```
+npm install
+```
+
 To build the front-end and launch a browser for debugging
 ```
 gulp
