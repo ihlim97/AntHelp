@@ -1,0 +1,31 @@
+/* Navigation */
+.nav-anthelp-logo{
+    position: relative;
+    font-size: 20px;
+    color: #E63E4C !important;
+    font-weight: 900;
+    padding-left: 63px;
+}
+.nav-anthelp-logo > span{
+    color:#FF5E6B;
+}
+.nav-anthelp-logo:after {
+    width: 43px;
+    height: 37px;
+    content: "";
+    background: url(img/ant.png) no-repeat 0 0;
+    position: absolute;
+    top: 2px;
+    left: 18px;
+    -webkit-background-size: 50px;
+    background-size: 37px;
+}
+.navbar {
+    border-radius: initial !important;
+}
+
+.danger-btn {
+    color: #fff;
+    background-color: #FF5E6B;
+    border-color: #d43f3a;
+}
