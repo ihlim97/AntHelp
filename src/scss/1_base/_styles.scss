@@ -1,4 +1,30 @@
 /* Navigation */
+
+.navbar-brand {
+    display: flex;
+    align-items: flex-start;
+}
+
+.navbar {
+    z-index: $zindex-dropdown;
+}
+
+/* Banner */
+.banner {
+    height: 70vh;
+    overflow: hidden;
+    position: relative;
+
+    background-size:cover;
+    background-repeat: no-repeat;
+
+    .wrapper {
+        position: absolute;
+        width: 100%;
+    }
+}
+
+
 .nav-anthelp-logo{
     position: relative;
     font-size: 20px;
@@ -13,7 +39,7 @@
     width: 43px;
     height: 37px;
     content: "";
-    background: url(img/ant.png) no-repeat 0 0;
+    background: url("../../assets/img/anthelp-logo-primary.svg") no-repeat 0 0;
     position: absolute;
     top: 2px;
     left: 18px;

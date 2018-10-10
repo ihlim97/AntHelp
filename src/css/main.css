@@ -6311,3 +6311,51 @@ a.text-dark:hover, a.text-dark:focus {
   .table .thead-dark th {
     color: inherit;
     border-color: #dee2e6; } }
+
+/* Navigation */
+.navbar-brand {
+  display: flex;
+  align-items: flex-start; }
+
+.navbar {
+  z-index: 1000; }
+
+/* Banner */
+.banner {
+  height: 70vh;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .banner .wrapper {
+    position: absolute;
+    width: 100%; }
+
+.nav-anthelp-logo {
+  position: relative;
+  font-size: 20px;
+  color: #E63E4C !important;
+  font-weight: 900;
+  padding-left: 63px; }
+
+.nav-anthelp-logo > span {
+  color: #FF5E6B; }
+
+.nav-anthelp-logo:after {
+  width: 43px;
+  height: 37px;
+  content: "";
+  background: url("../../assets/img/anthelp-logo-primary.svg") no-repeat 0 0;
+  position: absolute;
+  top: 2px;
+  left: 18px;
+  -webkit-background-size: 50px;
+  background-size: 37px; }
+
+.navbar {
+  border-radius: initial !important; }
+
+.danger-btn {
+  color: #fff;
+  background-color: #FF5E6B;
+  border-color: #d43f3a; }
