@@ -25,9 +25,18 @@
 }
 
 /* Service Curator */
-.service-curator form > * {
-    padding: 5px;
+.service-curator {
+
+    button {
+        width: 100px;
+    }
+    
+    form > * {
+        padding: 5px;
+        margin: 0 5px;
+    }
 }
+
 .nav-anthelp-logo{
     position: relative;
     font-size: 20px;
