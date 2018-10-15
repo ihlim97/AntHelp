@@ -6,7 +6,7 @@ var browserSync = require("browser-sync").create();
 gulp.task("default", ["hello", "js", "serve"]);
 
 gulp.task("sass", function () {
-    return gulp.src(["src/scss/*.scss"])
+    return gulp.src(["src/scss/*.scss", "node_modules/slick-carousel/slick/*.scss"])
         .pipe(plumber()) // prevent gulp from crashing during sass re-compile
         .pipe(sass())
         .pipe(gulp.dest("src/css"))
@@ -14,7 +14,11 @@ gulp.task("sass", function () {
 });
 
 gulp.task("js", function () {
-    return gulp.src(["node_modules/bootstrap/dist/js/bootstrap.min.js", "node_modules/jquery/dist/jquery.min.js", "node_modules/popper.js/dist/popper.min.js"])
+    return gulp.src([
+        "node_modules/bootstrap/dist/js/bootstrap.min.js",
+        "node_modules/jquery/dist/jquery.min.js",
+        "node_modules/popper.js/dist/popper.min.js",
+        "node_modules/slick-carousel/slick/slick.min.js"])
         .pipe(gulp.dest("src/js"))
         .pipe(browserSync.stream());
 });

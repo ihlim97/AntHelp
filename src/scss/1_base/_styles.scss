@@ -1,3 +1,9 @@
+/* Utilities */
+
+.rounded-corners {
+    border-radius: 5px;
+}
+
 /* Navigation */
 
 .navbar-brand {
@@ -10,14 +16,13 @@
 }
 
 /* Banner */
+
 .banner {
     height: 70vh;
     overflow: hidden;
     position: relative;
-
-    background-size:cover;
+    background-size: cover;
     background-repeat: no-repeat;
-
     .wrapper {
         position: absolute;
         width: 100%;
@@ -25,45 +30,42 @@
 }
 
 /* Service Curator */
-.service-curator {
 
+.service-curator {
     button {
         width: 100px;
     }
-    
-    form > * {
+    form>* {
         padding: 5px;
         margin: 0 5px;
     }
 }
 
-.nav-anthelp-logo{
-    position: relative;
-    font-size: 20px;
-    color: #E63E4C !important;
-    font-weight: 900;
-    padding-left: 63px;
-}
-.nav-anthelp-logo > span{
-    color:#FF5E6B;
-}
-.nav-anthelp-logo:after {
-    width: 43px;
-    height: 37px;
-    content: "";
-    background: url("../../assets/img/anthelp-logo-primary.svg") no-repeat 0 0;
-    position: absolute;
-    top: 2px;
-    left: 18px;
-    -webkit-background-size: 50px;
-    background-size: 37px;
-}
-.navbar {
-    border-radius: initial !important;
+/* Carousel */
+
+.slider {
+    .slider-item {
+        border-radius: 5px;
+        background-color: $gray-500;
+        position: relative;
+        overflow: hidden;
+        outline: none;
+        .content {
+            position: absolute;
+            padding: 30px;
+        }
+    }
+    .slick-dots button::before {
+        font-size: 40px;
+    }
 }
 
-.danger-btn {
-    color: #fff;
-    background-color: #FF5E6B;
-    border-color: #d43f3a;
+/* Product cards */
+
+.card-border-top-red {
+    border-top: 3px solid $primary;
+}
+
+.card-img {
+    border-radius: 0;
 }
