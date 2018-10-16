@@ -6344,17 +6344,17 @@ a.text-dark:hover, a.text-dark:focus {
 
 /* Ornaments */
 .big-red-tick {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   border-radius: 50px;
   background-color: #FF5E6B;
   color: #fff;
   position: absolute;
-  top: -30%;
+  top: -12%;
   left: 50%;
   transform: translateX(-50%); }
   .big-red-tick::before {
-    font-size: 50px;
+    font-size: 30px;
     top: 50%;
     left: 50%;
     position: absolute;
