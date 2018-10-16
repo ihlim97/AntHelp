@@ -12,12 +12,16 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/slick-theme.css">
     <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/brands.css" integrity="sha384-Px1uYmw7+bCkOsNAiAV5nxGKJ0Ixn5nChyW8lCK1Li1ic9nbO5pC/iXaq27X5ENt"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/fontawesome.css" integrity="sha384-BzCy2fixOYd0HObpx3GMefNqdbA7Qjcc91RgYeDjrHTIEXqiF00jKvgQG0+zY/7I"
+        crossorigin="anonymous">
 </head>
 
 <body>
 
     <div class="header">
-        <nav class="navbar navbar-expand-md text-uppercase navbar-light position-absolute w-100">
+        <nav class="navbar navbar-expand-md text-uppercase navbar-dark position-absolute w-100">
             <a class="navbar-brand" href="#">
                 <img src="assets/img/logo-primary.svg" width="100" alt="AntHELP Logo">
             </a>
@@ -40,22 +44,24 @@
                         <a class="nav-link disabled" href="#"><b>Contact Us</b></a>
                     </li>
                 </ul>
-            </div>
-
-            <a href="login-page.html" class="btn btn-primary">SIGNUP</a>
+                <a href="login-page.html" class="ml-auto btn btn-outline-light mr-3">SIGNUP</a>
+                <a href="signupmodal.html" class="btn btn-primary">LOGIN</a>
+            </div>            
         </nav>
 
-        <div class="banner d-flex align-items-center" style="background-image: url('assets/img/banners/sunset.jpg')">
+        <div class="banner d-flex align-items-center" style="background-image: url('assets/img/banners/handhold.jpg')">
             <div class="wrapper">
                 <div class="container">
                     <div class="row">
                         <div class="col-12 my-4">
                             <div class="service-curator card p-5">
                                 <h3 class="text-center">How can we help you today?</h3>
-                                <form class="d-flex justify-content-center" action="">
+                                <form class="d-flex justify-content-center flex-column flex-sm-row" action="">
                                     <h3>I need</h3>
                                     <select name="service_type">
-                                        <option value="cleaning-services">Cleaning Services</option>
+                                        <option value="cleaning">Cleaning Services</option>
+                                        <option value="nursing">Nursing Services</option>
+                                        <option value="meal-catering">Meal Catering Services</option>
                                     </select>
                                     <h3>at</h3>
                                     <select name="location">
@@ -65,17 +71,18 @@
                                     <select name="time">
                                         <option value="20181010 13:00">Today, 1:00pm</option>
                                     </select>
-                                    <button class="btn btn-success" type="submit">Search</button>
+                                    <button class="btn btn-success mt-3 mt-sm-0" type="submit">Search</button>
                                 </form>
                             </div>
                         </div>
-                        <div class="col-12 text-center">
+                        <div class="col-12 text-center text-white">
                             <h1>Are you a service provider?</h1>
                             <a href="#" class="btn btn-outline-light">Post Services FREE</a>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="overlay"></div>
         </div>
     </div>
 
@@ -112,15 +119,15 @@
     </div>
 
     <div class="container">
-        <div class="row my-5">
-            <div class="col my-5">
+        <div class="row mt-5 my-sm-5">
+            <div class="col-12 col-sm-6 my-5">
                 <h4>Get your business on track.</h4>
                 <h4>Sign up as a service provider.</h4>
                 <p>Join the fastest growing and best services platform for senior citizens in Malaysia! Supercharge your services business by catering to a more elder audience. Enjoy better earnings and so much more benefits.</p>
                 <a href="" class="btn btn-primary">Get a free service provider account</a>
             </div>
-            <div class="col">
-                <img src="https://via.placeholder.com/600x400" alt="" class="img-fluid rounded-corners">
+            <div class="col-12 col-sm-6 p-0">
+                <img src="https://via.placeholder.com/600x400" alt="" class="img-fluid rounded-corners-sm">
             </div>
         </div>
     </div>
@@ -132,7 +139,7 @@
                     <h4>What's happening at AntHELP</h4>
 
                     <div class="row mt-4">
-                        <div class="col-3">
+                        <div class="col-12 col-sm-6 col-md-3 mb-3">
                             <div class="card card-border-top-red">
                                 <img src="https://via.placeholder.com/400x300" alt="" class="card-img">
                                 <div class="card-body">
@@ -141,7 +148,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-3">
+                        <div class="col-12 col-sm-6 col-md-3 mb-3">
                             <div class="card card-border-top-red">
                                 <img src="https://via.placeholder.com/400x300" alt="" class="card-img">
                                 <div class="card-body">
@@ -150,7 +157,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-3">
+                        <div class="col-12 col-sm-6 col-md-3 mb-3">
                             <div class="card card-border-top-red">
                                 <img src="https://via.placeholder.com/400x300" alt="" class="card-img">
                                 <div class="card-body">
@@ -159,7 +166,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-3">
+                        <div class="col-12 col-sm-6 col-md-3 mb-3">
                             <div class="card card-border-top-red">
                                 <img src="https://via.placeholder.com/400x300" alt="" class="card-img">
                                 <div class="card-body">
@@ -176,6 +183,45 @@
         </div>
     </div>
 
+    <div class="footer bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col mt-5">
+
+                    <div class="row">
+                        <div class="col-12 col-sm-3 text-center">
+                            <img src="assets/img/logo-primary.svg" class="img-fluid footer-logo" alt="AntHELP Logo">
+                        </div>
+                        <div class="col-6 col-sm-3 mt-4 mt-sm-0">
+                            <h4>AntHELP</h4>
+                            <ul class="list-unstyled">
+                                <li><a class="text-light" href="#">My Account</a></li>
+                                <li><a class="text-light" href="#">About Us</a></li>
+                                <li><a class="text-light" href="#">Blog</a></li>
+                                <li><a class="text-light" href="#">FAQ</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-sm-3 mt-4 mt-sm-0">
+                            <h4>Careers</h4>
+                            <ul class="list-unstyled">
+                                <li><a class="text-light" href="#">Work with AntHELP</a></li>
+                                <li><a class="text-light" href="#">Become an Ant</a></li>
+                                <li><a class="text-light" href="#">Post a Service</a></li>
+                            </ul>
+                        </div>
+                        <div class="col footer-social">
+                            <h4>Get Social</h4>
+                            <a href="" class="btn btn-primary social-icons"><span class="fab fa-facebook-f"></span></a>
+                            <a href="" class="btn btn-primary social-icons"><span class="fab fa-twitter"></span></a>
+                            <a href="" class="btn btn-primary social-icons"><span class="fab fa-linkedin-in"></span></a>
+                        </div>
+                    </div>
+
+                    <p class="text-center mt-5">Copyright &copy; 2018 AntHELP. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/slick.min.js"></script>

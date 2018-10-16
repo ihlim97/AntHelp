@@ -6338,23 +6338,55 @@ a.text-dark:hover, a.text-dark:focus {
 .rounded-corners {
   border-radius: 5px; }
 
-/* Navigation */
-.navbar-brand {
-  display: flex;
-  align-items: flex-start; }
+@media (min-width: 576px) {
+  .rounded-corners-sm {
+    border-radius: 5px; } }
 
+/* Navigation */
 .navbar {
-  z-index: 1000; }
+  z-index: 1000;
+  transition: all 0.3s ease-out; }
+  .navbar .navbar-brand {
+    display: flex;
+    align-items: flex-start; }
+  .navbar.opened {
+    background-color: #dc3545; }
+
+/* Footer */
+.footer .footer-logo {
+  width: 50%; }
+
+.footer .footer-social {
+  text-align: center; }
+  .footer .footer-social .social-icons {
+    width: 50px;
+    height: 50px;
+    padding: 12px; }
+
+@media (min-width: 576px) {
+  .footer .footer-social {
+    text-align: unset; } }
 
 /* Banner */
 .banner {
-  height: 70vh;
+  height: 100vh;
   overflow: hidden;
   position: relative;
   background-size: cover;
   background-repeat: no-repeat; }
+  @media (min-width: 576px) {
+    .banner {
+      height: 70vh; } }
   .banner .wrapper {
     position: absolute;
+    width: 100%;
+    z-index: 1; }
+  .banner .overlay {
+    background: #495057;
+    opacity: 0.8;
+    filter: opacity(80);
+    overflow: hidden;
+    height: 100%;
     width: 100%; }
 
 /* Service Curator */
@@ -6378,6 +6410,18 @@ a.text-dark:hover, a.text-dark:focus {
 
 .slider .slick-dots button::before {
   font-size: 40px; }
+
+.slider .slick-slide {
+  margin: 0 10px; }
+
+.slider .slick-list {
+  margin: 0 -10px; }
+
+.slider .slick-prev {
+  left: -10px; }
+
+.slider .slick-next {
+  right: 0; }
 
 /* Product cards */
 .card {
