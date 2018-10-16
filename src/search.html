@@ -21,7 +21,7 @@
 
     <div class="header">
         <nav class="navbar navbar-expand-md text-uppercase navbar-dark position-absolute w-100">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.html">
                 <div class="anthelp-logo"></div>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
@@ -31,7 +31,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><b>Home <span class="sr-only">(current)</span></b></a>
+                        <a class="nav-link" href="index.html"><b>Home <span class="sr-only">(current)</span></b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="search.html"><b>Services</b></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><b>How It Works</b></a>
@@ -43,12 +46,12 @@
                         <a class="nav-link" href="#"><b>Contact Us</b></a>
                     </li>
                 </ul>
-                <a href="login-page.html" class="ml-auto btn btn-outline-light mr-3">SIGNUP</a>
-                <a href="signupmodal.html" class="btn btn-primary">LOGIN</a>
+                <a href="senior-signup-page.html" class="ml-auto btn btn-outline-light mr-3">SIGNUP</a>
+                <a href="login-page.html" class="btn btn-primary">LOGIN</a>
             </div>            
         </nav>
 
-        <div class="banner banner-short d-flex align-items-center" style="background-image: url('assets/img/banners/handhold.jpg')">
+        <div class="banner banner-medium d-flex align-items-center" style="background-image: url('assets/img/banners/handhold.jpg')">
             <div class="wrapper">
                 <div class="container">
                     <div class="row">
@@ -65,12 +68,15 @@
                                     <h3>at</h3>
                                     <select name="location">
                                         <option value="PJ">Petaling Jaya</option>
+                                        <option value="BKTD">Bukit Damansara</option>
+                                        <option value="Kepong">Kepong</option>
                                     </select>
                                     <h3>on</h3>
                                     <select name="time">
                                         <option value="20181010 13:00">Today, 1:00pm</option>
+                                        <option value="20181010 14:00">Today, 2:00pm</option>
                                     </select>
-                                    <a class="btn btn-success mt-3 mt-sm-0 text-white py-2 px-3">Search</a>
+                                    <a href="search.html" class="btn btn-success mt-3 mt-sm-0 text-white py-2 px-3">Search</a>
                                 </form>
                             </div>
                         </div>
@@ -88,7 +94,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Search</li>
+                            <li class="breadcrumb-item active" aria-current="page">Search (Cleaning Services)</li>
                         </ol>
                     </nav>
                     <div class="d-flex align-items-center">
@@ -118,93 +124,89 @@
             <div class="col-12 cards-container">
                 
                 <div class="card service-card mb-3">
-                    <a href="">
-                        <div class="row no-gutters">
-                            <div class="col-12 col-sm-4">
-                                <img src="https://source.unsplash.com/500x400/?maid" alt="" class="card-img">
-                            </div>
-                            <div class="col">
-                                <div class="card-body">
-                                    <h6 class="card-subtitle text-info">NEW!</h6>
-                                    <h3 class="card-title text-dark"><b>House Clearning Service</b></h3>
-                                    <div class="fas fa-chevron-right cta"></div>
-                                    <div class="rating text-warning">
-                                        <span class="fas fa-star"></span>
-                                        <span class="fas fa-star"></span>
-                                        <span class="fas fa-star"></span>
-                                        <span class="fas fa-star"></span>
-                                        <span class="fas fa-star"></span>
-                                        5.0
-                                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-12 col-sm-4">
+                            <img src="https://source.unsplash.com/500x400/?maid" alt="" class="card-img">
+                        </div>
+                        <div class="col">
+                            <div class="card-body">
+                                <h6 class="card-subtitle text-info">NEW!</h6>
+                                <h3 class="card-title text-dark"><b>House Cleaning Service</b></h3>
+                                <a class="btn btn-lg btn-success cta text-white">Book Now</a>
+                                <div class="rating text-warning">
+                                    <span class="fas fa-star"></span>
+                                    <span class="fas fa-star"></span>
+                                    <span class="fas fa-star"></span>
+                                    <span class="fas fa-star"></span>
+                                    <span class="fas fa-star"></span>
+                                    5.0
                                 </div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <div class="row no-gutters">
-                                            <div class="col-12 col-sm-8">
-                                                <ul class="disc text-dark">
-                                                    <li>Supreme cleaning services by trained staff</li>
-                                                    <li>Extra careful with your belongings</li>
-                                                    <li>Cleaning supplies can be arranged (if required)</li>
-                                                    <li>FREE! Essential oils for 1 room</li>
-                                                </ul>
-                                            </div>
-                                            <div class="col">
-                                                <div class="pricing text-right">
-                                                    <h1 class="text-danger m-0">RM120</h1>
-                                                    <h6 class="text-dark">per hour</h6>
-                                                </div>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row no-gutters">
+                                        <div class="col-12 col-sm-8">
+                                            <ul class="disc text-dark">
+                                                <li>Supreme cleaning services by trained staff</li>
+                                                <li>Extra careful with your belongings</li>
+                                                <li>Cleaning supplies can be arranged (if required)</li>
+                                                <li>FREE! Essential oils for 1 room</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col">
+                                            <div class="pricing text-right">
+                                                <h1 class="text-danger m-0">RM120</h1>
+                                                <h6 class="text-dark">per hour</h6>
                                             </div>
                                         </div>
-                                    </li>
-                                </ul>
-                            </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                    </a>
+                    </div>
                 </div>
 
                 <div class="card service-card mb-3">
-                    <a href="">
-                        <div class="row no-gutters">
-                            <div class="col-12 col-sm-4">
-                                <img src="https://source.unsplash.com/500x400/?maid" alt="" class="card-img">
-                            </div>
-                            <div class="col">
-                                <div class="card-body">
-                                    <h6 class="card-subtitle text-danger">POPULAR!</h6>
-                                    <h3 class="card-title text-dark"><b>Carpet Cleaning Service</b></h3>
-                                    <div class="fas fa-chevron-right cta"></div>
-                                    <div class="rating text-warning">
-                                        <span class="fas fa-star"></span>
-                                        <span class="fas fa-star"></span>
-                                        <span class="fas fa-star"></span>
-                                        <span class="fas fa-star"></span>
-                                        <span class="fas fa-star"></span>
-                                        5.0
-                                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-12 col-sm-4">
+                            <img src="https://source.unsplash.com/500x400/?cleaning" alt="" class="card-img">
+                        </div>
+                        <div class="col">
+                            <div class="card-body">
+                                <h6 class="card-subtitle text-danger">POPULAR!</h6>
+                                <h3 class="card-title text-dark"><b>Carpet Cleaning Service</b></h3>
+                                <a class="btn btn-lg btn-success cta text-white">Book Now</a>
+                                <div class="rating text-warning">
+                                    <span class="fas fa-star"></span>
+                                    <span class="fas fa-star"></span>
+                                    <span class="fas fa-star"></span>
+                                    <span class="fas fa-star"></span>
+                                    <span class="fas fa-star"></span>
+                                    5.0
                                 </div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <div class="row no-gutters">
-                                            <div class="col-12 col-sm-8">
-                                                <ul class="disc text-dark">
-                                                    <li>Supreme cleaning services by trained staff</li>
-                                                    <li>Extra careful with your belongings</li>
-                                                    <li>Cleaning supplies can be arranged (if required)</li>
-                                                    <li>FREE! Essential oils for 1 room</li>
-                                                </ul>
-                                            </div>
-                                            <div class="col">
-                                                <div class="pricing text-right">
-                                                    <h1 class="text-danger m-0">RM120</h1>
-                                                    <h6 class="text-dark">per hour</h6>
-                                                </div>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row no-gutters">
+                                        <div class="col-12 col-sm-8">
+                                            <ul class="disc text-dark">
+                                                <li>Supreme cleaning services by trained staff</li>
+                                                <li>Extra careful with your belongings</li>
+                                                <li>Cleaning supplies can be arranged (if required)</li>
+                                                <li>FREE! Essential oils for 1 room</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col">
+                                            <div class="pricing text-right">
+                                                <h1 class="text-danger m-0">RM120</h1>
+                                                <h6 class="text-dark">per hour</h6>
                                             </div>
                                         </div>
-                                    </li>
-                                </ul>
-                            </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                    </a>
+                    </div>
                 </div>
 
             </div>
@@ -215,7 +217,7 @@
         <div class="container">
             <div class="row">
                 <div class="col my-5">
-                    <h4>Did You Find What You Are Looking For?</h4>
+                    <h4>Did You Find What You Were Looking For?</h4>
 
                     <div class="row mt-4">
                         <div class="col-12 col-sm-6 col-md-3 mb-3">
@@ -299,6 +301,7 @@
             </div>
         </div>
     </div>
+
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
