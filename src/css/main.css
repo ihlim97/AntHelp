@@ -6349,8 +6349,17 @@ a.text-dark:hover, a.text-dark:focus {
   .navbar .navbar-brand {
     display: flex;
     align-items: flex-start; }
+    .navbar .navbar-brand .anthelp-logo {
+      background-image: url("../../assets/img/logo-primary.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 20px;
+      width: 130px; }
   .navbar.opened {
-    background-color: #dc3545; }
+    background-color: #dc3545;
+    padding-bottom: 20px; }
+    .navbar.opened .anthelp-logo {
+      background-image: url("../../assets/img/logo-inverted.svg"); }
 
 /* Footer */
 .footer .footer-logo {
@@ -6388,6 +6397,11 @@ a.text-dark:hover, a.text-dark:focus {
     overflow: hidden;
     height: 100%;
     width: 100%; }
+  .banner.banner-short {
+    height: 80vh; }
+    @media (min-width: 576px) {
+      .banner.banner-short {
+        height: 40vh; } }
 
 /* Service Curator */
 .service-curator button {
@@ -6408,22 +6422,23 @@ a.text-dark:hover, a.text-dark:focus {
     position: absolute;
     padding: 30px; }
 
-.slider .slick-dots button::before {
-  font-size: 40px; }
-
 .slider .slick-slide {
   margin: 0 10px; }
 
 .slider .slick-list {
   margin: 0 -10px; }
 
+.slider .slick-prev,
+.slider .slick-next {
+  z-index: 1; }
+
 .slider .slick-prev {
-  left: -10px; }
+  left: 0; }
 
 .slider .slick-next {
   right: 0; }
 
-/* Product cards */
+/* Cards */
 .card {
   transition: all 0.2s ease-in-out; }
   .card:hover {
@@ -6432,3 +6447,26 @@ a.text-dark:hover, a.text-dark:focus {
     border-top: 3px solid #FF5E6B; }
   .card .card-img {
     border-radius: 0; }
+
+.service-card:hover * {
+  text-decoration: none; }
+
+.service-card .card-body {
+  position: relative; }
+
+.service-card .card-title {
+  margin-bottom: 0; }
+
+.service-card .card-img {
+  height: 200px;
+  object-fit: cover; }
+  @media (min-width: 576px) {
+    .service-card .card-img {
+      height: initial; } }
+
+.service-card .cta {
+  color: #343a40;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%); }

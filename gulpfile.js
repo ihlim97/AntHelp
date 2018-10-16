@@ -6,19 +6,25 @@ var browserSync = require("browser-sync").create();
 gulp.task("default", ["hello", "js", "serve"]);
 
 gulp.task("sass", function () {
-    return gulp.src(["src/scss/*.scss", "node_modules/slick-carousel/slick/*.scss"])
+    return gulp.src(["src/scss/*.scss"])
         .pipe(plumber()) // prevent gulp from crashing during sass re-compile
         .pipe(sass())
         .pipe(gulp.dest("src/css"))
         .pipe(browserSync.stream());
 });
 
+gulp.task("slick", function() {
+    return gulp.src([
+        "node_modules/slick-carousel/slick/**/*"
+    ])
+    .pipe(gulp.dest("src/assets/slick"));
+});
+
 gulp.task("js", function () {
     return gulp.src([
         "node_modules/bootstrap/dist/js/bootstrap.min.js",
         "node_modules/jquery/dist/jquery.min.js",
-        "node_modules/popper.js/dist/popper.min.js",
-        "node_modules/slick-carousel/slick/slick.min.js"])
+        "node_modules/popper.js/dist/umd/popper.min.js"])
         .pipe(gulp.dest("src/js"))
         .pipe(browserSync.stream());
 });
