@@ -108,7 +108,7 @@
 						<div class="row no-gutters">
 							<div class="col-12 col-lg-4">
 								<div class="card-body pb-0">
-									<div class="badge badge-warning">PENDING</div>
+									<div class="badge badge-success">COMPLETED</div>
 									<h3 class="card-title text-dark">Home Cleaning Service</h3>
 									<p class="card-text">Helping seniors clean their homes.</p>
 								</div>
@@ -163,10 +163,10 @@
 													<span class="fas fa-cog"></span>
 												</button>
 												<div class="dropdown-menu">
-													<a class="dropdown-item" href="#">Accept</a>
+													<a class="dropdown-item" data-toggle="modal" data-target="#success-modal">Accept</a>
 													<a class="dropdown-item" href="#">Decline</a>
 													<div class="dropdown-divider"></div>
-													<a class="dropdown-item disabled" href="review.html">Review</a>
+													<a class="dropdown-item" href="review.html">Review</a>
 												</div>
 											</div>
 										</div>
@@ -183,7 +183,7 @@
 						<div class="row no-gutters">
 							<div class="col-12 col-lg-4">
 								<div class="card-body pb-0">
-									<div class="badge badge-success">COMPLETED</div>
+									<div class="badge badge-warning">PENDING</div>
 									<h3 class="card-title text-dark">Carpet Cleaning Service</h3>
 									<p class="card-text">Helping seniors to clean their carpets.</p>
 								</div>
@@ -238,8 +238,8 @@
 													<span class="fas fa-cog"></span>
 												</button>
 												<div class="dropdown-menu">
-													<a class="dropdown-item disabled" href="#">Accept</a>
-													<a class="dropdown-item disabled" href="#">Decline</a>
+													<a class="dropdown-item" data-toggle="modal" data-target="#success-modal">Accept</a>
+													<a class="dropdown-item" href="#">Decline</a>
 													<div class="dropdown-divider"></div>
 													<a class="dropdown-item" href="review.html">Review</a>
 												</div>
@@ -313,10 +313,10 @@
 													<span class="fas fa-cog"></span>
 												</button>
 												<div class="dropdown-menu">
-													<a class="dropdown-item disabled" href="#">Accept</a>
-													<a class="dropdown-item disabled" href="#">Decline</a>
+													<a class="dropdown-item disabled not-clickable" href="#">Accept</a>
+													<a class="dropdown-item disabled not-clickable" href="#">Decline</a>
 													<div class="dropdown-divider"></div>
-													<a class="dropdown-item disabled" href="review.html">Review</a>
+													<a class="dropdown-item disabled not-clickable" href="review.html">Review</a>
 												</div>
 											</div>
 										</div>
@@ -332,6 +332,23 @@
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="success-modal" tabindex="-1" aria-hidden="true" role="dialog">
+	    <div class="modal-dialog modal-dialog-centered">
+	        <!-- Modal content-->
+	        <div class="modal-content text-center">
+	            <div class="modal-body">
+	            	<img src="assets/img/sent.svg" width="60">
+	                <div class="my-4">
+	                    <h4>Request Accepted.</h4>
+	                    <p class="mb-2">You has accepted a request at<br><b>1:00 pm</b> on <b>Thur 27th Sep</b></p>
+	                </div>
+	                <button type="button" class="btn w-100 btn-danger mb-3" data-dismiss="modal">OK</button>
+	            </div>
+	        </div>
+	    </div>
 	</div>
 
 	<div class="footer bg-dark text-white">

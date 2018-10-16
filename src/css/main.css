@@ -6607,3 +6607,6 @@ a.text-dark:hover, a.text-dark:focus {
 .modal .rating > label:hover ~ input:checked ~ label,
 .modal .rating > input:checked ~ label:hover ~ label {
   color: #FFED85; }
+
+.not-clickable {
+  pointer-events: none; }
