@@ -80,10 +80,16 @@
         height: 100%;
         width: 100%;
     }
-    &.banner-short {
+    &.banner-medium {
         height: 80vh;
         @include media-breakpoint-up(sm) {
-            height: 40vh;
+            height: 50vh;
+        }
+    }
+    &.banner-short {
+        height: 30vh;
+        @include media-breakpoint-up(sm) {
+            height: 20vh;
         }
     }
 }
@@ -111,7 +117,7 @@
         outline: none;
         .content {
             position: absolute;
-            padding: 30px;
+            padding: 50px;
         }
     }
     .slick-slide {
@@ -165,10 +171,32 @@
         }
     }
     .cta {
-        color: $gray-800;
+        color: white;
         position: absolute;
         right: 15px;
         top: 50%;
         transform: translateY(-50%);
+    }
+}
+
+/* Sign Up Form */
+
+.sign-form {
+    h4:before,
+    h4:after {
+        width: 18%;
+        @include media-breakpoint-up(md) {
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 25%;
+            background-color: #000;
+            top: 50%;
+            left: 0;
+        }
+    }
+    h4:after {
+        right: 0;
+        left: initial;
     }
 }

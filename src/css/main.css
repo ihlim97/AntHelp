@@ -6397,11 +6397,16 @@ a.text-dark:hover, a.text-dark:focus {
     overflow: hidden;
     height: 100%;
     width: 100%; }
-  .banner.banner-short {
+  .banner.banner-medium {
     height: 80vh; }
     @media (min-width: 576px) {
+      .banner.banner-medium {
+        height: 50vh; } }
+  .banner.banner-short {
+    height: 30vh; }
+    @media (min-width: 576px) {
       .banner.banner-short {
-        height: 40vh; } }
+        height: 20vh; } }
 
 /* Service Curator */
 .service-curator button {
@@ -6420,7 +6425,7 @@ a.text-dark:hover, a.text-dark:focus {
   outline: none; }
   .slider .slider-item .content {
     position: absolute;
-    padding: 30px; }
+    padding: 50px; }
 
 .slider .slick-slide {
   margin: 0 10px; }
@@ -6465,8 +6470,27 @@ a.text-dark:hover, a.text-dark:focus {
       height: initial; } }
 
 .service-card .cta {
-  color: #343a40;
+  color: white;
   position: absolute;
   right: 15px;
   top: 50%;
   transform: translateY(-50%); }
+
+/* Sign Up Form */
+.sign-form h4:before,
+.sign-form h4:after {
+  width: 18%; }
+  @media (min-width: 768px) {
+    .sign-form h4:before,
+    .sign-form h4:after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 25%;
+      background-color: #000;
+      top: 50%;
+      left: 0; } }
+
+.sign-form h4:after {
+  right: 0;
+  left: initial; }
