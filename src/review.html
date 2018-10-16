@@ -14,73 +14,7 @@
     <link rel="stylesheet" href="assets/slick/slick.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
 	 crossorigin="anonymous">
-
-<style type="text/css">
-    #submit-review-modal .modal-header {
-        background-color: #FF5E6B;
-        color: #fff;
-    }
-    .modal-content > span:first-child {
-        height: 40px;
-        width: 40px;
-        background-color: #FF5E6B;
-        top: -15px;
-        right: -10px;
-        cursor: pointer;
-        z-index: 1;
-    }
-    .modal-content > span:first-child:before{
-        content: "\274c";
-        position: absolute;
-        top: 7px;
-        right: 10px;
-        font-size: 18px;
-        color: #fff;
-    }
-
-    .review-tile {
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-        width: 100%
-    }
-    .review-tile:last-child{
-        margin-bottom: 3rem;
-    }
-    .modal .rating { 
-      border: none;
-      float: left;
-    }
-
-    .modal .rating > input { display: none; } 
-    .modal .rating > label:before { 
-    margin-right: 10px;
-      font-size: 1.25em;
-      font-family: FontAwesome;
-      display: inline-block;
-      content: "\f005";
-    }
-
-    .modal .rating > .half:before { 
-      content: "\f089";
-      position: absolute;
-    }
-
-    .modal .rating > label { 
-      color: #ddd; 
-     float: right; 
-    }
-
-/***** CSS Magic to Highlight Stars on Hover *****/
-
-.modal .rating > input:checked ~ label, /* show gold star when clicked */
-.modal .rating:not(:checked) > label:hover, /* hover current star */
-.modal .rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
-
-.modal .rating > input:checked + label:hover, /* hover current star when changing rating */
-.modal .rating > input:checked ~ label:hover,
-.modal .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
-.modal .rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
-</style>
-
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 <body>
 	<!-- main navbar -->
@@ -136,11 +70,11 @@
 	</div>
 
 	<!-- body content -->
-	<div class="container">
+	<div class="container" id="review">
 	    <div class="mt-5 clearfix">
 	        <h2>User Reviews</h2>
 	        <h5>Karen Teh</h5>
-	        <button type="button" class="clearfix  btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#submit-review-modal">
+	        <button type="button" class="clearfix btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#submit-review-modal">
 	            Write a review
 	        </button>
 	    </div>

@@ -6378,6 +6378,8 @@ a.text-dark:hover, a.text-dark:focus {
     padding-bottom: 20px; }
     .navbar.opened .anthelp-logo {
       background-image: url("../../assets/img/logo-inverted.svg"); }
+  .navbar .user-info button:hover {
+    text-decoration: none; }
 
 /* Footer */
 .footer .footer-logo {
@@ -6494,6 +6496,14 @@ a.text-dark:hover, a.text-dark:focus {
   top: 50%;
   transform: translateY(-50%); }
 
+.service-card-2 .metadata-wrapper {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem; }
+
+@media (min-width: 992px) {
+  .service-card-2 .metadata {
+    text-align: right; } }
+
 /* Sign Up Form */
 .sign-form h4:before,
 .sign-form h4:after {
@@ -6512,3 +6522,88 @@ a.text-dark:hover, a.text-dark:focus {
 .sign-form h4:after {
   right: 0;
   left: initial; }
+
+.sign-form a {
+  font-weight: bold; }
+
+.sign-form p span a {
+  color: #008489; }
+
+.sign-form.card {
+  max-width: 500px;
+  width: calc(100% - 20px);
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%; }
+
+.full-h {
+  height: 100vh;
+  overflow: hidden; }
+
+/* Review Page Star (Highlight Stars on Hover) */
+@media screen and (max-width: 555px) {
+  #review > div > button {
+    float: initial !important;
+    margin-top: 20px; } }
+
+#submit-review-modal .modal-header {
+  background-color: #FF5E6B;
+  color: #fff; }
+
+.modal-content > span:first-child {
+  height: 40px;
+  width: 40px;
+  background-color: #FF5E6B;
+  top: -15px;
+  right: -10px;
+  cursor: pointer;
+  z-index: 1; }
+
+.modal-content > span:first-child:before {
+  content: "\274c";
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  font-size: 18px;
+  color: #fff; }
+
+.review-tile {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%; }
+
+.review-tile:last-child {
+  margin-bottom: 3rem; }
+
+.modal .rating {
+  border: none;
+  float: left; }
+
+.modal .rating > input {
+  display: none; }
+
+.modal .rating > label:before {
+  margin-right: 10px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005"; }
+
+.modal .rating > .half:before {
+  content: "\f089";
+  position: absolute; }
+
+.modal .rating > label {
+  color: #ddd;
+  float: right; }
+
+.modal .rating > input:checked ~ label,
+.modal .rating:not(:checked) > label:hover,
+.modal .rating:not(:checked) > label:hover ~ label {
+  color: #FFD700; }
+
+/* hover previous stars in list */
+.modal .rating > input:checked + label:hover,
+.modal .rating > input:checked ~ label:hover,
+.modal .rating > label:hover ~ input:checked ~ label,
+.modal .rating > input:checked ~ label:hover ~ label {
+  color: #FFED85; }
