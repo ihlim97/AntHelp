@@ -89,32 +89,50 @@
 
 <body>
 	<!-- main navbar -->
-	<nav class="navbar navbar-expand-md text-uppercase navbar-dark bg-dark w-100">
-	    <a class="navbar-brand" href="#">
-	        <div class="anthelp-logo"></div>
-	    </a>
-	    <button class="navbar-toggler shadow-lg" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-	                <span class="navbar-toggler-icon"></span>
-	            </button>
-	    <div class="collapse navbar-collapse" id="navbarNav">
-	        <ul class="navbar-nav">
-	            <li class="nav-item active">
-	                <a class="nav-link" href="#"><b>Home <span class="sr-only">(current)</span></b></a>
-	            </li>
-	            <li class="nav-item">
-	                <a class="nav-link" href="#"><b>How It Works</b></a>
-	            </li>
-	            <li class="nav-item">
-	                <a class="nav-link" href="#"><b>About Us</b></a>
-	            </li>
-	            <li class="nav-item">
-	                <a class="nav-link" href="#"><b>Contact Us</b></a>
-	            </li>
-	        </ul>
-	        <a href="login-page.html" class="ml-auto btn btn-outline-light mr-3">SIGNUP</a>
-	        <a href="signupmodal.html" class="btn btn-primary">LOGIN</a>
-	    </div>
-	</nav>
+	<nav class="navbar navbar-expand-lg text-uppercase navbar-dark position-absolute w-100">
+			<a class="navbar-brand" href="index.html">
+				<div class="anthelp-logo"></div>
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+			 aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link active" href="index.html"><b>Home <span class="sr-only">(current)</span></b></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="search.html"><b>Services</b></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"><b>How It Works</b></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"><b>About Us</b></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"><b>Contact Us</b></a>
+					</li>
+				</ul>
+
+				<div class="ml-auto d-none">
+					<a href="senior-signup-page.html" class="btn btn-outline-light mr-3">SIGNUP</a>
+					<a href="login-page.html" class="btn btn-primary">LOGIN</a>
+				</div>
+
+				<div class="dropdown user-info ml-auto">
+					<button class="btn btn-link text-white dropdown-toggle" type="button" data-toggle="dropdown"
+					 aria-haspopup="true" aria-expanded="false">
+						Hi, Ryan
+					</button>
+					<div class="dropdown-menu dropdown-menu-right">
+						<a class="dropdown-item" href="#">My Account</a>
+						<a class="dropdown-item" href="manage-requests.html">Manage Requests</a>
+					</div>
+				</div>
+			</div>
+		</nav>
 	<!-- body content -->
 	<div class="container">
 	    <div class="mt-5 clearfix">
