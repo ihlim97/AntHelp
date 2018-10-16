@@ -84,7 +84,8 @@
 
 <body>
 	<!-- main navbar -->
-	<nav class="navbar navbar-expand-lg text-uppercase navbar-dark position-absolute w-100">
+	<div class="header">
+		<nav class="navbar navbar-expand-lg text-uppercase navbar-dark position-absolute w-100">
 			<a class="navbar-brand" href="index.html">
 				<div class="anthelp-logo"></div>
 			</a>
@@ -100,25 +101,16 @@
 					<li class="nav-item">
 						<a class="nav-link" href="search.html"><b>Services</b></a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#"><b>How It Works</b></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#"><b>About Us</b></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#"><b>Contact Us</b></a>
-					</li>
 				</ul>
-
+	
 				<div class="ml-auto d-none">
 					<a href="senior-signup-page.html" class="btn btn-outline-light mr-3">SIGNUP</a>
 					<a href="login-page.html" class="btn btn-primary">LOGIN</a>
 				</div>
-
+	
 				<div class="dropdown user-info ml-auto">
-					<button class="btn btn-link text-white dropdown-toggle" type="button" data-toggle="dropdown"
-					 aria-haspopup="true" aria-expanded="false">
+					<button class="btn btn-link text-white dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+					 aria-expanded="false">
 						Hi, Ryan
 					</button>
 					<div class="dropdown-menu dropdown-menu-right">
@@ -128,6 +120,21 @@
 				</div>
 			</div>
 		</nav>
+	
+		<div class="banner banner-short d-flex align-items-end" style="background-image: url('assets/img/banners/handhold.jpg')">
+			<div class="wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 my-5 text-center text-white">
+							<h1>Manage Requests</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="overlay"></div>
+		</div>
+	</div>
+
 	<!-- body content -->
 	<div class="container">
 	    <div class="mt-5 clearfix">
@@ -192,8 +199,7 @@
 	                        <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1"></label>
 	                    </fieldset>
 	                    <div class="form-group">
-	                        <textarea class="form-control" id="review-desc" rows="3" placeholder="Description your experience">
-	                        </textarea>
+	                        <textarea class="form-control" id="review-desc" rows="3" placeholder="Description your experience"></textarea>
 	                    </div>
 	                </form>
 	            </div>
