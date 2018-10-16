@@ -6,7 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Best Services Platform Provide For You</title>
+
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/slick.css">
 
 <!-- CSS here -->
 <style type="text/css">
@@ -37,7 +41,6 @@
 	}
 
 	.sign-form a {
-	    color: #E63E4C;
 	    font-weight: bold;
 	}
     .sign-form p span a {
@@ -47,6 +50,35 @@
 </head>
 
 <body>
+
+<nav class="navbar navbar-expand-md text-uppercase navbar-dark bg-dark w-100">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/logo-primary.svg" width="100" alt="AntHELP Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"><b>Home <span class="sr-only">(current)</span></b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><b>Services</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><b>About Us</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#"><b>Contact Us</b></a>
+                    </li>
+                </ul>
+                <a href="login-page.html" class="ml-auto btn btn-outline-light mr-3">SIGNUP</a>
+                <a href="signupmodal.html" class="btn btn-primary">LOGIN</a>
+            </div>            
+        </nav>
+
 <div class="bg-light full-h">
     <div class="sign-form text-center card">
         <div class="card-body">
@@ -56,19 +88,67 @@
             </div>
             <form action="">
                 <div class="form-group">
-                    <input type="text" id="login-email" class="form-control" id="usr" placeholder="Enter email">
+                    <input type="text" id="login-email" class="form-control" placeholder="E-mail address">
                 </div>
                 <div class="form-group">
-                    <input type="password" id="login-password" class="form-control" id="pwd" placeholder="Password">
+                    <input type="password" id="login-password" class="form-control" placeholder="Password">
                 </div>
                 <button type="button" class="btn w-100 btn-danger mb-3" onclick="validateEmail()">Next</button>
             </form>
             <p class="text-right"><a href="#">Forgot Password?</a></p>
             <hr>
-            <p>Don’t have an account? <span><a href="#">Sign up</a></span></p>
+            <p>
+                Don’t have an account? Sign up as <br>
+                <span><a href="senior-signup-page.html">Senior</a></span> | <span><a href="service-provider-signup-page.html">Service Provider</a></span>
+            </p>
         </div>
     </div>
 </div>
+
+<div class="footer bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col mt-5">
+
+                    <div class="row">
+                        <div class="col-12 col-sm-3 text-center">
+                            <img src="assets/img/logo-primary.svg" class="img-fluid footer-logo" alt="AntHELP Logo">
+                        </div>
+                        <div class="col-6 col-sm-3 mt-4 mt-sm-0">
+                            <h4>AntHELP</h4>
+                            <ul class="list-unstyled">
+                                <li><a class="text-light" href="#">My Account</a></li>
+                                <li><a class="text-light" href="#">About Us</a></li>
+                                <li><a class="text-light" href="#">Blog</a></li>
+                                <li><a class="text-light" href="#">FAQ</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-sm-3 mt-4 mt-sm-0">
+                            <h4>Careers</h4>
+                            <ul class="list-unstyled">
+                                <li><a class="text-light" href="#">Work with AntHELP</a></li>
+                                <li><a class="text-light" href="#">Become an Ant</a></li>
+                                <li><a class="text-light" href="#">Post a Service</a></li>
+                            </ul>
+                        </div>
+                        <div class="col footer-social">
+                            <h4>Get Social</h4>
+                            <a href="" class="btn btn-primary social-icons"><span class="fab fa-facebook-f"></span></a>
+                            <a href="" class="btn btn-primary social-icons"><span class="fab fa-twitter"></span></a>
+                            <a href="" class="btn btn-primary social-icons"><span class="fab fa-linkedin-in"></span></a>
+                        </div>
+                    </div>
+
+                    <p class="text-center mt-5">Copyright &copy; 2018 AntHELP. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/bundle.js"></script>
+
 
 <!-- JavaScript here -->
 <script>
