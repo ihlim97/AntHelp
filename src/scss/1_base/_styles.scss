@@ -198,6 +198,17 @@
     }
 }
 
+.service-card-2 {
+    .metadata-wrapper {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+    @include media-breakpoint-up(lg) {
+        .metadata {
+            text-align: right;
+        }
+    }
+}
 /* Sign Up Form */
 
 .sign-form {

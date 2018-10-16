@@ -22,5 +22,10 @@
                 form.classList.add('was-validated');
             }, false);
         });
+
+        $('.nav-tabs a').on('click', function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+        })
     });
 }(jQuery))
