@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Best Services Platform Provide For You</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/slick.css">
+    
+<!-- CSS here -->
+<style type="text/css">
+    /*input::placeholder {
+        font-size: 10px;
+    }*/
+    .sign-form.card {
+        max-width: 500px;
+        width: calc(100% - 20px);
+        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+    }
+	.sign-form h4:before,
+    .sign-form h4:after {
+	    content: "";
+	    position: absolute;
+	    height: 1px;
+	    width: 25%;
+	    background-color: #000;
+	    top: 50%;
+	    left: 0;
+	}
+	.sign-form h4:after{
+	   	right: 0;
+	   	left: initial;
+	}
+	.full-h {
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	.sign-form a {
+	    font-weight: bold;
+	}
+    .sign-form p span a {
+    	color:#008489;
+    }
+    @media (max-width: 576px){
+        .sign-form h4:before,
+        .sign-form h4:after{
+            width: 18%;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="bg-light full-h">
+        <div class="sign-form card text-center">
+            <div class="card-body">
+                <img src="assets/img/logo-primary.svg" width="150" alt="AntHELP Logo">
+                <div class="position-relative py-3">
+                    <h4>Vendor Signup</h4>
+                </div>
+                <form action="">
+                    <div class="form-group">
+                        <input type="text" id="name" class="form-control" placeholder="Full name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="nric" class="form-control" placeholder="NRIC">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="phone" class="form-control" placeholder="Mobile number">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="login-email" class="form-control" placeholder="E-mail address">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="login-password" class="form-control" placeholder="Create a password">
+                    </div>
+                    <div class="form-group">
+                    <select name="service_type" class="form-control">
+                        <option value="disable">Select your service group</option>
+                        <option value="cleaning">Cleaning, Laundry & Maid Service</option>
+                        <option value="repair maintenance">Home Repair & Maintenance</option>
+                        <option value="electronic gadget">Electronic & Gadget</option>
+                        <option value="movers relocator">Movers / Relocators</option>
+                        <option value="pets service">Pets Services</option>
+                        <option value="food beverage">Food & Beverage</option>
+                        <option value="pest control">Pest Control Services</option>
+                        <option value="health fitness">Health & Fitness</option>
+                    </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-sm-7 form-group">
+                        <input type="text" id="service-rate" class="form-control" placeholder="Your service rate (e.g. RM100)">
+                        </div>
+                        <div class="col-sm-5 col-7 form-group">
+                            <select name="rate_type" class="form-control">
+                            <option value="disable">Rate type</option>
+                            <option value="per square feet">/square feet</option>
+                            <option value="per hours">/hours</option>
+                             </select>
+                        </div>
+                    </div>
+                    <button type="button" class="btn w-100 btn-danger mb-3" onclick="validateEmail()">Sign up</button>
+                </form>
+                <hr>
+                <p>Already have an AntHelp account? <span><a href="login-page.html">Login</a></span></p>
+            </div>
+        </div>
+    </div>
+
+<div class="footer bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col mt-5">
+
+                    <div class="row">
+                        <div class="col-12 col-sm-3 text-center">
+                            <img src="assets/img/logo-primary.svg" class="img-fluid footer-logo" alt="AntHELP Logo">
+                        </div>
+                        <div class="col-6 col-sm-3 mt-4 mt-sm-0">
+                            <h4>AntHELP</h4>
+                            <ul class="list-unstyled">
+                                <li><a class="text-light" href="#">My Account</a></li>
+                                <li><a class="text-light" href="#">About Us</a></li>
+                                <li><a class="text-light" href="#">Blog</a></li>
+                                <li><a class="text-light" href="#">FAQ</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-sm-3 mt-4 mt-sm-0">
+                            <h4>Careers</h4>
+                            <ul class="list-unstyled">
+                                <li><a class="text-light" href="#">Work with AntHELP</a></li>
+                                <li><a class="text-light" href="#">Become an Ant</a></li>
+                                <li><a class="text-light" href="#">Post a Service</a></li>
+                            </ul>
+                        </div>
+                        <div class="col footer-social">
+                            <h4>Get Social</h4>
+                            <a href="" class="btn btn-primary social-icons"><span class="fab fa-facebook-f"></span></a>
+                            <a href="" class="btn btn-primary social-icons"><span class="fab fa-twitter"></span></a>
+                            <a href="" class="btn btn-primary social-icons"><span class="fab fa-linkedin-in"></span></a>
+                        </div>
+                    </div>
+
+                    <p class="text-center mt-5">Copyright &copy; 2018 AntHELP. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/bundle.js"></script>
+
+<!-- JavaScript here -->
+<script>
+
+// Email validation
+function validateEmail() {
+    var email = document.getElementById("login-email").value;
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
+
+    if (!filter.test(email)) {
+    alert('Please provide a valid email address');
+    email.focus;
+    return false;
+}
+    else {
+        alert('good');
+        return true
+    }
+}
+// clear text field when modal close
+$(".modal").on("hidden.bs.modal", function () {
+    $("#login-email").val("");
+      $("#login-password").val("");
+});
+</script>
+
+</body>
+</html>
