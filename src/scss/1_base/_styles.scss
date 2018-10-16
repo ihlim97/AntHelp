@@ -18,9 +18,20 @@
     .navbar-brand {
         display: flex;
         align-items: flex-start;
+        .anthelp-logo {
+            background-image: url("../../assets/img/logo-primary.svg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 20px;
+            width: 130px;
+        }
     }
     &.opened {
         background-color: $danger;
+        padding-bottom: 20px;
+        .anthelp-logo {
+            background-image: url("../../assets/img/logo-inverted.svg");
+        }
     }
 }
 
@@ -69,6 +80,12 @@
         height: 100%;
         width: 100%;
     }
+    &.banner-short {
+        height: 80vh;
+        @include media-breakpoint-up(sm) {
+            height: 40vh;
+        }
+    }
 }
 
 /* Service Curator */
@@ -97,24 +114,25 @@
             padding: 30px;
         }
     }
-    .slick-dots button::before {
-        font-size: 40px;
-    }
     .slick-slide {
         margin: 0 10px;
     }
     .slick-list {
         margin: 0 -10px;
     }
+    .slick-prev,
+    .slick-next {
+        z-index: 1;
+    }
     .slick-prev {
-        left: -10px;
+        left: 0;
     }
     .slick-next {
         right: 0;
     }
 }
 
-/* Product cards */
+/* Cards */
 
 .card {
     transition: all 0.2s ease-in-out;
@@ -126,5 +144,31 @@
     }
     .card-img {
         border-radius: 0;
+    }
+}
+
+.service-card {
+    &:hover * {
+        text-decoration: none;
+    }
+    .card-body {
+        position: relative;
+    }
+    .card-title {
+        margin-bottom: 0;
+    }
+    .card-img {
+        height: 200px;
+        object-fit: cover;
+        @include media-breakpoint-up(sm) {
+            height: initial;
+        }
+    }
+    .cta {
+        color: $gray-800;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
     }
 }
