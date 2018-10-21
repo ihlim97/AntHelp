@@ -9,6 +9,10 @@
 
 session_start();
 
+date_default_timezone_set('Asia/Kuala_Lumpur');
+
+$limit=10;
+
  $fullName=$_POST['fullname'];
  $myKadNo=$_POST['mykadno'];
  $address=$_POST['address'];
