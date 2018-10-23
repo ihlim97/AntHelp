@@ -1,0 +1,343 @@
+/* Utilities */
+
+.rounded-corners {
+    border-radius: 5px;
+}
+
+@include media-breakpoint-up(sm) {
+    .rounded-corners-sm {
+        border-radius: 5px;
+    }
+}
+
+/* Ornaments */
+
+.big-red-tick {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: $primary;
+    color: #fff;
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    transform: translateX(-50%);
+    &::before {
+        font-size: 50px;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Navigation */
+
+.navbar {
+    z-index: $zindex-dropdown;
+    transition: all 0.3s ease-out;
+    .navbar-brand {
+        display: flex;
+        align-items: flex-start;
+        .anthelp-logo {
+            background-image: url("../../public/svg/logo-primary.svg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 20px;
+            width: 130px;
+        }
+    }
+    &.opened {
+        background-color: $danger;
+        padding-bottom: 20px;
+        .anthelp-logo {
+            background-image: url("../../public/svg/logo-inverted.svg");
+        }
+    }
+    .user-info button:hover {
+        text-decoration: none;
+    }
+}
+
+/* Footer */
+
+.footer {
+    .footer-logo {
+        width: 50%
+    }
+    .footer-social {
+        text-align: center;
+        .social-icons {
+            width: 50px;
+            height: 50px;
+            padding: 12px;
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        .footer-social {
+            text-align: unset;
+        }
+    }
+}
+
+/* Banner */
+
+.banner {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include media-breakpoint-up(sm) {
+        height: 70vh;
+    }
+    .wrapper {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+    }
+    .overlay {
+        background: $gray-700;
+        opacity: 0.8;
+        filter: opacity(80);
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+    }
+    &.banner-medium {
+        height: 80vh;
+        @include media-breakpoint-up(lg) {
+            height: 50vh;
+        }
+    }
+    &.banner-short {
+        height: 30vh;
+        @include media-breakpoint-up(sm) {
+            height: 20vh;
+        }
+    }
+}
+
+/* Service Curator */
+
+.service-curator {
+    button {
+        width: 100px;
+    }
+    form>* {
+        padding: 5px;
+        margin: 0 5px;
+    }
+}
+
+/* Carousel */
+
+.slider {
+    .slider-item {
+        border-radius: 5px;
+        background-color: $gray-500;
+        position: relative;
+        overflow: hidden;
+        outline: none;
+        .content {
+            position: absolute;
+            padding: 50px;
+        }
+    }
+    .slick-slide {
+        margin: 0 10px;
+    }
+    .slick-list {
+        margin: 0 -10px;
+    }
+    .slick-prev,
+    .slick-next {
+        z-index: 1;
+    }
+    .slick-prev {
+        left: 0;
+    }
+    .slick-next {
+        right: 0;
+    }
+}
+
+/* Cards */
+
+.card {
+    transition: all 0.2s ease-in-out;
+    &:hover {
+        box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.2);
+    }
+    &.card-border-top-red {
+        border-top: 3px solid $primary;
+    }
+    .card-img {
+        border-radius: 0;
+    }
+}
+
+.service-card {
+    &:hover * {
+        text-decoration: none;
+    }
+    .card-body {
+        position: relative;
+    }
+    .card-title {
+        margin-bottom: 0;
+    }
+    .card-img {
+        height: 200px;
+        object-fit: cover;
+    }
+}
+
+.service-card-2 {
+    .metadata-wrapper {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+    @include media-breakpoint-up(lg) {
+        .metadata {
+            text-align: right;
+        }
+    }
+}
+
+/* Sign Up Form */
+
+.sign-form {
+    h4:before,
+    h4:after {
+        width: 18%;
+        @include media-breakpoint-up(md) {
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 25%;
+            background-color: #000;
+            top: 50%;
+            left: 0;
+        }
+    }
+    h4:after {
+        right: 0;
+        left: initial;
+    }
+    a {
+        font-weight: bold;
+    }
+    p span a {
+        color: #008489;
+    }
+}
+
+.sign-form.card {
+    max-width: 500px;
+    width: calc(100% - 20px);
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.full-h {
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Review Page Star (Highlight Stars on Hover) */
+
+@media screen and (max-width: 555px) {
+    #review>div>button {
+        float: initial !important;
+        margin-top: 20px;
+    }
+}
+
+#submit-review-modal .modal-header {
+    background-color: #FF5E6B;
+    color: #fff;
+}
+
+.modal-content>span:first-child {
+    height: 40px;
+    width: 40px;
+    background-color: #FF5E6B;
+    top: -15px;
+    right: -10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.modal-content>span:first-child:before {
+    content: "\274c";
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.review-tile {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%
+}
+
+.review-tile:last-child {
+    margin-bottom: 3rem;
+}
+
+.modal .rating {
+    border: none;
+    float: left;
+}
+
+.modal .rating>input {
+    display: none;
+}
+
+.modal .rating>label:before {
+    margin-right: 10px;
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}
+
+.modal .rating>.half:before {
+    content: "\f089";
+    position: absolute;
+}
+
+.modal .rating>label {
+    color: #ddd;
+    float: right;
+}
+
+.modal .rating>input:checked~label,
+/* show gold star when clicked */
+
+.modal .rating:not(:checked)>label:hover,
+/* hover current star */
+
+.modal .rating:not(:checked)>label:hover~label {
+    color: #FFD700;
+}
+
+/* hover previous stars in list */
+
+.modal .rating>input:checked+label:hover,
+/* hover current star when changing rating */
+
+.modal .rating>input:checked~label:hover,
+.modal .rating>label:hover~input:checked~label,
+/* lighten current selection */
+
+.modal .rating>input:checked~label:hover~label {
+    color: #FFED85;
+}
+
+.not-clickable {
+    pointer-events: none;
+}
