@@ -11,6 +11,10 @@
 // Custom 
 @import 'custom';
 
+// Slick Carousel 
+@import '~slick-carousel/slick/slick.scss';
+@import '~slick-carousel/slick/slick-theme.scss';
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
