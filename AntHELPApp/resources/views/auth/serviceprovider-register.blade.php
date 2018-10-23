@@ -15,13 +15,13 @@
                 </div>
                 <div class="card-body">
                     <div class="text-center">
-                        <h2 class="pb-3"><strong>Senior Citizen Signup</strong></h2>
+                        <h2 class="pb-3"><strong>Service Provider Signup</strong></h2>
                     </div>
 
-                    <form method="POST" action="{{ route('register') }}" novalidate>
+                    <form method="POST" action="{{ route('serviceprovider.register') }}" novalidate>
                         @csrf
 
-                        <input type="hidden" name="is_service_provider" value="false">
+                        <input type="hidden" name="is_service_provider" value="true">
 
                         <div class="form-group">
                             <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="{{ __('Name') }}" required autofocus>

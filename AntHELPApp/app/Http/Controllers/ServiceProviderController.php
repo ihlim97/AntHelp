@@ -14,4 +14,5 @@ class ServiceProviderController extends Controller
     public function index() {
         return view("serviceprovider.index");
     }
+
 }

@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\ServiceProvider;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
-class RegisterController extends Controller
+class ServiceProviderRegisterController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/serviceprovider';
 
     /**
      * Create a new controller instance.
@@ -69,13 +69,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        return ServiceProvider::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'my_kad_no' => $data['my_kad_no'],
             'mobile_no' => $data['mobile_no'],
             'address' => $data['address'],
             'password' => Hash::make($data['password']),
-        ]);  
+        ]);       
+        
+    }
+
+    public function showRegistrationForm() {
+        return view("auth.serviceprovider-register");
     }
 }

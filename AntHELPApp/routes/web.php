@@ -21,6 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix('serviceprovider')->group(function() {
     Route::get('/login', 'Auth\ServiceProviderLoginController@showLoginForm')->name('serviceprovider.login');
     Route::post('/login', 'Auth\ServiceProviderLoginController@login')->name('serviceprovider.login.submit');
+    Route::get('/register', 'Auth\ServiceProviderRegisterController@showRegistrationForm')->name('serviceprovider.register');
+    Route::post('/register', 'Auth\ServiceProviderRegisterController@register')->name('serviceprovider.register');
     Route::get('/', 'ServiceProviderController@index')->name('serviceprovider.dashboard');
 });
 
