@@ -1,9 +1,14 @@
 @extends('layouts.app')
 
+@section('header')
+    @component('components.banner', ['imagePath'=> 'img/banners/handhold.jpg', 'bannerType'=> 'banner-medium', 'serviceCurator'=>''])
+    @endcomponent
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 my-4">
             <div class="card">
                 <div class="card-header">Dashboard</div>
 
@@ -20,4 +25,10 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('footer')
+    @component('components.footer')
+        
+    @endcomponent
 @endsection

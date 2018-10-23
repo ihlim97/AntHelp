@@ -21,7 +21,7 @@
             <!-- Authentication Links -->
             @guest
                 <li class="nav-item">
-                    <a href="{{ route('login') }}" class="btn btn-primary">LOGIN</a>
+                    <a href="{{ route('login') }}" class="btn btn-primary mr-md-2 mb-2 mb-md-0">LOGIN</a>
                     {{-- <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a> --}}
                 </li>
                 <li class="nav-item">
