@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['showCurator' => true])
 
 @section('content')
 
@@ -24,6 +24,7 @@
                             ])         
                             @endcomponent
                         </div>
+                        {{$services->links()}}
                     @endforeach
                 </div>
 

@@ -14,7 +14,7 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        $services = Service::all();
+        $services = Service::orderBy("created_at", "desc")->paginate(9);
         return view("services.index")->with('services', $services);
     }
 
@@ -25,7 +25,7 @@ class ServicesController extends Controller
      */
     public function create()
     {
-        //
+        return view("services.create");
     }
 
     /**

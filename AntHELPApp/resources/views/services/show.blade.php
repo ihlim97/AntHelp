@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['showCurator', true])
 
 @section('content')
     <h1>{{$service->category}}</h1>

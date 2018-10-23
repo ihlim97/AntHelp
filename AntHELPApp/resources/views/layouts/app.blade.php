@@ -9,7 +9,8 @@
         <title>{{env('APP_NAME')}}</title>
     </head>
     <body>
-        @component('components.banner-medium', ['imagePath'=> 'img/banners/handhold.jpg', 'bannerType'=>'banner-medium'])
+        
+        @component('components.banner-medium', ['imagePath'=> 'img/banners/handhold.jpg', 'bannerType'=>'banner-medium', 'showCurator' => $showCurator])
         @endcomponent
 
         <div class="container">
