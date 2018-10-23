@@ -8,9 +8,9 @@
 
             <div class="col-12 text-center text-white mt-5">
                 <h1>Are you a service provider?</h1>
-                <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#login-modal">
+                <a class="btn btn-outline-light text-white" href="/serviceprovider">
                     Post Services FREE
-                </button>
+                </a>
             </div>
         @endslot
     @endcomponent
@@ -23,6 +23,45 @@
                 <div class="col">
                     @component('components.slider');
                     @endcomponent
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row mt-5 my-sm-5">
+            <div class="col-12 col-sm-6 my-5">
+                <h4><b>Get your business on track.</b></h4>
+                <h4><b>Sign up as a service provider.</b></h4>
+                <p>Join the fastest growing and best services platform for senior citizens in Malaysia! Supercharge your services business by catering to a more elder audience. Enjoy better earnings and so much more benefits.</p>
+                <a href="/serviceprovider" class="btn btn-primary">Get a free service provider account</a>
+            </div>
+            <div class="col-12 col-sm-6 p-0 p-sm-3">
+                <img src="https://source.unsplash.com/600x400/?business"  alt="" class="img-fluid rounded-corners-sm">
+            </div>
+        </div>
+    </div>
+
+    <div class="content bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col my-5">
+                    <h4>What's happening at AntHELP</h4>
+
+                    <div class="row mt-4">
+                        @foreach ($articles as $article)
+                            <div class="col-12 col-sm-6 col-md-3 mb-3">
+                                @component('components.articlecard', [
+                                    'articleImg' => $article['articleImg'],
+                                    'articleTitle' => $article['articleTitle'],
+                                    'articleDesc' => $article['articleDesc']
+                                ])
+                                @endcomponent
+                            </div>
+                        @endforeach
+                    </div>
+
+                    <div class="text-center mt-4"><a href="" class="btn btn-secondary">View More</a></div>
                 </div>
             </div>
         </div>

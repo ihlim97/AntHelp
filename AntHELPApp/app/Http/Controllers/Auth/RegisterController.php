@@ -52,6 +52,12 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'my_kad_no' => 'required|digits_between:12,14',
+            'mobile_no' => 'required|numeric',
+            'address' => 'required|string|max:255'
+        ], [
+            'my_kad_no.required' => 'The NRIC field is required.',
+            'my_kad_no.digits_between' => 'A NRIC must be between 12 and 14 digits.'
         ]);
     }
 
@@ -63,10 +69,25 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        if (!$data['is_service_provider']) {
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'my_kad_no' => $data['my_kad_no'],
+                'mobile_no' => $data['mobile_no'],
+                'address' => $data['address'],
+                'password' => Hash::make($data['password']),
+            ]);
+        } else {
+            return ServiceProvider::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'my_kad_no' => $data['my_kad_no'],
+                'mobile_no' => $data['mobile_no'],
+                'address' => $data['address'],
+                'password' => Hash::make($data['password']),
+            ]);
+        }
+        
     }
 }

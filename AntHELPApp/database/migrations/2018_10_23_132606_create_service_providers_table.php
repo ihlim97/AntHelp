@@ -18,6 +18,13 @@ class CreateServiceProvidersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+
+            # Service Provider attributes
+            $table->string('my_kad_no');
+            $table->string('address');
+            $table->string('mobile_no');
+            $table->string('profile_img')->nullable();
+
             $table->rememberToken();
             $table->timestamps();
         });

@@ -6,7 +6,31 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
+
     public function index() {
-        return view("pages.index");
+        $articles = [
+            [
+                'articleTitle' => 'Malaysia: Ageing Population',
+                'articleDesc' => 'Malaysia’s elderly population is expected to double to 5.18 million by 2030 ...',
+                'articleImg' => 'https://source.unsplash.com/400x300/?'
+            ],
+            [
+                'articleTitle' => 'Malaysia: Ageing Population',
+                'articleDesc' => 'Malaysia’s elderly population is expected to double to 5.18 million by 2030 ...',
+                'articleImg' => 'https://source.unsplash.com/400x300/?'
+            ],
+            [
+                'articleTitle' => 'Malaysia: Ageing Population',
+                'articleDesc' => 'Malaysia’s elderly population is expected to double to 5.18 million by 2030 ...',
+                'articleImg' => 'https://source.unsplash.com/400x300/?'
+            ],
+            [
+                'articleTitle' => 'Malaysia: Ageing Population',
+                'articleDesc' => 'Malaysia’s elderly population is expected to double to 5.18 million by 2030 ...',
+                'articleImg' => 'https://source.unsplash.com/400x300/?'
+            ],
+        ];
+
+        return view("pages.index")->with(['articles' => $articles]);
     }
 }

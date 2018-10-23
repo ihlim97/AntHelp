@@ -19,6 +19,13 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+
+            # Senior Citizen Attributes
+            $table->string('my_kad_no');
+            $table->string('address');
+            $table->string('mobile_no');
+            $table->string('profile_img')->nullable();
+
             $table->rememberToken();
             $table->timestamps();
         });

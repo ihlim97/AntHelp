@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
-    @component('components.banner', ['imagePath'=> 'img/banners/handhold.jpg', 'bannerType'=> 'banner-medium', 'serviceCurator'=>''])
+    @component('components.banner', ['imagePath'=> 'img/banners/handhold.jpg', 'bannerType'=> 'banner-short', 'serviceCurator'=>''])
     @endcomponent
 @endsection
 

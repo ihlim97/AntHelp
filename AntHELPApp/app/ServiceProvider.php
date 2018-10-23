@@ -18,7 +18,7 @@ class ServiceProvider extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'my_kad_no', 'mobile_no', 'address'
     ];
 
     /**
@@ -29,4 +29,8 @@ class ServiceProvider extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function Service() {
+        return $this->hasMany('App\Service', 'user_id');
+    }
 }

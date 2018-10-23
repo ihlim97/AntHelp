@@ -12,8 +12,8 @@
 @section('content')
 
     <div class="container">
+        <div class="row">
         @if (count($services) > 0)
-            <div class="row">
                 <div class="col-12">
                     <p>Yay! We found {{count($services)}} service(s)</p>
                 </div>
@@ -36,10 +36,12 @@
                         @endforeach
                     </div>
                 </div>
-            </div>
         @else
-            <h4 class="text-muted">No Services Yet!</h4>
+            <div class="col text-center my-5">
+                <h4 class="text-muted">No Services Yet!</h4>
+            </div>
         @endif
+        </div>
     </div>
 
 @endsection
