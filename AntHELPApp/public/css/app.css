@@ -10627,6 +10627,33 @@ a.text-dark:focus {
   margin: 0 5px;
 }
 
+.service-curator .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.service-curator .form-group h3 {
+  margin-right: 5px;
+}
+
+@media (min-width: 768px) {
+  .service-curator .form-group {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  .service-curator .form-group h3 {
+    margin: 0 10px;
+  }
+}
+
 /* Carousel */
 
 .slider .slider-item {
@@ -10681,6 +10708,11 @@ a.text-dark:focus {
 
 .card .card-img {
   border-radius: 0;
+}
+
+.card.no-shadow:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .service-card:hover * {

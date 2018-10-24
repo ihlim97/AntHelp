@@ -81,12 +81,10 @@
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="{{__('Confirm password')}}" required>
                         </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
+                        <div class="form-group mb-0">
+                            <button type="submit" class="btn btn-primary w-100">
+                                {{ __('Register') }}
+                            </button>
                         </div>
                     </form>
                 </div>

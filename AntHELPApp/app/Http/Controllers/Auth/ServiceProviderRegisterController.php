@@ -83,4 +83,5 @@ class ServiceProviderRegisterController extends Controller
     public function showRegistrationForm() {
         return view("auth.serviceprovider-register");
     }
+
 }

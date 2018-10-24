@@ -13,7 +13,7 @@
                 <div class="row">
                     <ul class="col-md-2 nav flex-column border">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Dashboard</a>
+                            <a class="nav-link active" href="{{route('serviceprovider.dashboard')}}">My Account</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Services</a>
@@ -23,8 +23,29 @@
                         </li>
                     </ul>
                     <div class="col-md-10">
-                        <div class="border">
-                            <h1>My dashboard</h1>
+                        <div class="border p-4">
+                            <h1>Service Provider Dashboard</h1>
+                            <div class="row">
+                                <div class="card col">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><strong>Account Information</strong></h5>
+                                        <h6 class="card-subtitle">{{Auth::user()->name}}</h6>
+                                        <p class="card-text">{{Auth::user()->email}}</p>
+                                    </div>
+                                </div>
+                                <div class="card col">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><strong>Active Services</strong></h5>
+                                        <h1>0 service(s)</h1>
+                                    </div>
+                                </div>
+                                <div class="card col">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><strong>Reviews</strong></h5>
+                                        <h1>300 review(s)</h1>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
