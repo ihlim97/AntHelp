@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AntHELP - Review User</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="assets/slick/slick-theme.css">
+    <link rel="stylesheet" href="assets/slick/slick.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+	 crossorigin="anonymous">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<body>
+	<!-- main navbar -->
+	<div class="header">
+		<nav class="navbar navbar-expand-lg text-uppercase navbar-dark position-absolute w-100">
+			<a class="navbar-brand" href="index.html">
+				<div class="anthelp-logo"></div>
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+			 aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link active" href="index.html"><b>Home <span class="sr-only">(current)</span></b></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="search.html"><b>Services</b></a>
+					</li>
+				</ul>
+	
+				<div class="ml-auto d-none">
+					<a href="senior-signup-page.html" class="btn btn-outline-light mr-3">SIGNUP</a>
+					<a href="login-page.html" class="btn btn-primary">LOGIN</a>
+				</div>
+	
+				<div class="dropdown user-info ml-auto">
+					<button class="btn btn-link text-white dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+					 aria-expanded="false">
+						Hi, Ryan
+					</button>
+					<div class="dropdown-menu dropdown-menu-right">
+						<a class="dropdown-item" href="#">My Account</a>
+						<a class="dropdown-item" href="manage-requests.html">Manage Requests</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+	
+		<div class="banner banner-short d-flex align-items-end" style="background-image: url('assets/img/banners/handhold.jpg')">
+			<div class="wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 my-5 text-center text-white">
+							<h1>Reviews</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="overlay"></div>
+		</div>
+	</div>
+
+	<!-- body content -->
+	<div class="container" id="review">
+	    <div class="mt-5 clearfix">
+	        <h2>User Reviews</h2>
+	        <h5>Karen Teh</h5>
+	        <button type="button" class="clearfix btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#submit-review-modal">
+	            Write a review
+	        </button>
+	    </div>
+	    <div class="review-tile mt-5">
+	        <div class="rating text-warning mt-3">
+	            <span class="fas fa-star"></span>
+	            <span class="fas fa-star"></span>
+	            <span class="fas fa-star"></span>
+	            <span class="fas fa-star"></span>
+	            <span class="fas fa-star"></span>
+	        </div>
+	        <p>by Nick Teh, September 24, 2018</p>
+	        <p>“Punctuality at its best, money well paid & reliable. Ease of mind as they know what to do, performed task quickly & efficiently. Satisfied with the team, would definitely be using their service again next time.”</p>
+	    </div>
+	    <div class="review-tile mt-5">
+	        <div class="rating text-warning mt-3">
+	            <span class="fas fa-star"></span>
+	            <span class="fas fa-star"></span>
+	            <span class="fas fa-star"></span>
+	            <span class="fas fa-star"></span>
+	            <span class="fas fa-star"></span>
+	        </div>
+	        <p>by James Thong, September 24, 2018</p>
+	        <p>"They were on time, stuck to their rates and cleaned up my super messy place!"</p>
+	    </div>
+	    <div class="review-tile mt-5">
+	        <div class="rating text-warning mt-3">
+	            <span class="fas fa-star"></span>
+	            <span class="fas fa-star"></span>
+	            <span class="fas fa-star"></span>
+	            <span class="fas fa-star"></span>
+	            <span class="fas fa-star"></span>
+	        </div>
+	        <p>by Joyce Chan, September 20, 2018</p>
+	        <p>"Service is good. Very thorough cleaning and reliable maids. Don't really have to watch over them. Just tell them what is needed to be cleaned and they'll do it for you."</p>
+	    </div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="submit-review-modal" tabindex="-1" aria-hidden="true" role="dialog">
+	    <div class="modal-dialog modal-dialog-centered">
+	        <!-- Modal content-->
+	        <div class="modal-content">
+	            <span class="rounded-circle position-absolute shadow-sm" data-dismiss="modal"></span>
+	            <div class="modal-header">
+	                <h5 class="modal-title">Rate and review</h5>
+	            </div>
+	            <div class="modal-body">
+	                <b id="user-name">Ryan Lim</b>
+	                <p>Your review will be posted publicly on the web.</p>
+	                <form class="clearfix">
+	                    <fieldset class="rating">
+	                        <input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5"></label>
+	                        <input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4"></label>
+	                        <input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3"></label>
+	                        <input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2"></label>
+	                        <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1"></label>
+	                    </fieldset>
+	                    <div class="form-group">
+	                        <textarea class="form-control" id="review-desc" rows="3" placeholder="Description your experience"></textarea>
+	                    </div>
+	                </form>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<!-- footer -->
+	<div class="footer bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col mt-5">
+                    <div class="row">
+                        <div class="col-12 col-lg-3 text-center mb-4 mb-lg-0">
+                            <img src="assets/img/logo-primary.svg" class="img-fluid footer-logo" alt="AntHELP Logo">
+                        </div>
+                        <div class="col-6 col-sm-4 col-lg-3 mt-4 mt-sm-0">
+                            <h4>AntHELP</h4>
+                            <ul class="list-unstyled">
+                                <li><a class="text-light" href="login-page.html">My Account</a></li>
+                                <li><a class="text-light" href="about-us.html">About Us</a></li>
+                                <li><a class="text-light" href="#">Blog</a></li>
+                                <li><a class="text-light" href="#">FAQ</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-sm-4 col-lg-3 mt-4 mt-sm-0">
+                            <h4>Careers</h4>
+                            <ul class="list-unstyled">
+                                <li><a class="text-light" href="login-page.html">Work with AntHELP</a></li>
+                                <li><a class="text-light" href="senior-signup-page.html">Become an Ant</a></li>
+                                <li><a class="text-light" href="service-provider-signup-page.html">Post a Service</a></li>
+                            </ul>
+                        </div>
+                        <div class="col footer-social">
+                            <h4>Get Social</h4>
+                            <a href="" class="btn btn-primary social-icons"><span class="fab fa-facebook-f"></span></a>
+                            <a href="" class="btn btn-primary social-icons"><span class="fab fa-twitter"></span></a>
+                            <a href="" class="btn btn-primary social-icons"><span class="fab fa-linkedin-in"></span></a>
+                        </div>
+                    </div>
+    
+                    <p class="text-center mt-5">Copyright &copy; 2018 AntHELP. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/bundle.js"></script>
+</body>
+</html>
