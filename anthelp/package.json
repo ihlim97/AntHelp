@@ -1,0 +1,31 @@
+{
+  "name": "websiteforse",
+  "version": "1.0.0",
+  "description": "This is a test website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ihlim97/SoftwareEngineeringS3.git"
+  },
+  "author": "Ie Howe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ihlim97/SoftwareEngineeringS3/issues"
+  },
+  "homepage": "https://github.com/ihlim97/SoftwareEngineeringS3#readme",
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.4",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.24.7",
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.2.0",
+    "gulp-sass": "^4.0.1"
+  }
+}
