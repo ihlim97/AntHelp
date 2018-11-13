@@ -1,50 +1,7 @@
-<?php
- session_start();
+<?php 
+session_start();
+include("header.php");
 ?>
-
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Best Services Platform Provide For You</title>
-
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="assets/slick/slick-theme.css">
-    <link rel="stylesheet" href="assets/slick/slick.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
-        crossorigin="anonymous">
-  
-</head>
-
-<body>
-
-    <div class="header">
-        <nav class="navbar navbar-expand-lg text-uppercase navbar-dark position-absolute w-100">
-            <a class="navbar-brand" href="index.html">
-                <div class="anthelp-logo"></div>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html"><b>Home <span class="sr-only">(current)</span></b></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="search.html"><b>Services</b></a>
-                    </li>
-                </ul>
-                <a href="senior-signup-page.html" class="ml-auto btn btn-outline-light mr-3">SIGNUP</a>
-                <a href="login-page.php" class="btn btn-primary">LOGIN</a>
-            </div>
-        </nav>
 
         <div class="banner banner-short d-flex align-items-end" style="background-image: url('assets/img/banners/handhold.jpg')">
             <div class="wrapper">
@@ -89,7 +46,7 @@
                             <p class="text-right"><a href="#">Forgot Password?</a></p>
                             <hr>
                             <p class="text-center m-0">Don’t have an account? Sign up as </p>
-                            <p class="text-center"><b><span><a class="text-info" href="senior-signup-page.html">Senior</a></span> | <span><a class="text-info" href="service-provider-signup-page.html">Service Provider</a></span></b></p>
+                            <p class="text-center"><b><span><a class="text-info" href="signup.php">Senior</a></span> | <span><a class="text-info" href="provider-signup.php">Service Provider</a></span></b></p>
                         </div>
                     </div>
                 </div>
@@ -97,50 +54,4 @@
         </div>
     </div>
 
-    <div class="footer bg-dark text-white">
-        <div class="container">
-            <div class="row">
-                <div class="col mt-5">
-                    <div class="row">
-                        <div class="col-12 col-lg-3 text-center mb-4 mb-lg-0">
-                            <img src="assets/img/logo-primary.svg" class="img-fluid footer-logo" alt="AntHELP Logo">
-                        </div>
-                        <div class="col-6 col-sm-4 col-lg-3 mt-4 mt-sm-0">
-                            <h4>AntHELP</h4>
-                            <ul class="list-unstyled">
-                                <li><a class="text-light" href="login-page.html">My Account</a></li>
-                                <li><a class="text-light" href="about-us.html">About Us</a></li>
-                                <li><a class="text-light" href="#">Blog</a></li>
-                                <li><a class="text-light" href="#">FAQ</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-6 col-sm-4 col-lg-3 mt-4 mt-sm-0">
-                            <h4>Careers</h4>
-                            <ul class="list-unstyled">
-                                <li><a class="text-light" href="login-page.html">Work with AntHELP</a></li>
-                                <li><a class="text-light" href="senior-signup-page.html">Become an Ant</a></li>
-                                <li><a class="text-light" href="service-provider-signup-page.html">Post a Service</a></li>
-                            </ul>
-                        </div>
-                        <div class="col footer-social">
-                            <h4>Get Social</h4>
-                            <a href="" class="btn btn-primary social-icons"><span class="fab fa-facebook-f"></span></a>
-                            <a href="" class="btn btn-primary social-icons"><span class="fab fa-twitter"></span></a>
-                            <a href="" class="btn btn-primary social-icons"><span class="fab fa-linkedin-in"></span></a>
-                        </div>
-                    </div>
-    
-                    <p class="text-center mt-5">Copyright &copy; 2018 AntHELP. All rights reserved.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="assets/slick/slick.min.js"></script>
-    <script src="js/bundle.js"></script>
-
-</body>
-</html>
+<?php include("footer.php"); ?>
