@@ -14,7 +14,9 @@
 Auth::routes();
 
 Route::get('/', 'PagesController@index');
+
 Route::resource('services', 'ServicesController');
+Route::resource('serviceRequests', 'ServiceRequestController');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

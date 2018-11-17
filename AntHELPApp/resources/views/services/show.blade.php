@@ -82,7 +82,13 @@
                     </li>
                 </ul>
 
-                <button class="btn btn-primary btn-lg btn-block mb-5 text-white" type="submit">Request for the Service</button>
+                <form action="{{ action('ServiceRequestController@store') }}" class="hidden" method="POST">
+                    @csrf
+                    <input type="hidden" name="startDateTime" value="{{request('startDateTime')}}">
+                    <input type="hidden" name="endDateTime" value="{{request('endDateTime')}}">
+                    <input type="hidden" name="location" value="{{request('location')}}">
+                    <button class="btn btn-primary btn-lg btn-block mb-5 text-white" type="submit">Request for the Service</button>
+                </form>
             </div>
         </div>
     </div>
