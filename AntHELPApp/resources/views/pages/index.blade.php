@@ -5,7 +5,7 @@
         @slot('serviceCurator')
             @component('components.service-curator', ['title' => 'How can we help you today?'])                              
             @endcomponent
-
+            
             <div class="col-12 text-center text-white mt-5">
                 <h1>Are you a service provider?</h1>
                 <a class="btn btn-outline-light text-white" href="/serviceprovider">
@@ -65,6 +65,23 @@
             </div>
         </div>
     </div>
+    <script>
+        // Date picker for the service curator
+        $("input.daterange").daterangepicker({
+            "ranges" : {
+                'Today' : [moment(), moment()],
+                'Tomorrow' : [moment().add(1, 'days'), moment().add(1, 'days')]
+            },
+            "showDropdowns": true,
+            "startDate": moment(),
+            "endDate": moment(),
+            "minDate": moment(),
+            "opens": "center",
+            "locale": {
+                "format": "DD/MM/YYYY"
+            } 
+        });
+    </script>
 @endsection
 
 @section('footer')

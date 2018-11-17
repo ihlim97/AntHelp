@@ -13,4 +13,6 @@ import 'daterangepicker';
 import 'bootstrap-3-typeahead';
 
 window.moment = require('moment');
+window.moment.locale('en-gb');
+
 require('./custombundle');

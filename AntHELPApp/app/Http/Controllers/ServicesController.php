@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Service;
+use DateTime;
 
 class ServicesController extends Controller
 {
@@ -12,10 +13,24 @@ class ServicesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $services = Service::orderBy("created_at", "desc")->paginate(9);
-        return view("services.index")->with('services', $services);
+
+        $services = new Service;
+
+        if(request()->has('sort')) {
+            if (request('sort') == "Latest") {
+                $services = $services::orderBy("updated_at", "desc");
+            } else if (request('sort') == "Price") {
+                $services = $services::orderBy("rate", "asc");
+            }
+        }
+
+        $services = $services->paginate(9)->appends([
+            'sort' => request('sort')
+        ]);
+        
+        return view("services.index")->with(['services' => $services]);
     }
 
     /**
@@ -84,4 +99,6 @@ class ServicesController extends Controller
     {
         //
     }
+
+
 }

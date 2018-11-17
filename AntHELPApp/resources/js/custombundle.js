@@ -16,27 +16,34 @@
             $(this).tab('show')
         });
 
-        // Date picker for the service curator
-        $("input.daterange").daterangepicker({
-            "ranges" : {
-                'Today' : [moment(), moment()],
-                'Tomorrow' : [moment().add(1, 'days'), moment()]
-            },
-            "showDropdowns": true,
-            "startDate": moment(),
-            "endDate": moment().add(1, 'days'),
-            "opens": "center"
-        }, function(start, end, label) {
-            // Callback when date is selected
-            console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
-        });
-
         // Location autocomplete for Service Curator
         $.get("misc/service-areas.json", function(data) {
             $(".service-curator input[name=location]").typeahead({
                 source: data            
             });
         });
+
     });
 
 }(jQuery));
+
+window.getParameterByName = function(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+};
+
+window.updateParameterByName = function(uri, key, value) {
+    var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+    var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+    if (uri.match(re)) {
+        return uri.replace(re, '$1' + key + "=" + value + '$2');
+    }
+    else {
+        return uri + separator + key + "=" + value;
+    }
+}

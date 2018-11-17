@@ -3,7 +3,7 @@
 @section('header')
     @component('components.banner', ['imagePath'=> 'img/banners/handhold.jpg', 'bannerType'=> 'banner-medium'])
         @slot('serviceCurator')
-            @component('components.service-curator', ['title' => 'Refine your search'])                              
+            @component('components.service-curator', ['title' => 'Refine your search', 'service_type' => request('service_type'), 'location' => request('location'), 'time' => request('time')])                              
             @endcomponent
         @endslot
     @endcomponent
@@ -20,19 +20,20 @@
                         <li class="breadcrumb-item active" aria-current="page">Services</li>
                     </ol>
                 </nav>
-                <div class="d-flex align-items-center">
+                <form class="d-flex align-items-center sorter">
                     <p class="m-0 mr-3">SORT BY</p>
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            Popularity
+                            {{$sort ?? "Latest"}}
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Price</a>
-                            <a class="dropdown-item" href="#">Rating</a>
-                        </div>
+                        <ul class="dropdown-menu pointer" aria-labelledby="dropdownMenuButton">
+                            <li class="dropdown-item"><a href="{{action("ServicesController@index", ['service_type' => request('service_type'), 'location' => request('location'), 'time' => request('time'), 'sort' => 'Latest'])}}">Latest</a></li>
+                            <li class="dropdown-item"><a href="{{action("ServicesController@index", ['service_type' => request('service_type'), 'location' => request('location'), 'time' => request('time'), 'sort' => 'Price'])}}">Price</a></li>
+                        </ul>
                     </div>
-                </div>
+                </form>
+
             </div>
         </div>
     </div>
@@ -48,7 +49,7 @@
                         @foreach ($services as $service)
                             <div class="col-12 col-lg-4">
                                 @component("components.servicecard", [
-                                    'freshness' => 'NEW!',
+                                    'freshness' => $service->freshness,
                                     'category' => $service->category,
                                     'rating' => '5.0',
                                     'description' => $service->description,
@@ -70,6 +71,23 @@
         </div>
     </div>
 
+    <script>
+        // Date picker for the service curator
+        $("input.daterange").daterangepicker({
+            "ranges" : {
+                'Today' : [moment(), moment()],
+                'Tomorrow' : [moment().add(1, 'days'), moment().add(1, 'days')]
+            },
+            "showDropdowns": true,
+            "startDate": "{{request('time')}}".split(" - ")[0],
+            "endDate": "{{request('time')}}".split(" - ")[1],
+            "minDate": moment(),
+            "opens": "center",
+            "locale": {
+                "format": "DD/MM/YYYY"
+            } 
+        });
+    </script>
 @endsection
 
 @section('footer')

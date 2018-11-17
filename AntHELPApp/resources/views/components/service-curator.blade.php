@@ -13,12 +13,13 @@
                 </div>
                 <div class="form-group col-12 col-sm-3 p-0">
                     <h3>at</h3>
-                    <input type="text" class="form-control" name="location" placeholder="e.g. Petaling Jaya">
+                    <input type="text" class="form-control" name="location" placeholder="e.g. Petaling Jaya" value="{{$location ?? ''}}">
                 </div>
                 <div class="form-group col-12 col-sm-3 p-0">
                     <h3>on</h3>
-                    <input type="text" class="form-control daterange" name="time" placeholder="Select a convenient time">
+                    <input type="text" class="form-control daterange" name="time" placeholder="Select a convenient time" value="{{$time ?? ''}}">
                 </div>
+                <input type="hidden" name="sort" value="Latest">  
                 <div class="col-12 col-sm-2 text-right p-0 pl-sm-3">
                     <button type="submit" class="btn btn-success text-white w-100">Search</button>
                 </div>
