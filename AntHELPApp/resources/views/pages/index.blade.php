@@ -68,19 +68,30 @@
     <script>
         // Date picker for the service curator
         $("input.daterange").daterangepicker({
+            "autoApply": true,
+            "autoUpdateInput": true,
+            "minDate": moment(),           
+            "timePicker": true,
+            "opens" : "center",
             "ranges" : {
-                'Today' : [moment(), moment()],
-                'Tomorrow' : [moment().add(1, 'days'), moment().add(1, 'days')]
+                "Today": [moment(), moment()],
+                "Tomorrow": [moment().add(1, 'days'), moment().add(1, 'days')]
             },
-            "showDropdowns": true,
-            "startDate": moment(),
-            "endDate": moment(),
-            "minDate": moment(),
-            "opens": "center",
             "locale": {
-                "format": "DD/MM/YYYY"
-            } 
+                "format": "DD/MM/YYYY hh:mm"
+            }
+        }, function(start, end, label) {
+            console.log("Date picked!");
+            $(".service-curator input[name=startDateTime]").val(start.format('DD/MM/YYYY hh:mm'));
+            $(".service-curator input[name=endDateTime]").val(end.format('DD/MM/YYYY hh:mm'));
         });
+        
+        $("input.daterange").on("hide.daterangepicker", function(ev, picker) {
+            $(".service-curator input[name=startDateTime]").val(picker.startDate.format('DD/MM/YYYY hh:mm'));
+            $(".service-curator input[name=endDateTime]").val(picker.endDate.format('DD/MM/YYYY hh:mm'));
+        });
+
+        $("input.daterange").val("");
     </script>
 @endsection
 

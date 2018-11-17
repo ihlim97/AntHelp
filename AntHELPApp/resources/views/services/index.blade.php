@@ -6,8 +6,7 @@
             @component('components.service-curator', [
                 'title' => 'Refine your search', 
                 'service_type' => request('service_type'), 
-                'location' => request('location'), 
-                'time' => request('time'),
+                'location' => request('location'),
                 'service_categories' => $service_categories])                              
             @endcomponent
         @endslot
@@ -60,7 +59,7 @@
                                     'description' => $service->description,
                                     'rate' => $service->rate,
                                     'rate_type' => $service->rate_type,
-                                    'link' => action("ServicesController@show", ['id' => $service->id,'location' => request('location'), 'time' => request('time')])
+                                    'link' => action("ServicesController@show", ['id' => $service->id,'location' => request('location'), 'startDateTime' => request('startDateTime'), 'endDateTime' => request('endDateTime')])
                                 ])         
                                 @endcomponent
                             </div>
@@ -84,13 +83,25 @@
                 'Tomorrow' : [moment().add(1, 'days'), moment().add(1, 'days')]
             },
             "showDropdowns": true,
-            "startDate": "{{request('time')}}".split(" - ")[0] || moment(),
-            "endDate": "{{request('time')}}".split(" - ")[1] || moment().add(1, 'days'),
+            "startDate": "{{request('startDateTime')}}" || moment(),
+            "endDate": "{{request('endDateTime')}}" || moment().add(1, 'days'),
             "minDate": moment(),
             "opens": "center",
             "locale": {
-                "format": "DD/MM/YYYY"
-            } 
+                "format": "DD/MM/YYYY hh:mm"
+            },
+            "autoUpdateInput": true,
+            "autoApply": true,
+            "timePicker": true
+        }, function(start, end, label) {
+            console.log("Date picked!");
+            $(".service-curator input[name=startDateTime]").val(start.format('DD/MM/YYYY h:m'));
+            $(".service-curator input[name=endDateTime]").val(end.format('DD/MM/YYYY h:m'));
+        });
+
+        $("input.daterange").on("hide.daterangepicker", function(ev, picker) {
+            $(".service-curator input[name=startDateTime]").val(picker.startDate.format('DD/MM/YYYY hh:mm'));
+            $(".service-curator input[name=endDateTime]").val(picker.endDate.format('DD/MM/YYYY hh:mm'));
         });
     </script>
 @endsection

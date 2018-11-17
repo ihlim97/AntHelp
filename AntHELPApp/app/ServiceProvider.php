@@ -30,7 +30,7 @@ class ServiceProvider extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function Service() {
+    public function services() {
         return $this->hasMany('App\Service', 'user_id');
     }
 }

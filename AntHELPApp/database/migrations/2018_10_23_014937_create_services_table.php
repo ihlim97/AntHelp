@@ -15,7 +15,7 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('user_id'); # to refer back to the service provider
+            $table->unsignedInteger('user_id')->references('id')->on('service_providers'); # to refer back to the service provider
             $table->string('category');
             $table->string('description');
             $table->decimal('rate', 5, 2);

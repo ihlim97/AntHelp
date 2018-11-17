@@ -1,7 +1,7 @@
 <div class="card service-card mb-3">
     <div class="row no-gutters">
         <div class="col-12">
-            <img src="https://source.unsplash.com/500x400/?cleaning%20maid" alt="" class="card-img">
+            <img src="https://source.unsplash.com/500x400/?{{ urlencode($category) ?? 'cleaning+maid' }}" alt="" class="card-img">
         </div>
         <div class="col">
             <div class="card-body">

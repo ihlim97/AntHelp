@@ -12,7 +12,7 @@
                 <a class="nav-link active" href="/"><b>Home <span class="sr-only">(current)</span></b></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="services"><b>Services</b></a>
+                <a class="nav-link" href="/services"><b>Services</b></a>
             </li>
         </ul>
         

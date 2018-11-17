@@ -33,9 +33,10 @@
                     $(e).removeClass("is-invalid");
                     $(e).siblings(".invalid-feedback").text("");
 
-                    if ($(e).attr("required") && ($(e).val() == undefined || $(e).val() == "")) {
+                    if ($(e).attr("required") !== undefined && ($(e).val() == undefined || $(e).val() == "")) {
                         $(e).addClass("is-invalid");
-                        $(e).siblings(".invalid-feedback").text($(e).data("required"));
+                        console.log("The required text is: " + $(e).data("required"));
+                        $(e).parent().find(".invalid-feedback").text($(e).data("required"));
                         flag = false;
                     }
                 });

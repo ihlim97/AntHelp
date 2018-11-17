@@ -1,7 +1,6 @@
 @component('components.navbar', ['classes' => 'position-absolute'])
 @endcomponent
-
-<div class="banner d-flex align-items-center {{$bannerType}}" style="background-image: url('{{asset("$imagePath")}}')">
+<div class="banner d-flex align-items-center {{$bannerType}}" style="background-image: url('{{asset($imagePath)}}')">
     <div class="wrapper">
         <div class="container">
             <div class="row">

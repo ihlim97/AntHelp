@@ -6,18 +6,21 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container-fluid bg-white">
 		<div class="row">
-			<div class="col">
-				<nav aria-label="breadcrumb">
-					<ol class="breadcrumb bg-white m-0">
-						<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-					</ol>
-				</nav>
-			</div>
-		</div>
+            <div class="col p-0">
+                <div class="container">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb m-0 bg-white">
+                            <li class="breadcrumb-item"><a href="{{ route("serviceprovider.dashboard") }}">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Manage Services</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
     </div>
-    
+
     <div class="container-fluid">
         <div class="row">
             <div class="offset-md-1 col-md-10 my-5">

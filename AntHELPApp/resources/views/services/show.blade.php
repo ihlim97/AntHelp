@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col col-md-8">
                 <div class="card no-shadow">
-                    <img class="card-img-top" src="https://source.unsplash.com/1440x300/?home" alt="Card image cap">
+                    <img class="card-img-top" src="https://source.unsplash.com/1440x300/?{{urlencode($service->category)}}" alt="{{$service->category}}">
                     <div class="card-body">
                         <h1><strong>{{$service->category}}</strong></h1>
                         <p class="card-subtitle">{{$service->description}}</p>
@@ -57,10 +57,24 @@
                     </li>
                     <li class="list-group-item d-flex justify-content-between">
                         <div>
-                            <h6 class="my-0">Date and Time</h6>
-                            <small class="text-muted">When will the service start</small>
+                            <h6 class="my-0">Start Date/Time</h6>
+                            <small class="text-muted">When the service starts</small>
                         </div>
-                        <span>{{Request('time')}}</span>
+                        <span class="text-right">{{Request('startDateTime')}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <h6 class="my-0">End Date/Time</h6>
+                            <small class="text-muted">When the service ends</small>
+                        </div>
+                        <span class="text-right">{{Request('endDateTime')}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <h6 class="my-0">Location</h6>
+                            <small class="text-muted">The job location</small>
+                        </div>
+                        <span class="text-right">{{Request('location')}}</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between">
                     <span>Total (MYR)</span>
