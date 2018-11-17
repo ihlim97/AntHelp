@@ -1,31 +1,72 @@
 <?php
-
  	include("config.php");
  	session_start();
- 	$seniors = $con->query('SELECT * FROM seniors');
+ 	$sql = "SELECT * FROM seniors";
+ 	$seniors = mysqli_query($con, $sql);
  	$count = 0;
- 	if ($seniors->num_rows > 0) {
-	    while($row = $seniors->fetch_assoc()) {
+ 	if (mysqli_num_rows($seniors) > 0) {
+	    while($row = mysqli_fetch_assoc($seniors)) {
 	        if($row['email'] == $_POST['email'] && $row['password'] == $_POST['password']){
-	        	$_SESSION['username'] = $row['fullname'];
-	        	$_SESSION['email'] = $row['password'];
-	        	$_SESSION['address'] = $row['address'];
-	        	header("location:../src/manage-requests.php");
+	        	$_SESSION['username'] = $row['name'];
+	        	$_SESSION['userId'] = $row['user_id'];
+	        	header("location:../src/index.php");
 	        }
 	        else{
 	        	++$count;
-	        }
-	    }
+	        	if($count == mysqli_num_rows($seniors)){
+					$sql = "SELECT * FROM providers";
+				 	$providers = mysqli_query($con, $sql);
+				 	$count = 0;
+				 	if (mysqli_num_rows($providers) > 0) {
+				 		while($row = mysqli_fetch_assoc($providers)) {
+					        if($row['email'] == $_POST['email'] && $row['password'] == $_POST['password']){
+					        	$_SESSION['username'] = $row['name'];
+					        	$_SESSION['userId'] = $row['user_id'];
+					        	header("location:../src/index.php");
+					        }
+					        else{
+					        	++$count;
+					        	if($count == mysqli_num_rows($providers)){
+									$_SESSION['errormsg'] = TRUE;
+									header("location:../src/login.php");
+								}
+					        }
+				 		}
+					}
+					else{
+						$_SESSION['errormsg'] = TRUE;
+						header("location:../src/login.php");
+					}
+				}
+			}
+		}
 	} 
 	else {
-	   	header("location:../src/login.php");
-	    $message = "User not found";
-		echo "<script type='text/javascript'>alert('$message');</script>";
+	   	$sql = "SELECT * FROM providers";
+	 	$providers = mysqli_query($con, $sql);
+	 	$count = 0;
+	 	if (mysqli_num_rows($providers) > 0) {
+	 		while($row = mysqli_fetch_assoc($providers)) {
+		        if($row['email'] == $_POST['email'] && $row['password'] == $_POST['password']){
+		        	$_SESSION['username'] = $row['name'];
+		        	$_SESSION['userId'] = $row['user_id'];
+		        	header("location:../src/index.php");
+		        }
+		        else{
+		        	++$count;
+		        	if($count == mysqli_num_rows($providers)){
+						$_SESSION['errormsg'] = TRUE;
+						header("location:../src/login.php");
+					}
+		        }
+	 		}
+		}
+		else{
+			$_SESSION['errormsg'] = TRUE;
+			header("location:../src/login.php");
+		}
 	}
-	if($count == $seniors->num_rows){
-		header("location:../src/login.php");
-	    $message = "User not found";
-		echo "<script type='text/javascript'>alert('$message');</script>";
-	}
-$con->close();
+	
+mysqli_close($con);
+
 ?>
