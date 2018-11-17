@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Service;
 
 class PagesController extends Controller
 {
@@ -31,6 +32,18 @@ class PagesController extends Controller
             ],
         ];
 
-        return view("pages.index")->with(['articles' => $articles]);
+        $categories = $this->getCategories();
+        return view("pages.index")->with(['articles' => $articles, "service_categories" => $categories]);
+    }
+
+    public static function getCategories() {
+        $services = Service::all();
+        $categories = [];
+
+        foreach($services as $service) {
+            $categories[] = $service->category;
+        }
+
+        return array_unique($categories);
     }
 }

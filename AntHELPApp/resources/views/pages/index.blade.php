@@ -3,7 +3,7 @@
 @section('header')
     @component('components.banner', ['imagePath'=> 'img/banners/handhold.jpg', 'bannerType'=> ''])
         @slot('serviceCurator')
-            @component('components.service-curator', ['title' => 'How can we help you today?'])                              
+            @component('components.service-curator', ['title' => 'How can we help you today?', 'service_categories' => $service_categories])                              
             @endcomponent
             
             <div class="col-12 text-center text-white mt-5">

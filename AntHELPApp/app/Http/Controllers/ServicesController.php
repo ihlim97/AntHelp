@@ -30,7 +30,7 @@ class ServicesController extends Controller
             'sort' => request('sort')
         ]);
         
-        return view("services.index")->with(['services' => $services]);
+        return view("services.index")->with(['services' => $services, 'service_categories' => $this->getCategories()]);
     }
 
     /**
@@ -100,5 +100,14 @@ class ServicesController extends Controller
         //
     }
 
+    public static function getCategories() {
+        $services = Service::all();
+        $categories = [];
 
+        foreach($services as $service) {
+            $categories[] = $service->category;
+        }
+
+        return array_unique($categories);
+    }
 }

@@ -57751,6 +57751,27 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* =============
                 source: data
             });
         });
+
+        var serviceCurator = function () {
+            var $curator = $(".service-curator");
+
+            $curator.find("form").on("submit", function (event) {
+                var flag = true;
+
+                $(this).find("input, select, textarea").each(function (i, e) {
+                    $(e).removeClass("is-invalid");
+                    $(e).siblings(".invalid-feedback").text("");
+
+                    if ($(e).attr("required") && ($(e).val() == undefined || $(e).val() == "")) {
+                        $(e).addClass("is-invalid");
+                        $(e).siblings(".invalid-feedback").text($(e).data("required"));
+                        flag = false;
+                    }
+                });
+
+                return flag;
+            });
+        }();
     });
 })(jQuery);
 

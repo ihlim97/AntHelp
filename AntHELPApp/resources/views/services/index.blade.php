@@ -3,7 +3,12 @@
 @section('header')
     @component('components.banner', ['imagePath'=> 'img/banners/handhold.jpg', 'bannerType'=> 'banner-medium'])
         @slot('serviceCurator')
-            @component('components.service-curator', ['title' => 'Refine your search', 'service_type' => request('service_type'), 'location' => request('location'), 'time' => request('time')])                              
+            @component('components.service-curator', [
+                'title' => 'Refine your search', 
+                'service_type' => request('service_type'), 
+                'location' => request('location'), 
+                'time' => request('time'),
+                'service_categories' => $service_categories])                              
             @endcomponent
         @endslot
     @endcomponent
@@ -25,7 +30,7 @@
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            {{$sort ?? "Latest"}}
+                            {{request('sort') ?? "Latest"}}
                         </button>
                         <ul class="dropdown-menu pointer" aria-labelledby="dropdownMenuButton">
                             <li class="dropdown-item"><a href="{{action("ServicesController@index", ['service_type' => request('service_type'), 'location' => request('location'), 'time' => request('time'), 'sort' => 'Latest'])}}">Latest</a></li>
@@ -79,8 +84,8 @@
                 'Tomorrow' : [moment().add(1, 'days'), moment().add(1, 'days')]
             },
             "showDropdowns": true,
-            "startDate": "{{request('time')}}".split(" - ")[0],
-            "endDate": "{{request('time')}}".split(" - ")[1],
+            "startDate": "{{request('time')}}".split(" - ")[0] || moment(),
+            "endDate": "{{request('time')}}".split(" - ")[1] || moment().add(1, 'days'),
             "minDate": moment(),
             "opens": "center",
             "locale": {
