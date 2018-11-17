@@ -16,15 +16,27 @@
             $(this).tab('show')
         });
 
+        // Date picker for the service curator
         $("input.daterange").daterangepicker({
+            "ranges" : {
+                'Today' : [moment(), moment()],
+                'Tomorrow' : [moment().add(1, 'days'), moment()]
+            },
             "showDropdowns": true,
-            "startDate": "11/11/2018",
-            "endDate": "11/17/2018",
+            "startDate": moment(),
+            "endDate": moment().add(1, 'days'),
             "opens": "center"
         }, function(start, end, label) {
             // Callback when date is selected
             console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
         });
-        
+
+        // Location autocomplete for Service Curator
+        $.get("misc/service-areas.json", function(data) {
+            $(".service-curator input[name=location]").typeahead({
+                source: data            
+            });
+        });
     });
+
 }(jQuery));

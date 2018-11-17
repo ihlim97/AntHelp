@@ -3964,7 +3964,9 @@ input[type="button"].btn-block {
   margin-left: 0;
 }
 
-.dropdown-menu {
+.dropdown-menu,
+span.twitter-typeahead .tt-menu,
+span.twitter-typeahead .tt-dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
@@ -3989,7 +3991,11 @@ input[type="button"].btn-block {
   left: auto;
 }
 
-.dropup .dropdown-menu {
+.dropup .dropdown-menu,
+.dropup span.twitter-typeahead .tt-menu,
+span.twitter-typeahead .dropup .tt-menu,
+.dropup span.twitter-typeahead .tt-dropdown-menu,
+span.twitter-typeahead .dropup .tt-dropdown-menu {
   top: auto;
   bottom: 100%;
   margin-top: 0;
@@ -4013,7 +4019,11 @@ input[type="button"].btn-block {
   margin-left: 0;
 }
 
-.dropright .dropdown-menu {
+.dropright .dropdown-menu,
+.dropright span.twitter-typeahead .tt-menu,
+span.twitter-typeahead .dropright .tt-menu,
+.dropright span.twitter-typeahead .tt-dropdown-menu,
+span.twitter-typeahead .dropright .tt-dropdown-menu {
   top: 0;
   right: auto;
   left: 100%;
@@ -4042,7 +4052,11 @@ input[type="button"].btn-block {
   vertical-align: 0;
 }
 
-.dropleft .dropdown-menu {
+.dropleft .dropdown-menu,
+.dropleft span.twitter-typeahead .tt-menu,
+span.twitter-typeahead .dropleft .tt-menu,
+.dropleft span.twitter-typeahead .tt-dropdown-menu,
+span.twitter-typeahead .dropleft .tt-dropdown-menu {
   top: 0;
   right: 100%;
   left: auto;
@@ -4084,9 +4098,17 @@ input[type="button"].btn-block {
 }
 
 .dropdown-menu[x-placement^="top"],
+span.twitter-typeahead .tt-menu[x-placement^="top"],
+span.twitter-typeahead .tt-dropdown-menu[x-placement^="top"],
 .dropdown-menu[x-placement^="right"],
+span.twitter-typeahead .tt-menu[x-placement^="right"],
+span.twitter-typeahead .tt-dropdown-menu[x-placement^="right"],
 .dropdown-menu[x-placement^="bottom"],
-.dropdown-menu[x-placement^="left"] {
+span.twitter-typeahead .tt-menu[x-placement^="bottom"],
+span.twitter-typeahead .tt-dropdown-menu[x-placement^="bottom"],
+.dropdown-menu[x-placement^="left"],
+span.twitter-typeahead .tt-menu[x-placement^="left"],
+span.twitter-typeahead .tt-dropdown-menu[x-placement^="left"] {
   right: auto;
   bottom: auto;
 }
@@ -4098,7 +4120,8 @@ input[type="button"].btn-block {
   border-top: 1px solid #e9ecef;
 }
 
-.dropdown-item {
+.dropdown-item,
+span.twitter-typeahead .tt-suggestion {
   display: block;
   width: 100%;
   padding: 0.25rem 1.5rem;
@@ -4112,26 +4135,35 @@ input[type="button"].btn-block {
 }
 
 .dropdown-item:hover,
-.dropdown-item:focus {
+span.twitter-typeahead .tt-suggestion:hover,
+.dropdown-item:focus,
+span.twitter-typeahead .tt-suggestion:focus {
   color: #16181b;
   text-decoration: none;
   background-color: #f8f9fa;
 }
 
 .dropdown-item.active,
-.dropdown-item:active {
+span.twitter-typeahead .active.tt-suggestion,
+span.twitter-typeahead .tt-suggestion.tt-cursor,
+.dropdown-item:active,
+span.twitter-typeahead .tt-suggestion:active {
   color: #fff;
   text-decoration: none;
   background-color: #FF5E6B;
 }
 
 .dropdown-item.disabled,
-.dropdown-item:disabled {
+span.twitter-typeahead .disabled.tt-suggestion,
+.dropdown-item:disabled,
+span.twitter-typeahead .tt-suggestion:disabled {
   color: #6c757d;
   background-color: transparent;
 }
 
-.dropdown-menu.show {
+.dropdown-menu.show,
+span.twitter-typeahead .show.tt-menu,
+span.twitter-typeahead .show.tt-dropdown-menu {
   display: block;
 }
 
@@ -4952,7 +4984,11 @@ input[type="button"].btn-block {
   border-color: #dee2e6 #dee2e6 #f8fafc;
 }
 
-.nav-tabs .dropdown-menu {
+.nav-tabs .dropdown-menu,
+.nav-tabs span.twitter-typeahead .tt-menu,
+span.twitter-typeahead .nav-tabs .tt-menu,
+.nav-tabs span.twitter-typeahead .tt-dropdown-menu,
+span.twitter-typeahead .nav-tabs .tt-dropdown-menu {
   margin-top: -1px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -5056,7 +5092,11 @@ input[type="button"].btn-block {
   padding-left: 0;
 }
 
-.navbar-nav .dropdown-menu {
+.navbar-nav .dropdown-menu,
+.navbar-nav span.twitter-typeahead .tt-menu,
+span.twitter-typeahead .navbar-nav .tt-menu,
+.navbar-nav span.twitter-typeahead .tt-dropdown-menu,
+span.twitter-typeahead .navbar-nav .tt-dropdown-menu {
   position: static;
   float: none;
 }
@@ -5132,7 +5172,11 @@ input[type="button"].btn-block {
             flex-direction: row;
   }
 
-  .navbar-expand-sm .navbar-nav .dropdown-menu {
+  .navbar-expand-sm .navbar-nav .dropdown-menu,
+  .navbar-expand-sm .navbar-nav span.twitter-typeahead .tt-menu,
+  span.twitter-typeahead .navbar-expand-sm .navbar-nav .tt-menu,
+  .navbar-expand-sm .navbar-nav span.twitter-typeahead .tt-dropdown-menu,
+  span.twitter-typeahead .navbar-expand-sm .navbar-nav .tt-dropdown-menu {
     position: absolute;
   }
 
@@ -5186,7 +5230,11 @@ input[type="button"].btn-block {
             flex-direction: row;
   }
 
-  .navbar-expand-md .navbar-nav .dropdown-menu {
+  .navbar-expand-md .navbar-nav .dropdown-menu,
+  .navbar-expand-md .navbar-nav span.twitter-typeahead .tt-menu,
+  span.twitter-typeahead .navbar-expand-md .navbar-nav .tt-menu,
+  .navbar-expand-md .navbar-nav span.twitter-typeahead .tt-dropdown-menu,
+  span.twitter-typeahead .navbar-expand-md .navbar-nav .tt-dropdown-menu {
     position: absolute;
   }
 
@@ -5240,7 +5288,11 @@ input[type="button"].btn-block {
             flex-direction: row;
   }
 
-  .navbar-expand-lg .navbar-nav .dropdown-menu {
+  .navbar-expand-lg .navbar-nav .dropdown-menu,
+  .navbar-expand-lg .navbar-nav span.twitter-typeahead .tt-menu,
+  span.twitter-typeahead .navbar-expand-lg .navbar-nav .tt-menu,
+  .navbar-expand-lg .navbar-nav span.twitter-typeahead .tt-dropdown-menu,
+  span.twitter-typeahead .navbar-expand-lg .navbar-nav .tt-dropdown-menu {
     position: absolute;
   }
 
@@ -5294,7 +5346,11 @@ input[type="button"].btn-block {
             flex-direction: row;
   }
 
-  .navbar-expand-xl .navbar-nav .dropdown-menu {
+  .navbar-expand-xl .navbar-nav .dropdown-menu,
+  .navbar-expand-xl .navbar-nav span.twitter-typeahead .tt-menu,
+  span.twitter-typeahead .navbar-expand-xl .navbar-nav .tt-menu,
+  .navbar-expand-xl .navbar-nav span.twitter-typeahead .tt-dropdown-menu,
+  span.twitter-typeahead .navbar-expand-xl .navbar-nav .tt-dropdown-menu {
     position: absolute;
   }
 
@@ -5345,7 +5401,11 @@ input[type="button"].btn-block {
           flex-direction: row;
 }
 
-.navbar-expand .navbar-nav .dropdown-menu {
+.navbar-expand .navbar-nav .dropdown-menu,
+.navbar-expand .navbar-nav span.twitter-typeahead .tt-menu,
+span.twitter-typeahead .navbar-expand .navbar-nav .tt-menu,
+.navbar-expand .navbar-nav span.twitter-typeahead .tt-dropdown-menu,
+span.twitter-typeahead .navbar-expand .navbar-nav .tt-dropdown-menu {
   position: absolute;
 }
 
@@ -11545,6 +11605,26 @@ a.text-dark:focus {
 .slick-dots li.slick-active button:before {
   color: black;
   opacity: 0.75;
+}
+
+span.twitter-typeahead {
+  width: 100%;
+}
+
+.input-group span.twitter-typeahead {
+  display: block !important;
+}
+
+.input-group span.twitter-typeahead .tt-dropdown-menu {
+  top: 32px !important;
+}
+
+.input-group.input-group-lg span.twitter-typeahead .tt-dropdown-menu {
+  top: 44px !important;
+}
+
+.input-group.input-group-sm span.twitter-typeahead .tt-dropdown-menu {
+  top: 28px !important;
 }
 
 .navbar-laravel {

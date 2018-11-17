@@ -10,4 +10,7 @@ require('./bootstrap');
 
 import 'slick-carousel';
 import 'daterangepicker';
+import 'bootstrap-3-typeahead';
+
+window.moment = require('moment');
 require('./custombundle');

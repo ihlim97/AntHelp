@@ -1,7 +1,7 @@
 <div class="service-curator card p-3 py-5 mt-5">
     <h3 class="text-center">{{$title}}</h3>
     <div>
-        <form action="services">
+        <form action="services" autocomplete="off">
             <div class="row">
                 <div class="form-group col-12 col-sm-4 p-0">
                     <h3 class="flex-shrink-0">I need</h3>
@@ -13,11 +13,7 @@
                 </div>
                 <div class="form-group col-12 col-sm-3 p-0">
                     <h3>at</h3>
-                    <select class="form-control" name="location">
-                        <option value="PJ">Petaling Jaya</option>
-                        <option value="BKTD">Bukit Damansara</option>
-                        <option value="Kepong">Kepong</option>
-                    </select>
+                    <input type="text" class="form-control" name="location" placeholder="e.g. Petaling Jaya">
                 </div>
                 <div class="form-group col-12 col-sm-3 p-0">
                     <h3>on</h3>
