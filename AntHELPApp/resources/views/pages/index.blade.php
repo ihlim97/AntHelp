@@ -29,10 +29,9 @@
     </div>
 
     <div class="container">
-        <div class="row mt-5 my-sm-5">
+        <div class="row mt-5 my-sm-5 flex-row align-items-center">
             <div class="col-12 col-sm-6 my-5">
-                <h4><b>Get your business on track.</b></h4>
-                <h4><b>Sign up as a service provider.</b></h4>
+                <h2><b>Get your business on track. <br class="d-none d-sm-block">Sign up as a service provider.</b></h2>
                 <p>Join the fastest growing and best services platform for senior citizens in Malaysia! Supercharge your services business by catering to a more elder audience. Enjoy better earnings and so much more benefits.</p>
                 <a href="/serviceprovider" class="btn btn-primary">Get a free service provider account</a>
             </div>

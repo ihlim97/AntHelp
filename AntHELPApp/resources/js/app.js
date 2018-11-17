@@ -8,5 +8,6 @@
 require('./bootstrap');
 
 
-import 'slick-carousel'
+import 'slick-carousel';
+import 'daterangepicker';
 require('./custombundle');
