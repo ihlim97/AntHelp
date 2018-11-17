@@ -58,9 +58,9 @@
                     <li class="list-group-item d-flex justify-content-between">
                         <div>
                             <h6 class="my-0">Date and Time</h6>
-                            <small>When will the service start</small>
+                            <small class="text-muted">When will the service start</small>
                         </div>
-                        <span>Today, 12:00 PM</span>
+                        <span>{{Request('time')}}</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between">
                     <span>Total (MYR)</span>
@@ -68,7 +68,7 @@
                     </li>
                 </ul>
 
-                <button class="btn btn-primary btn-lg btn-block mb-5" type="submit">Request for the Service</button>
+                <button class="btn btn-primary btn-lg btn-block mb-5 text-white" type="submit">Request for the Service</button>
             </div>
         </div>
     </div>

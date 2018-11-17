@@ -60,7 +60,7 @@
                                     'description' => $service->description,
                                     'rate' => $service->rate,
                                     'rate_type' => $service->rate_type,
-                                    'link' => "services/".($service->id)
+                                    'link' => action("ServicesController@show", ['id' => $service->id,'location' => request('location'), 'time' => request('time')])
                                 ])         
                                 @endcomponent
                             </div>
