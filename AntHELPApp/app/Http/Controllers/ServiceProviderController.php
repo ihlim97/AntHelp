@@ -15,12 +15,12 @@ class ServiceProviderController extends Controller
     }
 
     public function index() {
-        return view("serviceprovider.index");
+        $serviceProvider = Auth::user();
+        return view("serviceprovider.index")->with(["services_count" => count($serviceProvider->services)]);
     }
 
     public function services() {
         $serviceProvider = Auth::user();
-
         return view("serviceprovider.services")->with(["services" => $serviceProvider->services]);
     }
 

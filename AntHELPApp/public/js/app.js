@@ -57746,7 +57746,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* =============
         });
 
         // Location autocomplete for Service Curator
-        $.get("misc/service-areas.json", function (data) {
+        $.get("/misc/service-areas.json", function (data) {
             $(".service-curator input[name=location]").typeahead({
                 source: data
             });
