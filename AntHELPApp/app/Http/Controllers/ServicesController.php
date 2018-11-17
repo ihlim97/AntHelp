@@ -5,9 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Service;
 use DateTime;
+use Illuminate\Support\Facades\Auth;
 
 class ServicesController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth:serviceprovider')->except(["index", "show"]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -51,7 +56,26 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'category' => 'required',
+            'description' => 'required',
+            'rate' => 'required',
+            'rate_type' => 'required',
+            'location' => 'required'
+        ]);
+
+        // Create Service
+        $service = new Service();
+        $service->user_id = Auth::User()->id;
+        $service->category = $request->input('category');
+        $service->description = $request->input('description');
+        $service->rate = $request->input('rate');
+        $service->rate_type = $request->input('rate_type');
+        $service->location = $request->input('location');
+        $service->save();
+        
+        return redirect()->action('ServiceProviderController@index')->with(['success' => 'Service has been successfully created.']);
+
     }
 
     /**

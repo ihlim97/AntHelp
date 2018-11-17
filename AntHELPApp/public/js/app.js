@@ -57747,7 +57747,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* =============
 
         // Location autocomplete for Service Curator
         $.get("/misc/service-areas.json", function (data) {
-            $(".service-curator input[name=location]").typeahead({
+            $("input[name=location]").typeahead({
                 source: data
             });
         });
@@ -57773,6 +57773,12 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* =============
                 return flag;
             });
         }();
+
+        $('input.decimal[name=rate]').change(function () {
+            var num = parseFloat($(this).val());
+            var cleanNum = num.toFixed(2);
+            $(this).val(cleanNum);
+        });
     });
 })(jQuery);
 

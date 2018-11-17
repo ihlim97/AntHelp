@@ -34,6 +34,15 @@
                         <ul class="dropdown-menu pointer" aria-labelledby="dropdownMenuButton">
                             <li class="dropdown-item"><a href="{{action("ServicesController@index", ['service_type' => request('service_type'), 'location' => request('location'), 'time' => request('time'), 'sort' => 'Latest'])}}">Latest</a></li>
                             <li class="dropdown-item"><a href="{{action("ServicesController@index", ['service_type' => request('service_type'), 'location' => request('location'), 'time' => request('time'), 'sort' => 'Price'])}}">Price</a></li>
+                            <li class="list-group-item active">
+                                <a class="text-white" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <strong>{{ __('Logout') }}</strong>
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </li>
                         </ul>
                     </div>
                 </form>
@@ -103,6 +112,10 @@
             $(".service-curator input[name=startDateTime]").val(picker.startDate.format('DD/MM/YYYY hh:mm'));
             $(".service-curator input[name=endDateTime]").val(picker.endDate.format('DD/MM/YYYY hh:mm'));
         });
+
+        if(getParameterByName("startDateTime", window.location.href) == null && getParameterByName("endDateTime", window.location.href) == null) {
+            $("input.daterange").val("");
+        }
     </script>
 @endsection
 

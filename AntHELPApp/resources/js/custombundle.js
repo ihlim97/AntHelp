@@ -18,7 +18,7 @@
 
         // Location autocomplete for Service Curator
         $.get("/misc/service-areas.json", function(data) {
-            $(".service-curator input[name=location]").typeahead({
+            $("input[name=location]").typeahead({
                 source: data            
             });
         });
@@ -45,6 +45,12 @@
             });
 
         })();
+
+        $('input.decimal[name=rate]').change(function () {
+            var num = parseFloat($(this).val());
+            var cleanNum = num.toFixed(2);
+            $(this).val(cleanNum);
+        });
     });
 
 }(jQuery));

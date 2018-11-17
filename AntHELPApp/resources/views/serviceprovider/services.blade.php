@@ -34,7 +34,15 @@
                         <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.dashboard')}}">My Account</a></li>
                         <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.services')}}">Services</a></li>
                         <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.services')}}">Services Requests</a></li>
-                        <li class="list-group-item active"><strong>Logout</strong></li>
+                        <li class="list-group-item active">
+                            <a class="text-white" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <strong>{{ __('Logout') }}</strong>
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -100,7 +108,7 @@
                             </div>
                         </div>                       
                     @else
-                        <p><strong>Hello from backend!s</strong></p>
+                        <p><strong>Hello from backend!</strong></p>
                         {{$services}}
                     @endif
                 </div>

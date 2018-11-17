@@ -18,7 +18,7 @@ class CreateServicesTable extends Migration
             $table->unsignedInteger('user_id')->references('id')->on('service_providers'); # to refer back to the service provider
             $table->string('category');
             $table->string('description');
-            $table->decimal('rate', 5, 2);
+            $table->decimal('rate', 9, 2);
             $table->enum('rate_type', array('HOURLY', 'DAILY', 'SQUARE_FEET'));
             $table->string('location');
             $table->string('photo')->nullable();
