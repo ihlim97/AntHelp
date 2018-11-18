@@ -21,6 +21,9 @@ class CreateServiceRequestsTable extends Migration
             $table->dateTime('end_date_time');
             $table->string('status');
             $table->string('note');
+            $table->string('duration');
+            $table->decimal('total', 9, 2);
+            $table->string('location');
             $table->timestamps();
         });
     }

@@ -34,19 +34,9 @@
                         <ul class="dropdown-menu pointer" aria-labelledby="dropdownMenuButton">
                             <li class="dropdown-item"><a href="{{action("ServicesController@index", ['service_type' => request('service_type'), 'location' => request('location'), 'time' => request('time'), 'sort' => 'Latest'])}}">Latest</a></li>
                             <li class="dropdown-item"><a href="{{action("ServicesController@index", ['service_type' => request('service_type'), 'location' => request('location'), 'time' => request('time'), 'sort' => 'Price'])}}">Price</a></li>
-                            <li class="list-group-item active">
-                                <a class="text-white" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    <strong>{{ __('Logout') }}</strong>
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </li>
                         </ul>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>
@@ -84,39 +74,6 @@
         </div>
     </div>
 
-    {{-- <script>
-        // Date picker for the service curator
-        $("input.daterange").daterangepicker({
-            "ranges" : {
-                'Today' : [moment(), moment()],
-                'Tomorrow' : [moment().add(1, 'days'), moment().add(1, 'days')]
-            },
-            "showDropdowns": true,
-            "startDate": "{{request('startDateTime')}}" || moment(),
-            "endDate": "{{request('endDateTime')}}" || moment().add(1, 'days'),
-            "minDate": moment(),
-            "opens": "center",
-            "locale": {
-                "format": "DD/MM/YYYY hh:mm"
-            },
-            "autoUpdateInput": true,
-            "autoApply": true,
-            "timePicker": true
-        }, function(start, end, label) {
-            console.log("Date picked!");
-            $(".service-curator input[name=startDateTime]").val(start.format('DD/MM/YYYY h:m'));
-            $(".service-curator input[name=endDateTime]").val(end.format('DD/MM/YYYY h:m'));
-        });
-
-        $("input.daterange").on("hide.daterangepicker", function(ev, picker) {
-            $(".service-curator input[name=startDateTime]").val(picker.startDate.format('DD/MM/YYYY hh:mm'));
-            $(".service-curator input[name=endDateTime]").val(picker.endDate.format('DD/MM/YYYY hh:mm'));
-        });
-
-        if(getParameterByName("startDateTime", window.location.href) == null && getParameterByName("endDateTime", window.location.href) == null) {
-            $("input.daterange").val("");
-        }
-    </script> --}}
 @endsection
 
 @section('footer')

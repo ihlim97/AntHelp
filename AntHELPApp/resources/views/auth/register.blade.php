@@ -60,10 +60,10 @@
                         </div>
 
                         <div class="form-group">
-                            <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address') }}" placeholder="{{ __('Address') }}" required>
-                            @if ($errors->has('address'))
+                            <input id="location" type="text" class="form-control{{ $errors->has('location') ? ' is-invalid' : '' }}" name="location" value="{{ old('location') }}" placeholder="{{ __('location') }}" required>
+                            @if ($errors->has('location'))
                                 <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('address') }}</strong>
+                                    <strong>{{ $errors->first('location') }}</strong>
                                 </span>
                             @endif
                         </div>
@@ -96,6 +96,6 @@
 
 @section('footer')
     @component('components.footer')
-        
+
     @endcomponent
 @endsection

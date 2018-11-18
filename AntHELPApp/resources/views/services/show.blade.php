@@ -203,11 +203,11 @@
                             }
 
                             function render() {
-                                $input.val(duration);
                                 if (basis == "HOURLY") {
                                     $label.text(duration + " hour(s)");
+                                    $input.val(duration + " hour(s)");
                                 } else {
-                                    $label.text(duration + " Day(s)");
+                                    $input.val(duration.asDays() + " Day(s)");
                                 }
                             }
                         })();
@@ -287,19 +287,23 @@
                             $this = $(this);
                             if(!validateFormFields($this)) {
                                 return false;
-                            } else {
-                                var obj = {};
-                                var $inputs = $this.find("textarea, input");
-
-                                $inputs.each(function(i, e) {
-                                    obj[$(e).attr("name")] = $(e).val();
-                                });
                             }
+
+                            var obj = {};
+                            var $inputs = $this.find("textarea, input");
+
+                            $inputs.each(function(i, e) {
+                                obj[$(e).attr("name")] = $(e).val();
+                            });
 
                             $.ajax({
                                 method: "POST",
                                 url: "{{ route('servicerequest.store') }}",
-                                data: obj
+                                data: JSON.stringify(obj),
+                                headers: {
+                                    'X-CSRF-TOKEN': '{{ @csrf_token() }}'
+                                },
+                                contentType: 'application/json'
                             }).done(function(data, textStatus, jqXHR) {
                                 console.log("server received data");
                                 if(data.success == true) {

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use DateTime;
 use App\ServiceRequest;
+use App\Service;
 
 class ServiceRequestController extends Controller
 {
@@ -42,6 +43,7 @@ class ServiceRequestController extends Controller
      */
     public function store(Request $request)
     {
+
         if (!Auth::guard("web")->check()) {
             return response()->json(['success' => false, "error_msg" => "Unauthenticated"], 401);
         }
@@ -56,6 +58,9 @@ class ServiceRequestController extends Controller
         $svcReq->end_date_time = $endDateTime;
         $svcReq->status = "PENDING";
         $svcReq->note = "Test";
+        $svcReq->duration = $request->duration;
+        $svcReq->location = $request->location;
+        $svcReq->total = $request->total;
         $svcReq->save();
 
         $svcReqFromDB = ServiceRequest::find($svcReq->id);
@@ -98,9 +103,20 @@ class ServiceRequestController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if ($request->trigger == "manage-service-dropdown") {
+            $serviceReq = ServiceRequest::find($request->id);
+
+            if($serviceReq !== null) {
+                $serviceReq->status = $request->status;
+                $serviceReq->save();
+                return response()->json(['success' => true, 'error_msg' => '', 'service_request' => $serviceReq]);
+            }
+        }
     }
 
+    public function updateStatusOfRequest(Request $request) {
+
+    }
     /**
      * Remove the specified resource from storage.
      *

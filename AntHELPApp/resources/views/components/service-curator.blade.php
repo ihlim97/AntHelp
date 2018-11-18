@@ -34,11 +34,13 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-4 p-0">
-                    <div class="form-group position-relative">
+                    <div class="form-group">
                         <h3>at</h3>
-                        <input type="text" class="form-control" name="location" placeholder="e.g. Petaling Jaya" value="{{$location ?? ''}}" required data-required="Please enter your location">
-                        <span class="fas fa-location-arrow input-icon text-muted"></span>
-                        <div class="invalid-feedback"></div>
+                        <div class="w-100 position-relative">
+                            <input type="text" class="form-control" name="location" placeholder="e.g. Petaling Jaya" value="{{$location ?? ''}}" required data-required="Please enter your location">
+                            <span class="fas fa-location-arrow input-icon text-muted"></span>
+                            <div class="invalid-feedback"></div>
+                        </div>
                     </div>
                 </div>
                 {{-- <div class="form-group col-12 col-sm-4 p-0">
