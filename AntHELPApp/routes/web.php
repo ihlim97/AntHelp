@@ -27,6 +27,7 @@ Route::prefix('serviceprovider')->group(function() {
     Route::post('/register', 'Auth\ServiceProviderRegisterController@register')->name('serviceprovider.register');
     Route::get('/', 'ServiceProviderController@index')->name('serviceprovider.dashboard');
     Route::get("/services", "ServiceProviderController@services")->name('serviceprovider.services');
+    Route::get("/servicerequests", "ServiceProviderController@serviceRequests")->name('serviceprovider.servicerequests');
 });
 
 Route::post('/servicerequests', 'ServiceRequestController@store')->name('servicerequest.store');

@@ -14,4 +14,8 @@ class Service extends Model
     public function serviceProvider() {
         return $this->belongsTo('App\ServiceProvider', 'id');
     }
+
+    public function serviceRequests() {
+        return $this->hasMany('App\ServiceRequest', 'service_id');
+    }
 }

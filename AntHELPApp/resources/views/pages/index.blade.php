@@ -3,9 +3,9 @@
 @section('header')
     @component('components.banner', ['imagePath'=> 'img/banners/handhold.jpg', 'bannerType'=> ''])
         @slot('serviceCurator')
-            @component('components.service-curator', ['title' => 'How can we help you today?', 'service_categories' => $service_categories])                              
+            @component('components.service-curator', ['title' => 'How can we help you today?', 'service_categories' => $service_categories])
             @endcomponent
-            
+
             <div class="col-12 text-center text-white mt-5">
                 <h1>Are you a service provider?</h1>
                 <a class="btn btn-outline-light text-white" href="/serviceprovider">
@@ -67,36 +67,36 @@
     </div>
     <script>
         // Date picker for the service curator
-        $("input.daterange").daterangepicker({
-            "autoApply": true,
-            "autoUpdateInput": true,
-            "minDate": moment(),           
-            "timePicker": true,
-            "opens" : "center",
-            "ranges" : {
-                "Today": [moment(), moment()],
-                "Tomorrow": [moment().add(1, 'days'), moment().add(1, 'days')]
-            },
-            "locale": {
-                "format": "DD/MM/YYYY hh:mm"
-            }
-        }, function(start, end, label) {
-            console.log("Date picked!");
-            $(".service-curator input[name=startDateTime]").val(start.format('DD/MM/YYYY hh:mm'));
-            $(".service-curator input[name=endDateTime]").val(end.format('DD/MM/YYYY hh:mm'));
-        });
-        
-        $("input.daterange").on("hide.daterangepicker", function(ev, picker) {
-            $(".service-curator input[name=startDateTime]").val(picker.startDate.format('DD/MM/YYYY hh:mm'));
-            $(".service-curator input[name=endDateTime]").val(picker.endDate.format('DD/MM/YYYY hh:mm'));
-        });
+        // $("input.daterange").daterangepicker({
+        //     "autoApply": true,
+        //     "autoUpdateInput": true,
+        //     "minDate": moment(),
+        //     "timePicker": true,
+        //     "opens" : "center",
+        //     "ranges" : {
+        //         "Today": [moment(), moment()],
+        //         "Tomorrow": [moment().add(1, 'days'), moment().add(1, 'days')]
+        //     },
+        //     "locale": {
+        //         "format": "DD/MM/YYYY hh:mm"
+        //     }
+        // }, function(start, end, label) {
+        //     console.log("Date picked!");
+        //     $(".service-curator input[name=startDateTime]").val(start.format('DD/MM/YYYY hh:mm'));
+        //     $(".service-curator input[name=endDateTime]").val(end.format('DD/MM/YYYY hh:mm'));
+        // });
 
-        $("input.daterange").val("");
+        // $("input.daterange").on("hide.daterangepicker", function(ev, picker) {
+        //     $(".service-curator input[name=startDateTime]").val(picker.startDate.format('DD/MM/YYYY hh:mm'));
+        //     $(".service-curator input[name=endDateTime]").val(picker.endDate.format('DD/MM/YYYY hh:mm'));
+        // });
+
+        // $("input.daterange").val("");
     </script>
 @endsection
 
 @section('footer')
     @component('components.footer')
-        
+
     @endcomponent
 @endsection

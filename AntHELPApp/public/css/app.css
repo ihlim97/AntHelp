@@ -10956,6 +10956,15 @@ a.text-dark:focus {
           transform: translate(-50%, -50%);
 }
 
+.input-icon {
+  /* Do ensure that the parent container's position is set to relative */
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
 /* Navigation */
 
 .navbar {

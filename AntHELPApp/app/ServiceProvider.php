@@ -11,7 +11,7 @@ class ServiceProvider extends Authenticatable
     use Notifiable;
 
     protected $guard = "serviceprovider";
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -33,4 +33,9 @@ class ServiceProvider extends Authenticatable
     public function services() {
         return $this->hasMany('App\Service', 'user_id');
     }
+
+    public function serviceRequests() {
+        return $this->hasManyThrough('App\ServiceRequest', 'App\Service', 'user_id', 'service_id', 'id', 'id');
+    }
+
 }

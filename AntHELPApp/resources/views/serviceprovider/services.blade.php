@@ -33,7 +33,7 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.dashboard')}}">My Account</a></li>
                         <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.services')}}">Services</a></li>
-                        <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.services')}}">Services Requests</a></li>
+                        <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.servicerequests')}}">Services Requests</a></li>
                         <li class="list-group-item active">
                             <a class="text-white" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <strong>{{ __('Logout') }}</strong>
@@ -67,7 +67,6 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>ID#</th>
                                         <th>Category</th>
                                         <th>Rate</th>
                                         <th>Basis</th>
@@ -79,7 +78,6 @@
                                 <tbody>
                                     @foreach ($services as $service)
                                         <tr>
-                                            <td>{{$service->id}}</td>
                                             <td>{{$service->category}}</td>
                                             <td>{{$service->rate}}</td>
                                             <td>{{$service->rate_type}}</td>
@@ -96,9 +94,9 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="border p-4 mt-4">
-                    @if (count($services) == 0) 
+                    @if (count($services) == 0)
                         <div class="row">
                             <div class="col-8">
                                 <h3>It's seems a bit lonely here...</h3>
@@ -106,7 +104,7 @@
                             <div class="col-4">
                                 <img class="img-fluid" src="{{ asset('img/tumbleweed.png') }}" alt="Tumbleweed" srcset="{{ asset('svg/tumbleweed.svg') }}">
                             </div>
-                        </div>                       
+                        </div>
                     @else
                         <p><strong>Hello from backend!</strong></p>
                         {{$services}}
@@ -120,7 +118,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col bg-white">
-                
+
                 <div class="container my-5">
                     <div class="row">
                         <div class="col-8">
@@ -139,6 +137,6 @@
 
 @section('footer')
     @component('components.footer')
-        
+
     @endcomponent
 @endsection

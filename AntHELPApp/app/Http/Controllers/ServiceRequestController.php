@@ -21,7 +21,7 @@ class ServiceRequestController extends Controller
      */
     public function index()
     {
-        
+
     }
 
     /**
@@ -42,7 +42,7 @@ class ServiceRequestController extends Controller
      */
     public function store(Request $request)
     {
-        if (!Auth::check()) {
+        if (!Auth::guard("web")->check()) {
             return response()->json(['success' => false, "error_msg" => "Unauthenticated"], 401);
         }
 
@@ -64,7 +64,7 @@ class ServiceRequestController extends Controller
         } else {
             return response()->json(['success' => false, "error_msg" => "Object not found in database."], 500);
         }
-       
+
     }
 
     /**

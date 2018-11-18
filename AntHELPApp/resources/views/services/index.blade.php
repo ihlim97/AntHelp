@@ -4,10 +4,10 @@
     @component('components.banner', ['imagePath'=> 'img/banners/handhold.jpg', 'bannerType'=> 'banner-medium'])
         @slot('serviceCurator')
             @component('components.service-curator', [
-                'title' => 'Refine your search', 
-                'service_type' => request('service_type'), 
+                'title' => 'Refine your search',
+                'service_type' => request('service_type'),
                 'location' => request('location'),
-                'service_categories' => $service_categories])                              
+                'service_categories' => $service_categories])
             @endcomponent
         @endslot
     @endcomponent
@@ -69,7 +69,7 @@
                                     'rate' => $service->rate,
                                     'rate_type' => $service->rate_type,
                                     'link' => action("ServicesController@show", ['id' => $service->id,'location' => request('location'), 'startDateTime' => request('startDateTime'), 'endDateTime' => request('endDateTime')])
-                                ])         
+                                ])
                                 @endcomponent
                             </div>
                             {{$services->links()}}
@@ -84,7 +84,7 @@
         </div>
     </div>
 
-    <script>
+    {{-- <script>
         // Date picker for the service curator
         $("input.daterange").daterangepicker({
             "ranges" : {
@@ -116,11 +116,11 @@
         if(getParameterByName("startDateTime", window.location.href) == null && getParameterByName("endDateTime", window.location.href) == null) {
             $("input.daterange").val("");
         }
-    </script>
+    </script> --}}
 @endsection
 
 @section('footer')
     @component('components.footer')
-        
+
     @endcomponent
 @endsection

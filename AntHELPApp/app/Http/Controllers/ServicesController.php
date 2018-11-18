@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Service;
 use DateTime;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class ServicesController extends Controller
 {
@@ -34,7 +35,7 @@ class ServicesController extends Controller
         $services = $services->paginate(9)->appends([
             'sort' => request('sort')
         ]);
-        
+
         return view("services.index")->with(['services' => $services, 'service_categories' => $this->getCategories()]);
     }
 
@@ -73,7 +74,7 @@ class ServicesController extends Controller
         $service->rate_type = $request->input('rate_type');
         $service->location = $request->input('location');
         $service->save();
-        
+
         return redirect()->action('ServiceProviderController@index')->with(['success' => 'Service has been successfully created.']);
 
     }
@@ -84,10 +85,13 @@ class ServicesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
+        // $startDateTime = Carbon::createFromFormat('d/m/Y H:i', $request->startDateTime);
+        // $endDateTime = Carbon::createFromFormat('d/m/Y H:i', $request->endDateTime);
+
         $service = Service::find($id);
-        return view("services.show")->with("service", $service);
+        return view("services.show")->with(["service" => $service]);
     }
 
     /**
@@ -133,5 +137,34 @@ class ServicesController extends Controller
         }
 
         return array_unique($categories);
+    }
+
+    /**
+     * Returns the billable working hours for AntHELP
+     * @param Carbon $start the start datetime
+     * @param Carbon $end the end datetime
+     * @return decimal
+     */
+    public static function getBillableHours($start, $end) {
+
+        $minsWorked = 0;
+
+        // Define work range
+        $workingHrs_start = 9;
+        $workingHrs_end = 19;
+
+        // For looping
+        $current = $start;
+
+        // Check if current time is in the working hour range
+        while($current->lessThanOrEqualTo($end)) {
+            if($current->hour >= $workingHrs_start && $current->hour <= $workingHrs_end) {
+                $minsWorked++;
+            }
+
+            $current->addMinute();
+        }
+
+        return $minsWorked / 60;
     }
 }

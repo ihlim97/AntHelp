@@ -12,7 +12,8 @@
                 <div class="container">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb m-0 bg-white">
-                            <li class="breadcrumb-item">Home</li>
+                            <li class="breadcrumb-item"><a href="{{ route("serviceprovider.dashboard") }}">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Services</li>
                         </ol>
                     </nav>
                 </div>
@@ -47,58 +48,68 @@
             </div>
             <div class="col-md-9">
                 <div class="row mb-3">
-                    <div class="col-8"><h3>Account Overview</h3></div>
-                    <div class="col-4 text-right"><a href="{{action('ServicesController@create')}}" class="btn btn-secondary">Create a new Service</a></div>
+                    <div class="col-8"><h3>Service Requests Overview</h3></div>
                 </div>
                 <div class="card no-shadow">
                     <div class="card-header">
                         <ul class="nav nav-tabs card-header-tabs" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="info-tab" data-toggle="tab" href="#info">My Info</a>
+                                <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all">All ({{count($serviceRequests)}})</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="archive-tab" data-toggle="tab" href="#archived">Archived</a>
                             </li>
                         </ul>
                     </div>
                     <div class="card-body tab-content">
-                        <div class="tab-pane fade show active" id="info">
-                            <div class="row">
-
-                                <div class="col">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h5 class="card-title"><strong>Account Information</strong></h5>
-                                            <h6 class="card-subtitle">{{Auth::user()->name}}</h6>
-                                            <p class="card-text">{{Auth::user()->email}}</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h5 class="card-title"><strong>My Services</strong></h5>
-                                            <div class="d-flex align-items-baseline">
-                                                <h1>{{$services_count}}</h1>
-                                                <h6 class="ml-2">service(s)</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h5 class="card-title"><strong>Service Requests</strong></h5>
-                                            <div class="d-flex align-items-baseline">
-                                                <h1>{{$requests_count}}</h1>
-                                                <h6 class="ml-2">request(s)</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
+                        <div class="tab-pane fade show active" id="all">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>ID#</th>
+                                        <th>Category</th>
+                                        <th>Rate</th>
+                                        <th>Basis</th>
+                                        <th>Location</th>
+                                        <th>Last Update</th>
+                                        <th>Edit</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{-- @foreach ($services as $service)
+                                        <tr>
+                                            <td>{{$service->id}}</td>
+                                            <td>{{$service->category}}</td>
+                                            <td>{{$service->rate}}</td>
+                                            <td>{{$service->rate_type}}</td>
+                                            <td>{{$service->location}}</td>
+                                            <td>{{$service->updated_at}}</td>
+                                            <td>Edit</td>
+                                        </tr>
+                                    @endforeach --}}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="archived">
+                            <h5 class="card-title">Nothing archived yet</h5>
                         </div>
                     </div>
+                </div>
+
+                <div class="border p-4 mt-4">
+                    @if (count($serviceRequests) == 0)
+                        <div class="row">
+                            <div class="col-8">
+                                <h3>It's seems a bit lonely here...</h3>
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid" src="{{ asset('img/tumbleweed.png') }}" alt="Tumbleweed" srcset="{{ asset('svg/tumbleweed.svg') }}">
+                            </div>
+                        </div>
+                    @else
+                        <p><strong>Hello from backend!</strong></p>
+                        {{$serviceRequests}}
+                    @endif
                 </div>
 
             </div>
@@ -122,6 +133,7 @@
             </div>
         </div>
     </div>
+
 @endsection
 
 @section('footer')

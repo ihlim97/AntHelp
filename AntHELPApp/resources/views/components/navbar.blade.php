@@ -15,7 +15,7 @@
                 <a class="nav-link" href="/services"><b>Services</b></a>
             </li>
         </ul>
-        
+
         <!-- Right Side Of Navbar -->
         <ul class="navbar-nav ml-auto">
             <!-- Authentication Links -->
@@ -35,6 +35,11 @@
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        @if (Auth::guard("serviceprovider")->check())
+                            <a class="dropdown-item" href="{{ route('serviceprovider.dashboard') }}">My Account</a>
+                        @elseif (Auth::guard("web")->check())
+                            <a class="dropdown-item" href="{{ action('HomeController@index') }}">My Account</a>
+                        @endif
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
