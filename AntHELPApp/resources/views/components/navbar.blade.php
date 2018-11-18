@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link active" href="/"><b>Home <span class="sr-only">(current)</span></b></a>
+                <a class="nav-link" href="/"><b>Home</b></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/services"><b>Services</b></a>
@@ -22,12 +22,10 @@
             @guest
                 <li class="nav-item">
                     <a href="{{ route('login') }}" class="btn btn-primary mr-md-2 mb-2 mb-md-0">LOGIN</a>
-                    {{-- <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a> --}}
                 </li>
                 <li class="nav-item">
                     @if (Route::has('register'))
                         <a href="{{ route('register') }}" class="ml-auto btn btn-outline-light mr-3">SIGN UP</a>
-                        {{-- <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a> --}}
                     @endif
                 </li>
             @else

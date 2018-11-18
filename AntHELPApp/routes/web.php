@@ -29,3 +29,6 @@ Route::prefix('serviceprovider')->group(function() {
     Route::get("/services", "ServiceProviderController@services")->name('serviceprovider.services');
 });
 
+Route::post('/servicerequests', 'ServiceRequestController@store')->name('servicerequest.store');
+// Route::group(['middleware' => ['auth']], function() {
+// });

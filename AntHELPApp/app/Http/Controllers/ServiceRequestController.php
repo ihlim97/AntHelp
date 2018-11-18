@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use DateTime;
+use App\ServiceRequest;
 
 class ServiceRequestController extends Controller
 {
-    public function __construct() {
-        $this->middleware('auth');
-        $this->middleware('auth:serviceprovider')->except(["store"]);
-    }
+    // public function __construct() {
+    //     $this->middleware('auth')->only(["store"]);
+    //     $this->middleware('auth:serviceprovider')->except(["show"]);
+    // }
 
     /**
      * Display a listing of the resource.
@@ -19,7 +21,7 @@ class ServiceRequestController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -40,7 +42,29 @@ class ServiceRequestController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        if (!Auth::check()) {
+            return response()->json(['success' => false, "error_msg" => "Unauthenticated"], 401);
+        }
+
+        $startDateTime = DateTime::createFromFormat("d/m/Y G:i", $request->startDateTime);
+        $endDateTime = DateTime::createFromFormat("d/m/Y G:i", $request->endDateTime);
+
+        $svcReq = new ServiceRequest;
+        $svcReq->service_id = $request->service_id;
+        $svcReq->user_id = Auth::user()->id;
+        $svcReq->start_date_time = $startDateTime;
+        $svcReq->end_date_time = $endDateTime;
+        $svcReq->status = "PENDING";
+        $svcReq->note = "Test";
+        $svcReq->save();
+
+        $svcReqFromDB = ServiceRequest::find($svcReq->id);
+        if($svcReqFromDB !== null) {
+            return response()->json(['success' => true, "error_msg" => "", "service_request" => $svcReqFromDB]);
+        } else {
+            return response()->json(['success' => false, "error_msg" => "Object not found in database."], 500);
+        }
+       
     }
 
     /**
