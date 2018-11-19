@@ -16,7 +16,6 @@ class ReviewController extends Controller
      */
     public function index()
     {
-
         // Get all eligible requests (must be completed)
         $reviewableRequests = ServiceRequest::where('status', 'COMPLETED')->get();
 
@@ -106,6 +105,9 @@ class ReviewController extends Controller
             $review->user_comment = $request->user_comment;
             $review->user_rating = $request->user_rating;
             $review->save();
+        } else if (Auth::guard('serviceprovider')->check()) {
+            $review->service_provider_reply = $request->service_provider_reply;
+            $review->save();
         }
 
         return redirect()->back();
@@ -122,4 +124,34 @@ class ReviewController extends Controller
         //
     }
 
+    public function indexForServiceProvider() {
+
+        // Get all eligible requests (must be completed)
+        $reviewableRequests = ServiceRequest::where('status', 'COMPLETED')->get();
+
+        // loop each service request
+        // check if there's a review for the request
+        foreach ($reviewableRequests as $svcReq) {
+
+            $review = Review::where('request_id', $svcReq->id)->first();
+            if($review == null) {
+                $newReview = new Review;
+                $newReview->user_id = $svcReq->user_id;
+                $newReview->service_provider_id = $svcReq->service->serviceProvider['id'];
+                $newReview->request_id = $svcReq->id;
+                $newReview->save();
+            }
+
+        }
+
+        $reviews = null;
+
+        if(Auth::guard('serviceprovider')->check()) {
+            $reviews = Review::where('service_provider_id', Auth::guard('serviceprovider')->user()->id)->get();
+        } else {
+            return redirect()->route('login');
+        }
+
+        return view('review.serviceproviderindex')->with(["reviews" => $reviews]);
+    }
 }

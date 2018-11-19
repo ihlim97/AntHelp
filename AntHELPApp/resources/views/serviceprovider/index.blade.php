@@ -33,6 +33,7 @@
                         <li class="list-group-item active"><a class="text-white" href="{{route('serviceprovider.dashboard')}}">My Account</a></li>
                         <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.services')}}">Services</a></li>
                         <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.servicerequests')}}">Services Requests</a></li>
+                        <li class="list-group-item"><a class="text-info" href="{{action('ReviewController@indexForServiceProvider')}}">Reviews</a></li>
                         <li class="list-group-item">
                             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <strong>{{ __('Logout') }}</strong>

@@ -23,7 +23,7 @@
     <div class="container my-5">
         <div class="row">
             <div class="col-md-3">
-                <div class="card">
+                <div class="card mb-5">
                     <img class="card-img-top" src="https://source.unsplash.com/600x400/?girl" alt="Card image cap">
                     <div class="card-body">
                         <h4 class="card-title mb-0"><strong>Hi, {{Auth::user()->name}}</strong></h4>
@@ -79,10 +79,10 @@
 
                                 </div>
 
-                                <div class="col">
+                                <div class="col-12 col-sm-4">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="card-title"><strong>Accepted</strong></h5>
+                                            <h5 class="card-title"><strong>Just accepted</strong></h5>
                                             <div class="d-flex align-items-baseline">
                                                 <h1>{{count($serviceRequests->where('status', 'ACCEPTED'))}}</h1>
                                                 <h6 class="ml-2">service(s)</h6>
@@ -91,7 +91,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col">
+                                <div class="col-12 col-sm-4">
                                     <div class="card">
                                         <div class="card-body">
                                             <h5 class="card-title"><strong>Completed</strong></h5>
@@ -103,13 +103,13 @@
                                     </div>
                                 </div>
 
-                                <div class="col">
+                                <div class="col-12 col-sm-4">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="card-title"><strong>Pending Review</strong></h5>
+                                            <h5 class="card-title"><strong>My reviews so far</strong></h5>
                                             <div class="d-flex align-items-baseline">
-                                                {{-- <h1>{{$requests_count}}</h1> --}}
-                                                <h6 class="ml-2">service(s)</h6>
+                                                <h1>{{$reviewCount}}</h1>
+                                                <h6 class="ml-2">review(s)</h6>
                                             </div>
                                         </div>
                                     </div>
@@ -131,7 +131,7 @@
 
                 <div class="container my-5">
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col col-md-8">
                             <h2><strong>Need somebody to help with chores?</strong></h2>
                             <p>AntHELP offers a wide range of services for your every need from cleaning the house to buying to shopping. Request a service now!</p>
                             <a href="{{action('ServicesController@index')}}" class="btn btn-primary">Browse services</a>

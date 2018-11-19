@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\ServiceRequest;
+use App\Review;
 use Carbon\Carbon;
 
 class HomeController extends Controller
@@ -28,8 +29,8 @@ class HomeController extends Controller
     {
         $senior = Auth::user();
         $serviceRequests = $senior->serviceRequests()->get();
-
-        return view('home')->with(["serviceRequests" => $serviceRequests]);
+        $reviews = Review::where('user_id', $senior->id)->get();
+        return view('home')->with(["serviceRequests" => $serviceRequests, "reviewCount" => count($reviews)]);
     }
 
     public function services() {

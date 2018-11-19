@@ -24,7 +24,7 @@
     <div class="container my-5">
         <div class="row">
             <div class="col-md-3">
-                <div class="card">
+                <div class="card mb-5">
                     <img class="card-img-top" src="https://source.unsplash.com/600x400/?guy" alt="Card image cap">
                     <div class="card-body">
                         <h4 class="card-title mb-0"><strong>Hi, {{Auth::user()->name}}</strong></h4>
@@ -44,7 +44,7 @@
             </div>
             <div class="col-md-9">
                 <div class="row mb-3">
-                    <div class="col-8">
+                    <div class="col-12">
                         @include('inc.messages')
                         <h3><b>Manage your services</b></h3>
                         <p>Get more information about your services.</p>

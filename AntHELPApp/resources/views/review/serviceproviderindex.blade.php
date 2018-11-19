@@ -27,13 +27,14 @@
                 <div class="card mb-5">
                     <img class="card-img-top" src="https://source.unsplash.com/600x400/?girl" alt="Card image cap">
                     <div class="card-body">
-                        <h4 class="card-title mb-0"><strong>Hi, {{Auth::user()->name}}</strong></h4>
-                        <p class="card-text">{{Auth::user()->address}}</p>
+                        <h4 class="card-title mb-0"><strong>Hi, {{Auth::guard('serviceprovider')->user()->name}}</strong></h4>
+                        <p class="card-text">{{Auth::guard('serviceprovider')->user()->address}}</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><a class="text-info" href="{{route('home')}}">My Account</a></li>
-                        <li class="list-group-item"><a class="text-info" href="{{action('HomeController@services')}}">Services</a></li>
-                        <li class="list-group-item active"><a class="text-white" href="{{action('ReviewController@index')}}">Reviews</a></li>
+                        <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.dashboard')}}">My Account</a></li>
+                        <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.services')}}">Services</a></li>
+                        <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.servicerequests')}}">Services Requests</a></li>
+                        <li class="list-group-item active"><a class="text-white" href="{{action('ReviewController@indexForServiceProvider')}}">Reviews</a></li>
                         <li class="list-group-item">
                             <a class="" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <strong>{{ __('Logout') }}</strong>
@@ -48,7 +49,7 @@
                     <div class="col-12">
                         @include('inc.messages')
                         <h3><b>Your Reviews</b></h3>
-                        <p>Let others know about your experience.</p>
+                        <p>Interact with your customers!</p>
                     </div>
                 </div>
                 <div class="card no-shadow">
@@ -113,7 +114,16 @@
                                                                 <div class="col">
                                                                     <p class="text-muted mb-0">Service provider feedback</p>
                                                                     @if ($review->service_provider_reply == null)
-                                                                        <p><strong>Service provider has not provided any feedback yet.</strong></p>
+                                                                        @if (Auth::guard('serviceprovider')->check())
+                                                                            <div class="input-group mb-3">
+                                                                                <input type="text" class="form-control" placeholder="Enter your feedback here" name="service_provider_reply">
+                                                                                <div class="input-group-append">
+                                                                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        @else
+                                                                            <p><strong>Service provider has not provided any feedback yet.</strong></p>
+                                                                        @endif
                                                                     @else
                                                                         <p><strong>{{$review->service_provider_reply}}</strong></p>
                                                                     @endif

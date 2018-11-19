@@ -34,6 +34,7 @@
                         <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.dashboard')}}">My Account</a></li>
                         <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.services')}}">Services</a></li>
                         <li class="list-group-item active"><a class="text-white" href="{{route('serviceprovider.servicerequests')}}">Services Requests</a></li>
+                        <li class="list-group-item"><a class="text-info" href="{{action('ReviewController@indexForServiceProvider')}}">Reviews</a></li>
                         <li class="list-group-item">
                             <a class="" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <strong>{{ __('Logout') }}</strong>
@@ -51,6 +52,9 @@
                         <ul class="nav nav-tabs card-header-tabs" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all">All ({{count($serviceRequests)}})</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="archive-tab" data-toggle="tab" href="#completed">Completed ({{count($serviceRequests->where('status', 'COMPLETED'))}})</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="archive-tab" data-toggle="tab" href="#pending">Pending ({{count($serviceRequests->where('status', 'PENDING'))}})</a>
@@ -86,6 +90,17 @@
                             @foreach ($serviceRequests as $svc_request)
                                 @include('components.servicerequestcard', ['svc_request' => $svc_request])
                             @endforeach
+                        </div>
+                        <div class="tab-pane fade" id="completed">
+                            @if (count($serviceRequests->where('status', 'COMPLETED')) > 0)
+                                @foreach ($serviceRequests as $svc_request)
+                                    @if ($svc_request->status == "COMPLETED")
+                                        @include('components.servicerequestcard', ['svc_request' => $svc_request])
+                                    @endif
+                                @endforeach
+                            @else
+                                <h5 class="text-center">No completed service requests yet.</h5>
+                            @endif
                         </div>
                         <div class="tab-pane fade" id="pending">
                             @if (count($serviceRequests->where('status', 'PENDING')) > 0)

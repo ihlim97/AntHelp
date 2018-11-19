@@ -32,6 +32,7 @@ Route::prefix('serviceprovider')->group(function() {
     Route::get('/', 'ServiceProviderController@index')->name('serviceprovider.dashboard');
     Route::get("/services", "ServiceProviderController@services")->name('serviceprovider.services');
     Route::get("/servicerequests", "ServiceProviderController@serviceRequests")->name('serviceprovider.servicerequests');
+    Route::get("/review", "ReviewController@indexForServiceProvider")->name('serviceprovider.reviews');
 });
 
 // Route::group(['middleware' => ['auth']], function() {
