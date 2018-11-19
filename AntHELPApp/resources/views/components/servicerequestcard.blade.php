@@ -11,7 +11,7 @@
                 @if($svc_request->status == 'ACCEPTED')
                     <div class="badge badge-info">{{$svc_request->status}}</div>
                 @endif
-                @if($svc_request->status == 'DECLINED')
+                @if($svc_request->status == 'DECLINED' || $svc_request->status == 'CANCELLED')
                     <div class="badge badge-danger">{{$svc_request->status}}</div>
                 @endif
                 @if($svc_request->status == 'EXPIRED')
@@ -72,12 +72,13 @@
                                     <a class="dropdown-item disabled text-muted">Accept</a>
                                     <a class="dropdown-item disabled text-muted">Decline</a>
                                 @endif
+
                                 <div class="dropdown-divider"></div>
 
-                                @if ($svc_request->status != 'COMPLETED')
-                                    <a class="dropdown-item disabled text-muted">Review</a>
+                                @if ($svc_request->status == 'COMPLETED')
+                                    <a class="dropdown-item" href="{{action('ReviewController@index')}}">Review</a>
                                 @else
-                                    <a class="dropdown-item disabled" href="review.html">Review</a>
+                                    <a class="dropdown-item disabled text-muted">Review</a>
                                 @endif
 
                             </div>

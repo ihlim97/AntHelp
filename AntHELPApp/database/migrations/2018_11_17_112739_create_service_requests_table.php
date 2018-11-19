@@ -20,11 +20,13 @@ class CreateServiceRequestsTable extends Migration
             $table->dateTime('start_date_time');
             $table->dateTime('end_date_time');
             $table->string('status');
-            $table->string('note');
+            $table->string('note')->nullable();
             $table->string('duration');
             $table->decimal('total', 9, 2);
             $table->string('location');
+            $table->string('reason')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -369,3 +369,72 @@
 .not-clickable {
     pointer-events: none;
 }
+
+/* Review */
+.review {
+    .info-block {
+
+        .profile {
+            display: flex;
+            align-items: center;
+
+            img {
+                margin-right: 5px;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+}
+
+/* Rating system */
+
+.star-rating {
+    font-family: 'FontAwesome';
+    >fieldset {
+        border: none;
+        display: inline-block;
+        &:not(:checked) {
+            >input {
+                position: absolute;
+                top: -9999px;
+                clip: rect(0, 0, 0, 0);
+            }
+            >label {
+                float: right;
+                width: 1em;
+                padding: 0 .05em;
+                overflow: hidden;
+                white-space: nowrap;
+                cursor: pointer;
+                font-size: 150%;
+                color: #f1c40f;
+                margin-bottom: 0;
+                &:before {
+                    content: '\f006  ';
+                }
+                &:hover,
+                &:hover~label {
+                    color: #f39c12;
+                    text-shadow: 0 0 3px #f39c12;
+                    &:before {
+                        content: '\f005  ';
+                    }
+                }
+            }
+        }
+        >input:checked {
+            &~label {
+                &:before {
+                    content: '\f005  ';
+                }
+            }
+        }
+        >label:active {
+            position: relative;
+            top: 2px;
+        }
+    }
+}

@@ -108,6 +108,7 @@ class ServiceRequestController extends Controller
 
             if($serviceReq !== null) {
                 $serviceReq->status = $request->status;
+                $serviceReq->reason = $request->reason;
                 $serviceReq->save();
                 return response()->json(['success' => true, 'error_msg' => '', 'service_request' => $serviceReq]);
             }
@@ -125,6 +126,9 @@ class ServiceRequestController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $serviceRequest = ServiceRequest::find($id);
+        $serviceRequest->delete();
+
+        return redirect()->back()->with('success', 'The service request has been deleted');
     }
 }

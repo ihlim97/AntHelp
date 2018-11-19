@@ -17,8 +17,12 @@ Route::get('/', 'PagesController@index');
 
 Route::resource('services', 'ServicesController');
 Route::resource('serviceRequests', 'ServiceRequestController');
+Route::resource('review', 'ReviewController');
+
+Route::post('/servicerequests', 'ServiceRequestController@store')->name('servicerequest.store');
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/myservices', 'HomeController@services');
 
 Route::prefix('serviceprovider')->group(function() {
     Route::get('/login', 'Auth\ServiceProviderLoginController@showLoginForm')->name('serviceprovider.login');
@@ -30,6 +34,5 @@ Route::prefix('serviceprovider')->group(function() {
     Route::get("/servicerequests", "ServiceProviderController@serviceRequests")->name('serviceprovider.servicerequests');
 });
 
-Route::post('/servicerequests', 'ServiceRequestController@store')->name('servicerequest.store');
 // Route::group(['middleware' => ['auth']], function() {
 // });

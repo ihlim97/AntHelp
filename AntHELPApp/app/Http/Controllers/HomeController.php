@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\ServiceRequest;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,24 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $senior = Auth::user();
+        $serviceRequests = $senior->serviceRequests()->get();
+
+        return view('home')->with(["serviceRequests" => $serviceRequests]);
+    }
+
+    public function services() {
+        $senior = Auth::user();
+        $serviceRequests = $senior->serviceRequests()->get()->sortByDesc('updated_at');
+
+        // foreach($serviceRequests as $serviceRequest) {
+        //     if (Carbon::parse($serviceRequest->start_date_time)->greaterThan(Carbon::now())) {
+        //         if($serviceRequest->status == "PENDING") {
+        //             $serviceRequest->status = "EXPIRED";
+        //             $serviceRequest->save();
+        //         }
+        //     }
+        // }
+        return view("seniorcitizen.services")->with(["serviceRequests" => $serviceRequests]);
     }
 }

@@ -27,4 +27,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function serviceRequests() {
+        return $this->hasMany('App\ServiceRequest', 'user_id');
+    }
 }

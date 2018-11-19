@@ -12,7 +12,7 @@ class Service extends Model
     ];
 
     public function serviceProvider() {
-        return $this->belongsTo('App\ServiceProvider', 'id');
+        return $this->belongsTo('App\ServiceProvider', 'user_id');
     }
 
     public function serviceRequests() {
