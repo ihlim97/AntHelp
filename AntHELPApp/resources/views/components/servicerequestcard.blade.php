@@ -14,6 +14,9 @@
                 @if($svc_request->status == 'DECLINED')
                     <div class="badge badge-danger">{{$svc_request->status}}</div>
                 @endif
+                @if($svc_request->status == 'EXPIRED')
+                    <div class="badge badge-secondary">{{$svc_request->status}}</div>
+                @endif
                 <h3 class="card-title text-dark">{{App\Service::find($svc_request->service_id)->category}}</h3>
                 <p class="card-text">{{App\Service::find($svc_request->service_id)->description}}</p>
             </div>
@@ -31,13 +34,13 @@
                         <div class="col-4">
                             <div class="metadata">
                                 <p class="card-subtitle text-muted">Start Date</p>
-                                <h5 class="card-title text-dark">{{Carbon\Carbon::parse($svc_request->start_date_time)->toFormattedDateString()}}</h5>
+                                <h5 class="card-title text-dark">{{Carbon\Carbon::parse($svc_request->start_date_time)->format('M j, H:i A')}}</h5>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="metadata">
                                 <p class="card-subtitle text-muted">End Date</p>
-                                <h5 class="card-title text-dark">{{Carbon\Carbon::parse($svc_request->end_date_time)->toFormattedDateString()}}</h5>
+                                <h5 class="card-title text-dark">{{Carbon\Carbon::parse($svc_request->end_date_time)->format('M j, H:i A')}}</h5>
                             </div>
                         </div>
                         <div class="col-4">
@@ -66,13 +69,13 @@
                                     <a class="dropdown-item" data-toggle="modal" data-target="#request-confirmation" data-service-request-id="{{$svc_request->id}}" data-status="ACCEPTED">Accept</a>
                                     <a class="dropdown-item" data-toggle="modal" data-target="#request-confirmation" data-service-request-id="{{$svc_request->id}}" data-status="DECLINED">Decline</a>
                                 @else
-                                    <a class="dropdown-item disabled">Accept</a>
-                                    <a class="dropdown-item disabled">Decline</a>
+                                    <a class="dropdown-item disabled text-muted">Accept</a>
+                                    <a class="dropdown-item disabled text-muted">Decline</a>
                                 @endif
                                 <div class="dropdown-divider"></div>
 
                                 @if ($svc_request->status != 'COMPLETED')
-                                    <a class="dropdown-item disabled">Review</a>
+                                    <a class="dropdown-item disabled text-muted">Review</a>
                                 @else
                                     <a class="dropdown-item disabled" href="review.html">Review</a>
                                 @endif

@@ -38,10 +38,6 @@
                             <a class="" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <strong>{{ __('Logout') }}</strong>
                             </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
                         </li>
                     </ul>
                 </div>
@@ -65,12 +61,15 @@
                             <li class="nav-item">
                                 <a class="nav-link" id="archive-tab" data-toggle="tab" href="#declined">Declined ({{count($serviceRequests->where('status', 'DECLINED'))}})</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="archive-tab" data-toggle="tab" href="#expired">Expired ({{count($serviceRequests->where('status', 'EXPIRED'))}})</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="card-body tab-content">
                         <div class="tab-pane fade show active" id="all">
                             {{-- Sorter --}}
-                            <form class="d-flex align-items-center justify-content-end sorter mb-3">
+                            {{-- <form class="d-flex align-items-center justify-content-end sorter mb-3">
                                 <p class="m-0 mr-3">SORT BY</p>
                                 <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
@@ -82,7 +81,7 @@
                                         <li class="dropdown-item"><a href="{{action("ServicesController@index", ['service_type' => request('service_type'), 'location' => request('location'), 'time' => request('time'), 'sort' => 'Price'])}}">Price</a></li>
                                     </ul>
                                 </div>
-                            </form>
+                            </form> --}}
 
                             @foreach ($serviceRequests as $svc_request)
                                 @include('components.servicerequestcard', ['svc_request' => $svc_request])
@@ -119,6 +118,17 @@
                                 @endforeach
                             @else
                                 <h5 class="text-center">No declined service requests yet.</h5>
+                            @endif
+                        </div>
+                        <div class="tab-pane fade" id="expired">
+                            @if (count($serviceRequests->where('status', 'EXPIRED')) > 0)
+                                @foreach ($serviceRequests as $svc_request)
+                                    @if ($svc_request->status == "EXPIRED")
+                                        @include('components.servicerequestcard', ['svc_request' => $svc_request])
+                                    @endif
+                                @endforeach
+                            @else
+                                <h5 class="text-center">No expired service requests yet.</h5>
                             @endif
                         </div>
                     </div>

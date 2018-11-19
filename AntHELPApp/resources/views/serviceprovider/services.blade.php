@@ -32,16 +32,12 @@
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.dashboard')}}">My Account</a></li>
-                        <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.services')}}">Services</a></li>
+                        <li class="list-group-item active"><a class="text-white" href="{{route('serviceprovider.services')}}">Services</a></li>
                         <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.servicerequests')}}">Services Requests</a></li>
-                        <li class="list-group-item active">
-                            <a class="text-white" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <li class="list-group-item">
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <strong>{{ __('Logout') }}</strong>
                             </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
                         </li>
                     </ul>
                 </div>
