@@ -23,11 +23,11 @@ include("header.php");
             <div class="position-relative py-3">
                 <h4>Update Request</h4>
             </div>
-            <form action="action-update-request.php?id=<?php echo $_GET['id']?>" method="post">
+            <form action="action-update-service-request.php?id=<?php echo $_GET['id']?>" method="post">
                 <div class="form-group">
                     <textarea name="request_notes" class="form-control" placeholder="Update notes"></textarea>
                 </div>
-                <button type="submit" class="btn w-100 btn-danger mb-3">Update Service</a>
+                <button type="submit" class="btn w-100 btn-danger mb-3">Update Request</a>
             </form>
         </div>
     </div>

@@ -30,24 +30,24 @@
 				</li>
 			</ul>';
 
-	if (!isset($_SESSION['username'])){
+	if (!isset($_SESSION['username'])){ // user not yet login
     	echo '<div class="ml-auto" >
                 <a href="signup.php" class="btn btn-outline-light mr-3">SIGNUP</a>
                 <a href="login.php" class="btn btn-primary">LOGIN</a>
          	</div>';
     }
-	else {
+	else { // user logged in
 		echo '<div class="dropdown user-info ml-auto">
                 <button class="btn btn-link text-white dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
         $username = $_SESSION["username"];
         echo explode(" ",trim($username))[0];
     	echo '	</button>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="#">My Account</a>';
-                    if($_SESSION['userType'] == 'provider'){
-                    	echo '<a class="dropdown-item" href="provider-manage-requests.php">Manage Requests</a>';
+                <div class="dropdown-menu dropdown-menu-right">';
+                    if($_SESSION['userType'] == 'provider'){ // if user is a provider
+                    	echo '<a class="dropdown-item" href="provider-manage-requests.php">Manage Requests</a>
+                         <a class="dropdown-item" href="manage-services.php">Manage Services</a>';
                     }
-                    elseif($_SESSION['userType'] == 'senior'){
+                    elseif($_SESSION['userType'] == 'senior'){ // if user is a senior
                     	echo '<a class="dropdown-item" href="manage-requests.php">Manage Requests</a>';
                     }
                     echo '<a class="dropdown-item" href="logout.php">Logout</a>

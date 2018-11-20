@@ -22,7 +22,7 @@ include("header.php");
 			<div class="col">
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb bg-white m-0">
-						<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+						<li class="breadcrumb-item"><a href="index.php">Home</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Manage Requests</li>
 					</ol>
 				</nav>
@@ -133,7 +133,10 @@ include("header.php");
 														echo '<a class="dropdown-item" href="action-accept-request.php?id='.$row['request_id'].'">Mark the Request as Complete</a>';
 													}
 													if($row['status'] == 'Completed'){
-														echo '<a class="dropdown-item" href="review.php?id='.$row['request_id'].'">Write Review</a>';
+														echo '<a class="dropdown-item" href="review.php?id='.$row['request_id'].'&sid='.$row['service_id'].'">Write Review</a>';
+													}
+													if($row['status'] == 'Declined'){
+														echo '<a class="dropdown-item" href="action-remove-request.php?id='.$row['request_id'].'&sid='.$row['service_id'].'">Delete</a>';
 													}
 													echo '
 												</div>
@@ -148,6 +151,12 @@ include("header.php");
 						</ul>
 					</div>';
 				}
+			}
+			else {
+				echo '
+				<div class="mt-5">
+					<p class="mt-3">You have not submit any request.</p>
+				</div>';
 			}
 
 function getServiceType($serviceId){
