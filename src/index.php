@@ -27,16 +27,17 @@ include("header.php");
                                         <option value="20181010 13:00">Today, 1:00pm</option>
                                         <option value="20181010 14:00">Today, 2:00pm</option>
                                     </select>
-                                    <a href="search.html" class="btn btn-success mt-3 mt-lg-0 text-white py-2 px-3">Search</a>
+                                    <a href="search.php" class="btn btn-success mt-3 mt-lg-0 text-white py-2 px-3">Search</a>
                                 </form>
                             </div>
                         </div>
-                        <div class="col-12 text-center text-white">
+                        <?php if(!isset($_SESSION['username'])){
+                        echo 
+                        '<div class="col-12 text-center text-white">
                             <h1>Are you a service provider?</h1>
-                            <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#login-modal">
-                            	Post Services FREE
-                        	</button>
-                        </div>
+                            <a href="login.php" class="btn btn-outline-light">Post Services FREE</a>
+                        </div>';
+                        } ?>
                     </div>
                 </div>
             </div>
@@ -52,21 +53,21 @@ include("header.php");
                         <div class="slider-item">
                             <div class="content h-100 w-100 d-flex flex-column justify-content-center align-items-baseline">
                                 <h2 class="mb-3 text-white">Get the best services <br class="hidden-xs">At the best prices.</h2>
-                                <a href="" class="btn btn-primary">Search for a Service</a>
+                                <a href="search.php" class="btn btn-primary">Search for a Service</a>
                             </div>
                             <img class="w-100" src="https://source.unsplash.com/1440x600/?happy" alt="Placeholder">
                         </div>
                         <div class="slider-item">
                             <div class="content h-100 w-100 d-flex flex-column justify-content-center align-items-baseline">
                                 <h2 class="mb-3 text-white">Get the best services <br class="hidden-xs">At the best prices.</h2>
-                                <a href="" class="btn btn-primary">Search for a Service</a>
+                                <a href="search.php" class="btn btn-primary">Search for a Service</a>
                             </div>
                             <img class="w-100" src="https://source.unsplash.com/1440x600/?cleaning" alt="Placeholder">
                         </div>
                         <div class="slider-item">
                             <div class="content h-100 w-100 d-flex flex-column justify-content-center align-items-baseline">
                                 <h2 class="mb-3 text-white">Get the best services <br class="hidden-xs">At the best prices.</h2>
-                                <a href="" class="btn btn-primary">Search for a Service</a>
+                                <a href="search.php" class="btn btn-primary">Search for a Service</a>
                             </div>
                             <img class="w-100" src="https://source.unsplash.com/1440x600/?meal" alt="Placeholder">
                         </div>
@@ -141,7 +142,7 @@ include("header.php");
         </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Login Modal -->
 	<div class="modal fade" id="login-modal" tabindex="-1" aria-hidden="true" role="dialog">
 	    <div class="modal-dialog modal-dialog-centered">
 	        <!-- Modal content-->
@@ -150,25 +151,25 @@ include("header.php");
 	            <div class="modal-body">
 	                <img src="assets/img/logo-primary.svg" width="150" alt="AntHELP Logo">
 	                <div class="position-relative py-3">
-	                    <h4>Sign in</h4>
+	                    <h4>Login</h4>
 	                </div>
 	                <form action="needs-validation" novalidate>
 	                    <div class="form-group">
-	                        <input required type="email" name="login-email" class="form-control" placeholder="E-mail address">
+	                        <input required type="email" name="email" class="form-control" placeholder="E-mail address">
                            	<div class="valid-feedback">Looks Good</div>
                             <div class="invalid-feedback">Please enter an email.</div>
 	                    </div>
 	                    <div class="form-group">
-	                        <input required type="password" name="login-password" class="form-control" placeholder="Create a password">
+	                        <input required type="password" name="password" class="form-control" placeholder="Password">
                             <div class="valid-feedback">Looks Good</div>
                             <div class="invalid-feedback">Please enter a password.</div>
 	                    </div>
-	                    <button type="button" class="btn w-100 btn-danger mb-3" onclick="validateEmail()">Next</button>
+	                    <a href="action-login.php" class="btn w-100 btn-danger mb-3">Next</a>
 	                </form>
 	                <p class="text-right"><a href="#">Forgot Password?</a></p>
 	                <hr>
 	                <p class="text-center m-0">Don’t have an account? Sign up as </p>
-                    <p class="text-center"><b><span><a class="text-info" href="senior-signup-page.html">Senior</a></span> | <span><a class="text-info" href="service-provider-signup-page.html">Service Provider</a></span></b></p>
+                    <p class="text-center"><b><span><a class="text-info" href="signup.php">Senior</a></span> | <span><a class="text-info" href="provider-signup.php">Service Provider</a></span></b></p>
 	            </div>
 	        </div>
 	    </div>
