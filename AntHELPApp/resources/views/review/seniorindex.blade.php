@@ -70,8 +70,11 @@
                                             <div class="review border rounded pt-3 px-3">
                                                 <div class="row border-bottom">
                                                     <div class="col">
-                                                        <div class="d-flex justify-content-between">
-                                                            <h3>{{ $review->serviceRequest->service['category']}}</h3>
+                                                        <div class="d-flex flex-column flex-md-row justify-content-between">
+                                                            <div class="d-flex align-items-center">
+                                                                <h3>{{ $review->serviceRequest->service['category']}}</h3>
+                                                                <p class="badge badge-light text-muted small ml-2">for request #{{$review->serviceRequest->id}}</p>
+                                                            </div>
                                                             <p class="text-muted">Service completed {{$review->serviceRequest['updated_at']->diffForHumans()}}</p>
                                                         </div>
                                                     </div>
