@@ -25,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        date_default_timezone_set('Asia/Kuala_Lumpur');
         if($this->app->environment('local', 'testing')) {
             $this->app->register(DuskServiceProvider::class);
         }

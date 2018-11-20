@@ -37,14 +37,14 @@ class HomeController extends Controller
         $senior = Auth::user();
         $serviceRequests = $senior->serviceRequests()->get()->sortByDesc('updated_at');
 
-        // foreach($serviceRequests as $serviceRequest) {
-        //     if (Carbon::parse($serviceRequest->start_date_time)->greaterThan(Carbon::now())) {
-        //         if($serviceRequest->status == "PENDING") {
-        //             $serviceRequest->status = "EXPIRED";
-        //             $serviceRequest->save();
-        //         }
-        //     }
-        // }
+        foreach($serviceRequests as $serviceRequest) {
+            if (Carbon::parse($serviceRequest->start_date_time)->lt(Carbon::now())) {
+                if($serviceRequest->status == "PENDING") {
+                    $serviceRequest->status = "EXPIRED";
+                    $serviceRequest->save();
+                }
+            }
+        }
         return view("seniorcitizen.services")->with(["serviceRequests" => $serviceRequests]);
     }
 }

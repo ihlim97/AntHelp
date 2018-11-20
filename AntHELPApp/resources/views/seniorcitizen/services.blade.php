@@ -79,35 +79,35 @@
                                 @include('components.servicerequestpanel', ['svc_request' => $svc_request])
                             @endforeach
                         </div>
-                        <div class="tab-pane fade show" id="pending">
+                        <div class="tab-pane fade" id="pending">
                             @foreach ($serviceRequests as $svc_request)
                                 @if($svc_request->status == 'PENDING')
                                     @include('components.servicerequestpanel', ['svc_request' => $svc_request])
                                 @endif
                             @endforeach
                         </div>
-                        <div class="tab-pane fade show" id="completed">
+                        <div class="tab-pane fade" id="completed">
                             @foreach ($serviceRequests as $svc_request)
                                 @if($svc_request->status == 'COMPLETED')
                                     @include('components.servicerequestpanel', ['svc_request' => $svc_request])
                                 @endif
                             @endforeach
                         </div>
-                        <div class="tab-pane fade show" id="accepted">
+                        <div class="tab-pane fade" id="accepted">
                             @foreach ($serviceRequests as $svc_request)
                                 @if($svc_request->status == 'ACCEPTED')
                                     @include('components.servicerequestpanel', ['svc_request' => $svc_request])
                                 @endif
                             @endforeach
                         </div>
-                        <div class="tab-pane fade show" id="expired">
+                        <div class="tab-pane fade" id="expired">
                             @foreach ($serviceRequests as $svc_request)
                                 @if($svc_request->status == 'EXPIRED')
                                     @include('components.servicerequestpanel', ['svc_request' => $svc_request])
                                 @endif
                             @endforeach
                         </div>
-                        <div class="tab-pane fade show" id="cancelled">
+                        <div class="tab-pane fade" id="cancelled">
                             @foreach ($serviceRequests as $svc_request)
                                 @if($svc_request->status == 'CANCELLED')
                                     @include('components.servicerequestpanel', ['svc_request' => $svc_request])

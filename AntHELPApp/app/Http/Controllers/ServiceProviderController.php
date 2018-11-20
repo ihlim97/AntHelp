@@ -36,12 +36,12 @@ class ServiceProviderController extends Controller
     }
 
     public function serviceRequests() {
-        $serviceProvider = Auth::user();
+        $serviceProvider = Auth::guard('serviceprovider')->user();
 
         $serviceRequests = $serviceProvider->serviceRequests()->get();
 
         foreach($serviceRequests as $serviceRequest) {
-            if (Carbon::parse($serviceRequest->start_date_time)->lessThan(Carbon::now())) {
+            if (Carbon::parse($serviceRequest->start_date_time)->lt(Carbon::now())) {
                 if($serviceRequest->status == "PENDING") {
                     $serviceRequest->status = "EXPIRED";
                     $serviceRequest->save();
