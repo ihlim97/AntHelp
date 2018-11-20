@@ -128,27 +128,36 @@ include("header.php");
 												<button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
 												 aria-haspopup="true" aria-expanded="false">
 													<span class="fas fa-cog"></span>
-												</button>
-												<div class="dropdown-menu">
+												</button>';
+												if($row['status'] == "Pending"){
+													echo '<div class="dropdown-menu">
 													<a class="dropdown-item" href="action-accept-request.php?id='.$row['request_id'].'">Accept</a>
-													<a class="dropdown-item" href="#">Decline</a>
 													<div class="dropdown-divider"></div>
-													<a class="dropdown-item" href="review.php">Review</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<ul class="list-group list-group-flush">
-							<li class="list-group-item">Remarks: '.$row['notes'].'</li>
-						</ul>
-					</div>';
+													<a class="dropdown-item" href="action-decline-request.php?id='.$row['request_id'].'">Decline</a>
+												</div>';
+												}
+												else{
+													echo '<div class="dropdown-menu">
+													<a class="dropdown-item disabled not-clickable" href="action-accept-request.php?id='.$row['request_id'].'">Accept</a>
+													<div class="dropdown-divider"></div>
+													<a class="dropdown-item disabled not-clickable" href="action-decline-request.php?id='.$row['request_id'].'">Decline</a>
+												</div>';
+												}
+												echo '</div></div></div></div></div></div>
+													<ul class="list-group list-group-flush">
+														<li class="list-group-item">Remarks: '.$row['notes'].'</li>
+													</ul>
+													</div>';	
 				        		}
 				        	}
-				        }
-				   	}
+						}
+					}
+					else{
+						echo '
+						<div class="mt-5">
+							<p class="mt-3">You have not submit any request.</p>
+						</div>';
+					}
 
 function getSeniorName($userId){
    	$con = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);

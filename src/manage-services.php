@@ -2,34 +2,12 @@
 session_start();
 include("header.php"); 
 ?>
-        <div class="banner banner-medium d-flex align-items-center" style="background-image: url('assets/img/banners/handhold.jpg')">
+        <div class="banner banner-short d-flex align-items-end" style="background-image: url('assets/img/banners/handhold.jpg')">
             <div class="wrapper">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 my-4">
-                            <div class="service-curator card p-5">
-                                <h3 class="text-center">Refine your search</h3>
-                                <form class="d-flex justify-content-center flex-column flex-lg-row" action="">
-                                    <h3>I need</h3>
-                                    <select name="service_type">
-                                        <option value="cleaning">Cleaning Services</option>
-                                        <option value="nursing">Nursing Services</option>
-                                        <option value="meal-catering">Meal Catering Services</option>
-                                    </select>
-                                    <h3>at</h3>
-                                    <select name="location">
-                                        <option value="PJ">Petaling Jaya</option>
-                                        <option value="BKTD">Bukit Damansara</option>
-                                        <option value="Kepong">Kepong</option>
-                                    </select>
-                                    <h3>on</h3>
-                                    <select name="time">
-                                        <option value="20181010 13:00">Today, 1:00pm</option>
-                                        <option value="20181010 14:00">Today, 2:00pm</option>
-                                    </select>
-                                    <a href="search.html" class="btn btn-success mt-3 mt-lg-0 text-white py-2 px-3">Search</a>
-                                </form>
-                            </div>
+                        <div class="col-12 my-5 text-center text-white">
+                            <h1>Manage Services</h1>
                         </div>
                     </div>
                 </div>
@@ -44,21 +22,11 @@ include("header.php");
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Search</li>
+                            <li class="breadcrumb-item active" aria-current="page">Manage Services</li>
                         </ol>
                     </nav>
                     <div class="d-flex align-items-center">
-                        <p class="m-0 mr-3">SORT BY</p>
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                Popularity
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Price</a>
-                                <a class="dropdown-item" href="#">Rating</a>
-                            </div>
-                        </div>
+                        <a href="provider-create-service.php" class="btn btn-primary">Create a new Service</a>
                     </div>
                 </div>
             </div>
@@ -71,15 +39,14 @@ include("header.php");
             <div class="col-12 cards-container">
 <?php 
     include("config.php");
-    $sql = "SELECT * FROM services";
+    $userId = $_SESSION['userId'];
+    $sql = "SELECT * FROM services WHERE user_id = '$userId'";
     $services = mysqli_query($con, $sql);
     if (mysqli_num_rows($services) > 0) {
-        echo '
-        <div class="col-12">
-                <p>'.mysqli_num_rows($services).' results found.</p>
-        </div>';
+        echo '<div class="col-12">
+                <p>You have posted '.mysqli_num_rows($services).' service(s).</p>
+            </div>';
         while($row = mysqli_fetch_assoc($services)) {
-        $row['service_type'];
         echo '
             <div class="card service-card mb-3">
                 <div class="row no-gutters">
@@ -88,9 +55,8 @@ include("header.php");
                     </div>
                     <div class="col">
                         <div class="card-body">
-                            <h6 class="card-subtitle text-info">NEW!</h6>
                             <h3 class="card-title text-dark"><b>'.$row['service_type'].'</b></h3>
-                            <a href=service-request.php?id='.$row['service_id'].' class="btn btn-lg btn-success cta text-white d-none d-sm-block">Book Now</a>
+                            <a href=update-service.php?id='.$row['service_id'].' class="btn btn-secondary cta text-white d-none d-sm-block">Update Service</a>
                             <div class="rating text-warning">
                                 <span class="fas fa-star"></span>
                                 <span class="fas fa-star"></span>
@@ -130,7 +96,7 @@ include("header.php");
                             </li>
                             <li class="list-group-item">
                                 <div class="row no-gutters">
-                                <a href="review.php?sid='.$row['service_id'].'">View Review for this Service</a>
+                                <a href="review.php?sid='.$row['service_id'].'">View Review</a>
                                 </div>
                             </li>
                         </ul>
