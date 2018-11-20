@@ -94,16 +94,26 @@
                                                                     @endif
                                                                 </div>
                                                                 <div class="col-sm-9">
-                                                                    @if ($review->user_comment != null || $review->user_comment != '')
-                                                                        <p><strong>{{$review->user_comment == '' ? 'User did not provide a feedback' : $review->user_comment}}</strong></p>
-                                                                    @else
+                                                                    @if ($review->user_comment == '')
+                                                                        <p><strong>User did not provide a feedback yet</strong></p>
+                                                                    @elseif ($review->user_comment == null)
                                                                         <textarea name="user_comment" cols="30" rows="1" class="form-control" placeholder="Write a review"></textarea>
+                                                                    @elseif ($review->user_comment != null)
+                                                                        <p><strong>{{$review->user_comment}}</strong></p>
                                                                     @endif
                                                                     <div class="d-flex justify-content-between mt-2">
-                                                                        @include('components.rating')
-                                                                        @if ($review->user_comment == null && $review->user_rating == null)
-                                                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                                                        @if ($review->user_rating == null)
+                                                                            <p>User has not rated the service</p>
+                                                                        @else
+                                                                            @include('components.rating')
                                                                         @endif
+
+                                                                        @if(!Auth::guard('serviceprovider')->check())
+                                                                            @if ($review->user_comment == null && $review->user_rating == null)
+                                                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                                            @endif
+                                                                        @endif
+
                                                                     </div>
                                                                 </div>
                                                             </div>

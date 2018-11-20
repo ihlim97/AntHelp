@@ -153,7 +153,7 @@ class ReviewController extends Controller
         }
 
         return view('review.serviceproviderindex')
-            ->with(["reviews" => $reviews,
+            ->with(["reviews" => $reviews->sortByDesc('created_at'),
                     "pending_count" => count(Auth::guard('serviceprovider')->user()->serviceRequests->where('status', 'PENDING'))]);
     }
 }

@@ -82,7 +82,7 @@
                                 <div class="dropdown-divider"></div>
 
                                 @if ($svc_request->status == 'COMPLETED')
-                                    <a class="dropdown-item" href="{{action('ReviewController@index')}}">Review</a>
+                                    <a class="dropdown-item" href="{{route('serviceprovider.reviews')}}">Review</a>
                                 @else
                                     <a class="dropdown-item disabled text-muted">Review</a>
                                 @endif
