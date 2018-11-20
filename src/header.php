@@ -47,7 +47,7 @@
                     if($_SESSION['userType'] == 'provider'){
                     	echo '<a class="dropdown-item" href="provider-manage-requests.php">Manage Requests</a>';
                     }
-                    else{
+                    elseif($_SESSION['userType'] == 'senior'){
                     	echo '<a class="dropdown-item" href="manage-requests.php">Manage Requests</a>';
                     }
                     echo '<a class="dropdown-item" href="logout.php">Logout</a>
