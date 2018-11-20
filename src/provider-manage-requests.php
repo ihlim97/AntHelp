@@ -206,17 +206,28 @@ include("header.php");
 					<?php 
     				include("config.php");
     				$userId = $_SESSION['userId'];
-				    $sql = "SELECT * FROM requests WHERE user_id = '$userId'";
-				    $request = mysqli_query($con, $sql);
-				    if (mysqli_num_rows($request) > 0) {
-				        while($row = mysqli_fetch_assoc($request)) {
-				        echo '<div class="card service-card-2 mb-3">
+				    $sql = "SELECT * FROM services WHERE user_id = '$userId'";
+				    $services = mysqli_query($con, $sql);
+				    if (mysqli_num_rows($services) > 0) {
+				        while($row = mysqli_fetch_assoc($services)) {
+				        	$serviceType = $row['service_type'];
+				        	$serviceDesc = $row['service_description'];
+				        	$serviceId = $row['service_id'];
+				        	$sql2 = "SELECT * FROM requests WHERE service_id = '$serviceId'";
+				        	$requests = mysqli_query($con, $sql2);
+				        	if (mysqli_num_rows($requests) > 0) {
+				        		while($row = mysqli_fetch_assoc($requests)) {
+				        			$userId = $row['user_id'];
+				        			$userName = getSeniorName($userId);
+				        			$duration = $row['duration'];
+				        			$totalCharge = calTotalCharge($serviceId,$duration);
+				        			echo '<div class="card service-card-2 mb-3">
 						<div class="row no-gutters">
 							<div class="col-12 col-lg-4">
 								<div class="card-body pb-0">
-									<div class="badge badge-danger">CANCELLED</div>
-									<h3 class="card-title text-dark">Home Cleaning Service</h3>
-									<p class="card-text">Helping seniors clean their homes.</p>
+									<div class="badge badge-danger">'.strtoupper($row['status']).'</div>
+									<h3 class="card-title text-dark">'.$serviceType.'</h3>
+									<p class="card-text">'.$serviceDesc.'</p>
 								</div>
 							</div>
 							<div class="col-12 col-lg-8">
@@ -232,7 +243,7 @@ include("header.php");
 											<div class="col-4">
 												<div class="metadata">
 													<p class="card-subtitle text-muted">Requested By</p>
-													<h5 class="card-title text-dark">Ahmad Ali</h5>
+													<h5 class="card-title text-dark">'.$userName.'</h5>
 												</div>
 											</div>
 											<div class="col-4">
@@ -256,7 +267,7 @@ include("header.php");
 											<div class="col-4">
 												<div class="metadata">
 													<p class="card-subtitle text-muted">Worth</p>
-													<h5 class="card-title text-success">RM240</h5>
+													<h5 class="card-title text-success">RM'.$totalCharge.'</h5>
 												</div>
 											</div>
 										</div>
@@ -269,8 +280,8 @@ include("header.php");
 													<span class="fas fa-cog"></span>
 												</button>
 												<div class="dropdown-menu">
-													<a class="dropdown-item disabled not-clickable" href="#">Accept</a>
-													<a class="dropdown-item disabled not-clickable" href="#">Decline</a>
+													<a class="dropdown-item" href="action-accept-request.php?id='.$row['request_id'].'">Accept</a>
+													<a class="dropdown-item" href="#">Decline</a>
 													<div class="dropdown-divider"></div>
 													<a class="dropdown-item disabled not-clickable" href="review.php">Review</a>
 												</div>
@@ -284,7 +295,40 @@ include("header.php");
 							<li class="list-group-item">Remarks: '.$row['notes'].'</li>
 						</ul>
 					</div>';
-        			}} ?>
+				        		}
+				        	}
+				        }
+				   	}
+
+function getSeniorName($userId){
+   	$con = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+   	if (!$con) {
+  		die("Connection error: " . mysqli_connect_errno());
+  	}
+	$sql = "SELECT name FROM seniors WHERE user_id = '$userId'";
+	$senior = mysqli_query($con, $sql);
+	if (mysqli_num_rows($senior) > 0) {
+		while($row = mysqli_fetch_assoc($senior)) {
+			return $row['name'];
+		}
+	}
+}
+
+function calTotalCharge($serviceId, $duration){
+   	$con = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+   	if (!$con) {
+  		die("Connection error: " . mysqli_connect_errno());
+  	}
+	$sql = "SELECT service_rate FROM services WHERE service_id = '$serviceId'";
+	$services = mysqli_query($con, $sql);
+	if (mysqli_num_rows($services) > 0) {
+		while($row = mysqli_fetch_assoc($services)) {
+			return $row['service_rate'] * $duration;
+		}
+	}
+}
+        			 
+?>
 					
 
 				</div>
@@ -309,4 +353,4 @@ include("header.php");
 	    </div>
 	</div>
 
-<?php include("footer.php"); ?>	
+<?php include("footer.php"); ?>

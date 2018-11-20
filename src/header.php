@@ -43,9 +43,14 @@
         echo explode(" ",trim($username))[0];
     	echo '	</button>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="#">My Account</a>
-                    <a class="dropdown-item" href="manage-requests.php">Manage Requests</a>
-                    <a class="dropdown-item" href="logout.php">Logout</a>
+                    <a class="dropdown-item" href="#">My Account</a>';
+                    if($_SESSION['userType'] == 'provider'){
+                    	echo '<a class="dropdown-item" href="provider-manage-requests.php">Manage Requests</a>';
+                    }
+                    else{
+                    	echo '<a class="dropdown-item" href="manage-requests.php">Manage Requests</a>';
+                    }
+                    echo '<a class="dropdown-item" href="logout.php">Logout</a>
                 </div>
             </div>';
     };
