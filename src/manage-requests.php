@@ -53,170 +53,24 @@ include("header.php");
 			<div class="row pb-4">
 				<div class="col-12">
 
-					<div class="card service-card-2 mb-3">
-						<div class="row no-gutters">
-							<div class="col-12 col-lg-4">
-								<div class="card-body pb-0">
-									<div class="badge badge-success">COMPLETED</div>
-									<h3 class="card-title text-dark">Home Cleaning Service</h3>
-									<p class="card-text">Helping seniors clean their homes.</p>
-								</div>
-							</div>
-							<div class="col-12 col-lg-8">
-								<div class="row">
-									<div class="col-12 col-sm-9">
-										<div class="row mt-4 mb-2 metadata-wrapper">
-											<div class="col-4">
-												<div class="metadata">
-													<p class="card-subtitle text-muted">Job ID#</p>
-													<h5 class="card-title text-dark">ANX5H</h5>
-												</div>
-											</div>
-											<div class="col-4">
-												<div class="metadata">
-													<p class="card-subtitle text-muted">Requested By</p>
-													<h5 class="card-title text-dark">Karen Teh</h5>
-												</div>
-											</div>
-											<div class="col-4">
-												<div class="metadata">
-													<p class="card-subtitle text-muted">Job Date</p>
-													<h5 class="card-title text-dark">Sep 27, 2018</h5>
-												</div>
-											</div>
-											<div class="col-4">
-												<div class="metadata">
-													<p class="card-subtitle text-muted">Job Time</p>
-													<h5 class="card-title text-dark">1:00 PM</h5>
-												</div>
-											</div>
-											<div class="col-4">
-												<div class="metadata">
-													<p class="card-subtitle text-muted">Duration</p>
-													<h5 class="card-title text-dark">3 Hours</h5>
-												</div>
-											</div>
-											<div class="col-4">
-												<div class="metadata">
-													<p class="card-subtitle text-muted">Worth</p>
-													<h5 class="card-title text-success">RM360</h5>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-3">
-										<div class="card-body text-right">
-											<div class="dropdown">
-												<button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-												 aria-haspopup="true" aria-expanded="false">
-													<span class="fas fa-cog"></span>
-												</button>
-												<div class="dropdown-menu">
-													<a class="dropdown-item" data-toggle="modal" data-target="#success-modal">Accept</a>
-													<a class="dropdown-item" href="#">Decline</a>
-													<div class="dropdown-divider"></div>
-													<a class="dropdown-item" href="review.php">Review</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<ul class="list-group list-group-flush">
-							<li class="list-group-item">Remarks: Please ring doorbell twice</li>
-						</ul>
-					</div>
-
-					<div class="card service-card-2 mb-3">
-						<div class="row no-gutters">
-							<div class="col-12 col-lg-4">
-								<div class="card-body pb-0">
-									<div class="badge badge-warning">PENDING</div>
-									<h3 class="card-title text-dark">Carpet Cleaning Service</h3>
-									<p class="card-text">Helping seniors to clean their carpets.</p>
-								</div>
-							</div>
-							<div class="col-12 col-lg-8">
-								<div class="row">
-									<div class="col-12 col-sm-9">
-										<div class="row mt-4 mb-2 metadata-wrapper">
-											<div class="col-4">
-												<div class="metadata">
-													<p class="card-subtitle text-muted">Job ID#</p>
-													<h5 class="card-title text-dark">MK1GH</h5>
-												</div>
-											</div>
-											<div class="col-4">
-												<div class="metadata">
-													<p class="card-subtitle text-muted">Requested By</p>
-													<h5 class="card-title text-dark">Jessica Tan</h5>
-												</div>
-											</div>
-											<div class="col-4">
-												<div class="metadata">
-													<p class="card-subtitle text-muted">Job Date</p>
-													<h5 class="card-title text-dark">Sep 22, 2018</h5>
-												</div>
-											</div>
-											<div class="col-4">
-												<div class="metadata">
-													<p class="card-subtitle text-muted">Job Time</p>
-													<h5 class="card-title text-dark">4:00 PM</h5>
-												</div>
-											</div>
-											<div class="col-4">
-												<div class="metadata">
-													<p class="card-subtitle text-muted">Duration</p>
-													<h5 class="card-title text-dark">1 Hours</h5>
-												</div>
-											</div>
-											<div class="col-4">
-												<div class="metadata">
-													<p class="card-subtitle text-muted">Worth</p>
-													<h5 class="card-title text-success">RM120</h5>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-3">
-										<div class="card-body text-right">
-											<div class="dropdown">
-												<button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-												 aria-haspopup="true" aria-expanded="false">
-													<span class="fas fa-cog"></span>
-												</button>
-												<div class="dropdown-menu">
-													<a class="dropdown-item" data-toggle="modal" data-target="#success-modal">Accept</a>
-													<a class="dropdown-item" href="#">Decline</a>
-													<div class="dropdown-divider"></div>
-													<a class="dropdown-item" href="review.php">Review</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<ul class="list-group list-group-flush">
-							<li class="list-group-item">Remarks: Please ring doorbell twice</li>
-						</ul>
-					</div>
-
 					<?php 
     				include("config.php");
     				$userId = $_SESSION['userId'];
-				    $sql = "SELECT * FROM requests WHERE user_id = '$userId'";
-				    $request = mysqli_query($con, $sql);
-				    if (mysqli_num_rows($request) > 0) {
-				        while($row = mysqli_fetch_assoc($request)) {
+				    $sql = "SELECT * FROM requests WHERE user_id = '$userId'"; // get all requests submitted by this senior
+				    $requests = mysqli_query($con, $sql);
+				    if (mysqli_num_rows($requests) > 0) {
+				        while($row = mysqli_fetch_assoc($requests)) {
+				        	$serviceType = getServiceType($row['service_id']);
+				        	$serviceDesc = getServiceDesc($row['service_id']);
+				        	$name = getProviderName($row['service_id']);
+				        	$cost = calCost($row['service_id'], $row['duration']);
 				        echo '<div class="card service-card-2 mb-3">
 						<div class="row no-gutters">
 							<div class="col-12 col-lg-4">
 								<div class="card-body pb-0">
-									<div class="badge badge-danger">CANCELLED</div>
-									<h3 class="card-title text-dark">Home Cleaning Service</h3>
-									<p class="card-text">Helping seniors clean their homes.</p>
+									<div class="badge badge-danger">'.strtoupper($row['status']).'</div>
+									<h3 class="card-title text-dark">'.$serviceType.'</h3>
+									<p class="card-text">'.$serviceDesc.'</p>
 								</div>
 							</div>
 							<div class="col-12 col-lg-8">
@@ -231,8 +85,8 @@ include("header.php");
 											</div>
 											<div class="col-4">
 												<div class="metadata">
-													<p class="card-subtitle text-muted">Requested By</p>
-													<h5 class="card-title text-dark">Ahmad Ali</h5>
+													<p class="card-subtitle text-muted">Service Provider</p>
+													<h5 class="card-title text-dark">'.$name.'</h5>
 												</div>
 											</div>
 											<div class="col-4">
@@ -255,8 +109,8 @@ include("header.php");
 											</div>
 											<div class="col-4">
 												<div class="metadata">
-													<p class="card-subtitle text-muted">Worth</p>
-													<h5 class="card-title text-success">RM240</h5>
+													<p class="card-subtitle text-muted">Cost</p>
+													<h5 class="card-title text-success">RM'.$cost.'</h5>
 												</div>
 											</div>
 										</div>
@@ -268,11 +122,20 @@ include("header.php");
 												 aria-haspopup="true" aria-expanded="false">
 													<span class="fas fa-cog"></span>
 												</button>
-												<div class="dropdown-menu">
-													<a class="dropdown-item disabled not-clickable" href="#">Accept</a>
-													<a class="dropdown-item disabled not-clickable" href="#">Decline</a>
-													<div class="dropdown-divider"></div>
-													<a class="dropdown-item disabled not-clickable" href="review.php">Review</a>
+												<div class="dropdown-menu">';
+													if($row['status'] == 'Pending'){
+														echo '<a class="dropdown-item" href="update-request.php?id='.$row['request_id'].'">Edit</a>
+														<div class="dropdown-divider"></div>
+														<a class="dropdown-item" href="action-remove-request.php?id='.$row['request_id'].'">Cancel The Request</a>';
+													}
+													
+													if($row['status'] == 'Accepted'){
+														echo '<a class="dropdown-item" href="action-accept-request.php?id='.$row['request_id'].'">Mark the Request as Complete</a>';
+													}
+													if($row['status'] == 'Completed'){
+														echo '<a class="dropdown-item" href="review.php?id='.$row['request_id'].'">Write Review</a>';
+													}
+													echo '
 												</div>
 											</div>
 										</div>
@@ -284,9 +147,74 @@ include("header.php");
 							<li class="list-group-item">Remarks: '.$row['notes'].'</li>
 						</ul>
 					</div>';
-        			}} ?>
-					
+				}
+			}
 
+function getServiceType($serviceId){
+   	$con = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+   	if (!$con) {
+  		die("Connection error: " . mysqli_connect_errno());
+  	}
+	$sql = "SELECT service_type FROM services WHERE service_id = '$serviceId'";
+	$result = mysqli_query($con, $sql);
+	if (mysqli_num_rows($result) > 0) {
+		while($row = mysqli_fetch_assoc($result)) {
+			return $row['service_type'];
+		}
+	}
+}
+
+function getServiceDesc($serviceId){
+   	$con = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+   	if (!$con) {
+  		die("Connection error: " . mysqli_connect_errno());
+  	}
+	$sql = "SELECT service_description FROM services WHERE service_id = '$serviceId'";
+	$result = mysqli_query($con, $sql);
+	if (mysqli_num_rows($result) > 0) {
+		while($row = mysqli_fetch_assoc($result)) {
+			return $row['service_description'];
+		}
+	}
+}
+
+function getProviderName($serviceId){
+	$con = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+   	if (!$con) {
+  		die("Connection error: " . mysqli_connect_errno());
+  	}
+	$sql = "SELECT user_id FROM services WHERE service_id = '$serviceId'";
+	$result = mysqli_query($con, $sql);
+	if (mysqli_num_rows($result) > 0) {
+		while($row = mysqli_fetch_assoc($result)) {
+			$userId = $row['user_id'];
+			$sql2 = "SELECT name FROM providers WHERE user_id = '$userId'";
+			$result2 = mysqli_query($con, $sql2);
+			if (mysqli_num_rows($result2) > 0) {
+				while($row = mysqli_fetch_assoc($result2)) {
+					return $row['name'];
+				}
+			}
+		}
+	}
+}
+
+function calCost($serviceId, $duration){
+   	$con = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+   	if (!$con) {
+  		die("Connection error: " . mysqli_connect_errno());
+  	}
+	$sql = "SELECT service_rate FROM services WHERE service_id = '$serviceId'";
+	$result = mysqli_query($con, $sql);
+	if (mysqli_num_rows($result) > 0) {
+		while($row = mysqli_fetch_assoc($result)) {
+			return $row['service_rate'] * $duration;
+		}
+	}
+}
+				    
+?>
+					
 				</div>
 			</div>
 		</div>
@@ -303,7 +231,24 @@ include("header.php");
 	                    <h4>Request Accepted.</h4>
 	                    <p class="mb-2">You has accepted a request at<br><b>1:00 pm</b> on <b>Thur 27th Sep</b></p>
 	                </div>
-	                <button type="button" class="btn w-100 btn-danger mb-3" data-dismiss="modal">OK</button>
+	                <!--<button type="button" class="btn w-100 btn-danger mb-3" data-dismiss="modal">OK</button>-->
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	<!-- Modal (Cancel Request) -->
+	<div class="modal fade" id="cancel-request-modal" tabindex="-1" aria-hidden="true" role="dialog">
+	    <div class="modal-dialog modal-dialog-centered">
+	        <!-- Modal content-->
+	        <div class="modal-content text-center">
+	            <div class="modal-body">
+	            	<img src="assets/img/sent.svg" width="60">
+	                <div class="my-4">
+	                    <h4>Are you sure?</h4>
+	                    <p class="mb-2">This cannot be reverted once it has been submitted.</p>
+	                </div>
+	                <a class="btn w-100 btn-danger mb-3" data-dismiss="modal" href='action-remove-request.php'>OK</a>
 	            </div>
 	        </div>
 	    </div>
