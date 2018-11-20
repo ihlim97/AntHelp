@@ -16,7 +16,7 @@
 
                 <div class="card-body">
                     <div class="text-center">
-                        <h2 class="pb-3"><strong>Login</strong></h2>
+                        <h2 class="pb-3"><strong>Service Provider Login</strong></h2>
                     </div>
 
                     <form method="POST" action="{{ route('serviceprovider.login.submit') }}">
@@ -48,7 +48,7 @@
                         </div>
 
                         <div class="form-group">
-                            
+
                             <button type="submit" class="btn btn-primary w-100 mt-3">
                                 <strong>{{ __('LOGIN') }}</strong>
                             </button>
@@ -64,7 +64,7 @@
                             <div class="text-center">
                                 <p>Don't have an account? <a href="{{route('serviceprovider.register')}}">Sign up today</a></p>
                             </div>
-                            
+
                         </div>
                     </form>
                 </div>
@@ -76,6 +76,6 @@
 
 @section('footer')
     @component('components.footer')
-        
+
     @endcomponent
 @endsection
