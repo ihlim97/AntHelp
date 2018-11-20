@@ -20,11 +20,16 @@
         </div>
         <div class="d-flex justify-content-between justify-content-sm-end align-items-center ml-md-auto">
             <div class="p-3">
+                <p class="card-subtitle"><b>Start Date/Time</b></p>
+                <p class="card-subtitle">{{Carbon\Carbon::parse($svc_request->start_date_time)->format('M j, H:i A')}}</p>
+                <p class="card-subtitle mt-sm-2"><b>Duration</b></p>
+            <p class="card-subtitle">{{ $svc_request->duration}}</p>
+            </div>
+            <div class="p-3">
                 <p class="card-subtitle"><b>Service Provider</b></p>
                 <p class="card-subtitle">{{ $svc_request->service->serviceProvider["name"] ?? "Unknown" }}</p>
                 <p class="card-subtitle mt-sm-2"><b>Cost</b></p>
                 <p class="text-primary card-subtitle">RM {{ $svc_request->total}}</p>
-
             </div>
             <div>
                 <div class="dropdown">
