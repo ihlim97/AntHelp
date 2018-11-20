@@ -55,6 +55,12 @@
                                 <h5 class="card-title text-success">RM {{$svc_request->total}}</h5>
                             </div>
                         </div>
+                        <div class="col-4">
+                            <div class="metadata">
+                                <p class="card-subtitle text-muted">Request ID</p>
+                                <h5 class="card-title text-success"># {{$svc_request->id}}</h5>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-3">
