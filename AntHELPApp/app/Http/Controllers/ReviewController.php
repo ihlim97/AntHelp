@@ -44,7 +44,7 @@ class ReviewController extends Controller
             return redirect()->route('login');
         }
 
-        return view('review.seniorindex')->with(["reviews" => $reviews]);
+        return view('review.seniorindex')->with(["reviews" => $reviews->sortByDesc('created_at')]);
     }
 
     /**

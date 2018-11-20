@@ -2,9 +2,12 @@
     <div class="card-body d-flex align-items-sm-center flex-column flex-sm-row">
         <img src="https://source.unsplash.com/100x100/?{{urlencode($svc_request->service->category)}}" alt="">
         <div class="p-3">
-            @if($svc_request->status == 'ACCEPTED' || $svc_request->status == 'COMPLETED')
+            @if($svc_request->status == 'COMPLETED')
                 <span class="badge badge-success">{{$svc_request->status}}</span>
             @endif
+            @if($svc_request->status == 'ACCEPTED')
+                    <div class="badge badge-info">{{$svc_request->status}}</div>
+                @endif
             @if($svc_request->status == 'DECLINED' || $svc_request->status == 'CANCELLED')
                 <span class="badge badge-danger" data-toggle="tooltip" data-placement="top" title="{{$svc_request->reason ?? 'Service Provider Declined'}}">{{$svc_request->status}}</span>
             @endif
