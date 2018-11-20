@@ -180,7 +180,7 @@
                                 if(basis == "HOURLY") {
                                     if(startDateTime && endDateTime) {
                                         duration = getBillableHours(moment(startDateTime, "DD/MM/YYYY HH:mm"), moment(endDateTime, "DD/MM/YYYY HH:mm"));
-                                        if (duration <= 0) {
+                                        if (duration < 1) {
                                             duration = 1;
                                         }
                                         events.emit("durationAvailable", duration);
@@ -193,7 +193,7 @@
 
                                         duration = moment.duration(mend.diff(mstart));
 
-                                        if(duration.asDays() == 0) {
+                                        if(duration.asDays() < 1) {
                                             duration.add(1, "days");
                                         }
                                         events.emit("durationAvailable", duration.asDays());

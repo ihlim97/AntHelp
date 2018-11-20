@@ -48,6 +48,7 @@ class ServiceProviderController extends Controller
                 }
             }
         }
-        return view("serviceprovider.servicerequests")->with(["serviceRequests" => $serviceRequests]);
+
+        return view("serviceprovider.servicerequests")->with(["serviceRequests" => $serviceRequests->sortByDesc('updated_at')]);
     }
 }
