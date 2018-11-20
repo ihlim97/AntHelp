@@ -183,6 +183,7 @@
                                         if (duration < 1) {
                                             duration = 1;
                                         }
+                                        duration = Math.round(duration);
                                         events.emit("durationAvailable", duration);
                                         render();
                                     }
