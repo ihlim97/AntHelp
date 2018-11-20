@@ -30,7 +30,7 @@
                         <h4 class="card-title mb-0"><strong>Hi, {{Auth::user()->name}}</strong></h4>
                         <p class="card-text">Here's all your services</p>
                     </div>
-                    <ul class="list-group list-group-flush">
+                    <ul class="list-group list-group-flush account-nav">
                         <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.dashboard')}}">My Account</a></li>
                         <li class="list-group-item active"><a class="text-white" href="{{route('serviceprovider.services')}}">Services</a></li>
                         <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.servicerequests')}}">Services Requests <span class="badge badge-pill badge-primary">{{$pending_count}}</span></a></li>

@@ -26,39 +26,39 @@
                 <div class="col-12 col-sm-9">
                     <div class="row mt-4 mb-2 metadata-wrapper">
                         <div class="col-4">
-                            <div class="metadata req-requestor">
+                            <div class="metadata">
                                 <p class="card-subtitle text-muted">Requested By</p>
-                                <h5 class="card-title text-dark">{{ App\User::find($svc_request->user_id)->name}}</h5>
+                                <h5 class="card-title text-dark req-requestor">{{ App\User::find($svc_request->user_id)->name}}</h5>
                             </div>
                         </div>
-                        <div class="col-4 req-start">
+                        <div class="col-4">
                             <div class="metadata">
                                 <p class="card-subtitle text-muted">Start Date</p>
-                                <h5 class="card-title text-dark">{{Carbon\Carbon::parse($svc_request->start_date_time)->format('M j, H:i A')}}</h5>
+                                <h5 class="card-title text-dark req-start">{{Carbon\Carbon::parse($svc_request->start_date_time)->format('M j, H:i A')}}</h5>
                             </div>
                         </div>
                         <div class="col-4">
-                            <div class="metadata req-end">
+                            <div class="metadata">
                                 <p class="card-subtitle text-muted">End Date</p>
-                                <h5 class="card-title text-dark">{{Carbon\Carbon::parse($svc_request->end_date_time)->format('M j, H:i A')}}</h5>
+                                <h5 class="card-title text-dark req-end">{{Carbon\Carbon::parse($svc_request->end_date_time)->format('M j, H:i A')}}</h5>
                             </div>
                         </div>
                         <div class="col-4">
-                            <div class="metadata req-duration">
+                            <div class="metadata">
                                 <p class="card-subtitle text-muted">Duration</p>
-                                <h5 class="card-title text-dark">{{$svc_request->duration}}</h5>
+                                <h5 class="card-title text-dark req-duration">{{$svc_request->duration}}</h5>
                             </div>
                         </div>
-                        <div class="col-4 req-worth">
+                        <div class="col-4">
                             <div class="metadata">
                                 <p class="card-subtitle text-muted">Worth</p>
-                                <h5 class="card-title text-success">RM {{$svc_request->total}}</h5>
+                                <h5 class="card-title text-success req-worth">RM {{$svc_request->total}}</h5>
                             </div>
                         </div>
                         <div class="col-4">
-                            <div class="metadata req-id">
+                            <div class="metadata">
                                 <p class="card-subtitle text-muted">Request ID</p>
-                                <h5 class="card-title"># {{$svc_request->id}}</h5>
+                                <h5 class="card-title req-id"># {{$svc_request->id}}</h5>
                             </div>
                         </div>
                     </div>
