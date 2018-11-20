@@ -1,4 +1,4 @@
-<div class="card border-left-0 border-right-0 border-top-0 no-shadow">
+<div class="card border-left-0 border-right-0 border-top-0 no-shadow" data-service-request-id="{{$svc_request->id}}">
     <div class="card-body d-flex align-items-sm-center flex-column flex-sm-row">
         <img src="https://source.unsplash.com/100x100/?{{urlencode($svc_request->service->category)}}" alt="">
         <div class="p-3">

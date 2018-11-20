@@ -50,19 +50,68 @@
                         <p>Get more information about your services.</p>
                     </div>
                 </div>
-                <div class="card no-shadow">
+                <div class="card no-shadow requests-tabbed-nav">
                     <div class="card-header">
                         <ul class="nav nav-tabs card-header-tabs" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all">All ({{count($serviceRequests)}})</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="all-tab" data-toggle="tab" href="#pending">Pending ({{count($serviceRequests->where('status', 'PENDING'))}})</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="all-tab" data-toggle="tab" href="#completed">Completed ({{count($serviceRequests->where('status', 'COMPLETED'))}})</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="all-tab" data-toggle="tab" href="#accepted">Accepted ({{count($serviceRequests->where('status', 'ACCEPTED'))}})</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="all-tab" data-toggle="tab" href="#expired">Expired ({{count($serviceRequests->where('status', 'EXPIRED'))}})</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="all-tab" data-toggle="tab" href="#cancelled">Cancelled ({{count($serviceRequests->where('status', 'CANCELLED'))}})</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="card-body tab-content">
                         <div class="tab-pane fade show active" id="all">
-
                             @foreach ($serviceRequests as $svc_request)
                                 @include('components.servicerequestpanel', ['svc_request' => $svc_request])
+                            @endforeach
+                        </div>
+                        <div class="tab-pane fade show" id="pending">
+                            @foreach ($serviceRequests as $svc_request)
+                                @if($svc_request->status == 'PENDING')
+                                    @include('components.servicerequestpanel', ['svc_request' => $svc_request])
+                                @endif
+                            @endforeach
+                        </div>
+                        <div class="tab-pane fade show" id="completed">
+                            @foreach ($serviceRequests as $svc_request)
+                                @if($svc_request->status == 'COMPLETED')
+                                    @include('components.servicerequestpanel', ['svc_request' => $svc_request])
+                                @endif
+                            @endforeach
+                        </div>
+                        <div class="tab-pane fade show" id="accepted">
+                            @foreach ($serviceRequests as $svc_request)
+                                @if($svc_request->status == 'ACCEPTED')
+                                    @include('components.servicerequestpanel', ['svc_request' => $svc_request])
+                                @endif
+                            @endforeach
+                        </div>
+                        <div class="tab-pane fade show" id="expired">
+                            @foreach ($serviceRequests as $svc_request)
+                                @if($svc_request->status == 'EXPIRED')
+                                    @include('components.servicerequestpanel', ['svc_request' => $svc_request])
+                                @endif
+                            @endforeach
+                        </div>
+                        <div class="tab-pane fade show" id="cancelled">
+                            @foreach ($serviceRequests as $svc_request)
+                                @if($svc_request->status == 'CANCELLED')
+                                    @include('components.servicerequestpanel', ['svc_request' => $svc_request])
+                                @endif
                             @endforeach
                         </div>
                     </div>
