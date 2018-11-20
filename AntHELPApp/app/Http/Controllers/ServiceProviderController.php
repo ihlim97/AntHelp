@@ -22,12 +22,17 @@ class ServiceProviderController extends Controller
 
         // return $serviceProvider->serviceRequests()->get();
         // return $serviceRequests = ServiceRequest::find(1);
-        return view("serviceprovider.index")->with(["services_count" => count($serviceProvider->services), "requests_count" => count($serviceProvider->serviceRequests()->get())]);
+        return view("serviceprovider.index")
+            ->with(["services_count" => count($serviceProvider->services),
+                    "requests_count" => count($serviceProvider->serviceRequests()->get()),
+                    "pending_count" => count($serviceProvider->serviceRequests()->where('status', 'PENDING')->get())]);
     }
 
     public function services() {
         $serviceProvider = Auth::user();
-        return view("serviceprovider.services")->with(["services" => $serviceProvider->services]);
+        return view("serviceprovider.services")
+            ->with(["services" => $serviceProvider->services,
+                    "pending_count" => count($serviceProvider->serviceRequests()->where('status', 'PENDING')->get())]);
     }
 
     public function serviceRequests() {

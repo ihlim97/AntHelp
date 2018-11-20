@@ -33,7 +33,7 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.dashboard')}}">My Account</a></li>
                         <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.services')}}">Services</a></li>
-                        <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.servicerequests')}}">Services Requests</a></li>
+                        <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.servicerequests')}}">Services Requests <span class="badge badge-pill badge-primary">{{$pending_count}}</span></a></li>
                         <li class="list-group-item active"><a class="text-white" href="{{action('ReviewController@indexForServiceProvider')}}">Reviews</a></li>
                         <li class="list-group-item">
                             <a class="" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

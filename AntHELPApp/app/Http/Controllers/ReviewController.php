@@ -152,6 +152,8 @@ class ReviewController extends Controller
             return redirect()->route('login');
         }
 
-        return view('review.serviceproviderindex')->with(["reviews" => $reviews]);
+        return view('review.serviceproviderindex')
+            ->with(["reviews" => $reviews,
+                    "pending_count" => count(Auth::guard('serviceprovider')->user()->serviceRequests->where('status', 'PENDING'))]);
     }
 }

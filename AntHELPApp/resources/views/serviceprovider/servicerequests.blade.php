@@ -33,7 +33,7 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.dashboard')}}">My Account</a></li>
                         <li class="list-group-item"><a class="text-info" href="{{route('serviceprovider.services')}}">Services</a></li>
-                        <li class="list-group-item active"><a class="text-white" href="{{route('serviceprovider.servicerequests')}}">Services Requests</a></li>
+                        <li class="list-group-item active"><a class="text-white" href="{{route('serviceprovider.servicerequests')}}">Services Requests <span class="badge badge-pill badge-light">{{count($serviceRequests->where('status', 'PENDING'))}}</span></a></li>
                         <li class="list-group-item"><a class="text-info" href="{{action('ReviewController@indexForServiceProvider')}}">Reviews</a></li>
                         <li class="list-group-item">
                             <a class="" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -149,8 +149,8 @@
                     </div>
                 </div>
 
-                <div class="border p-4 mt-4">
-                    @if (count($serviceRequests) == 0)
+                @if (count($serviceRequests) == 0)
+                    <div class="border p-4 mt-4">
                         <div class="row">
                             <div class="col-8">
                                 <h3>It's seems a bit lonely here...</h3>
@@ -159,11 +159,8 @@
                                 <img class="img-fluid" src="{{ asset('img/tumbleweed.png') }}" alt="Tumbleweed" srcset="{{ asset('svg/tumbleweed.svg') }}">
                             </div>
                         </div>
-                    @else
-                        <p><strong>Hello from backend!</strong></p>
-                        {{$serviceRequests}}
-                    @endif
-                </div>
+                    </div>
+                @endif
 
             </div>
         </div>
