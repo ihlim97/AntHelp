@@ -57,7 +57,7 @@ class RegisterController extends Controller
             'location' => 'required|string|max:255'
         ], [
             'my_kad_no.required' => 'The NRIC field is required.',
-            'my_kad_no.digits_between' => 'A NRIC must be between 12 and 14 digits.'
+            'my_kad_no.digits_between' => 'A NRIC must contain only numbers and is at least 12 digits.'
         ]);
     }
 
