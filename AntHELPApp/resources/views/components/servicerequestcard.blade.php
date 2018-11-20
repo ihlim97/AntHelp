@@ -96,6 +96,6 @@
         </div>
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">Notes: {{$svc_request->note}}</li>
+        <li class="list-group-item">Notes: <span class="req-notes">{{$svc_request->note}}</span></li>
     </ul>
 </div>
