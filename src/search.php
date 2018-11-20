@@ -36,7 +36,6 @@ include("header.php");
             </div>
             <div class="overlay"></div>
         </div>
-    </div>
 
     <div class="content bg-light">
         <div class="container">
@@ -66,78 +65,22 @@ include("header.php");
         </div>
     </div>
 
+<!-- Card Items -->
     <div class="container">
         <div class="row mt-5 my-sm-5">
-            <div class="col-12">
-                <p>2 results found.</p>
-            </div>
-
             <div class="col-12 cards-container">
-                <div class="card service-card mb-3">
-                    <div class="row no-gutters">
-                        <div class="col-12 col-lg-4">
-                            <img src="https://source.unsplash.com/500x400/?cleaning" alt="" class="card-img">
-                        </div>
-                        <div class="col">
-                            <div class="card-body">
-                                <h6 class="card-subtitle text-danger">POPULAR!</h6>
-                                <h3 class="card-title text-dark"><b>Carpet Cleaning Service</b></h3>
-                                <a data-toggle="modal" data-target="#request-confirmation" class="btn btn-lg btn-success cta text-white d-none d-sm-block">Book Now</a>
-                                <div class="rating text-warning">
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    5.0
-                                </div>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    <div class="row no-gutters">
-                                        <div class="col-12 col-sm-8">
-                                            <ul class="disc text-dark">
-                                                <li>Supreme cleaning services by trained staff</li>
-                                                <li>Extra careful with your belongings</li>
-                                                <li>Cleaning supplies can be arranged (if required)</li>
-                                                <li>FREE! Essential oils for 1 room</li>
-                                            </ul>
-
-                                            <div class="row d-sm-none">
-                                                <div class="col text-left">
-                                                    <a data-toggle="modal" data-target="#request-confirmation" class="btn btn-lg btn-success mt-3 text-white">Book Now</a>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="pricing text-right">
-                                                        <h1 class="text-danger m-0">RM120</h1>
-                                                        <h6 class="text-dark">per hour</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col d-none d-sm-block">
-                                            <div class="pricing text-right">
-                                                <h1 class="text-danger m-0">RM120</h1>
-                                                <h6 class="text-dark">per hour</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-    <?php 
+<?php 
     include("config.php");
     $sql = "SELECT * FROM services";
     $services = mysqli_query($con, $sql);
-    $count=0;
     if (mysqli_num_rows($services) > 0) {
         while($row = mysqli_fetch_assoc($services)) {
         $row['service_type'];
         echo '
-            <div class="card service-card mb-3 id="'.$count.'">
+             <div class="col-12">
+                <p>'.mysqli_num_rows($services).' results found.</p>
+            </div>
+            <div class="card service-card mb-3">
                 <div class="row no-gutters">
                     <div class="col-12 col-lg-4">
                         <img src="https://source.unsplash.com/500x400/?maid" class="card-img">
@@ -146,7 +89,7 @@ include("header.php");
                         <div class="card-body">
                             <h6 class="card-subtitle text-info">NEW!</h6>
                             <h3 class="card-title text-dark"><b>'.$row['service_type'].'</b></h3>
-                            <a href=service-request.php?type='.$row['service_type'].'?id='.$row['service_id'].' class="btn btn-lg btn-success cta text-white d-none d-sm-block">Book Now</a>
+                            <a href=service-request.php?id='.$row['service_id'].' class="btn btn-lg btn-success cta text-white d-none d-sm-block">Book Now</a>
                             <div class="rating text-warning">
                                 <span class="fas fa-star"></span>
                                 <span class="fas fa-star"></span>
@@ -188,15 +131,14 @@ include("header.php");
                     </div>
                 </div>
             </div>';
-            $count = $count + 1;
         }
     }
 ?>
-
             </div>
         </div>
-    </div>
+    </div> <!-- End Card Items -->
 
+<!-- Artical Section -->
     <div class="content bg-light">
         <div class="container">
             <div class="row">
@@ -244,8 +186,12 @@ include("header.php");
                 </div>
             </div>
         </div>
-    </div>
-
+    </div> <!-- End Artical Section -->
+    <?php 
+    if(isset($_SESSION['success'])){
+       // $('#request-confirmation').modal(show);
+        echo 'cool';
+    } ?>
     <div class="modal fade" id="request-confirmation" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -259,4 +205,4 @@ include("header.php");
         </div>
     </div>
 
-    <?php include("footer.php"); ?> 
+<?php include("footer.php"); ?> 
