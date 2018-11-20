@@ -9,6 +9,7 @@
 	        if($row['email'] == $_POST['email'] && $row['password'] == $_POST['password']){
 	        	$_SESSION['username'] = $row['name'];
 	        	$_SESSION['userId'] = $row['user_id'];
+	        	$_SESSION['userType'] = 'senior';
 	        	header("location:../src/index.php");
 	        }
 	        else{
@@ -22,6 +23,7 @@
 					        if($row['email'] == $_POST['email'] && $row['password'] == $_POST['password']){
 					        	$_SESSION['username'] = $row['name'];
 					        	$_SESSION['userId'] = $row['user_id'];
+	        					$_SESSION['userType'] = 'provider';
 					        	header("location:../src/index.php");
 					        }
 					        else{

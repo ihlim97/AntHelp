@@ -42,14 +42,16 @@ include("header.php");
                     <div class="form-group">
                     <select name="service_type" class="form-control">
                         <option value="disable">Select your service group</option>
-                        <option value="Cleaning, Laundry & Maid Service">Cleaning, Laundry & Maid Service</option>
-                        <option value="Home Repair & Maintenance">Home Repair & Maintenance</option>
+                        <option value="Cleaning Service">Cleaning Service</option>
                         <option value="Electronic & Gadget">Electronic & Gadget</option>
-                        <option value="Movers / Relocator">Movers / Relocators</option>
-                        <option value="Pets Service">Pets Services</option>
                         <option value="Food & Beverage">Food & Beverage</option>
-                        <option value="Pest Control Services">Pest Control Services</option>
                         <option value="Health & Fitness">Health & Fitness</option>
+                        <option value="Home Repair & Maintenance">Home Repair & Maintenance</option>
+                        <option value="Laundry Service">Laundry Service</option>
+                        <option value="Maid Service">Maid Service</option>
+                        <option value="Movers / Relocator">Movers / Relocators</option>
+                        <option value="Pest Control Services">Pest Control Service</option>
+                        <option value="Pets Service">Pets Service</option>
                     </select>
                     </div>
                     <div class="form-group">

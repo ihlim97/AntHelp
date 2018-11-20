@@ -4,15 +4,7 @@ include("header.php");
 ?>
 
 <div class="banner banner-short d-flex align-items-end" style="background-image: url('assets/img/banners/handhold.jpg')">
-    <div class="wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 my-5 text-center text-white">
-                    <h1>Login</h1>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <div class="overlay"></div>
 </div>
 </div>
@@ -22,12 +14,12 @@ include("header.php");
         <div class="row">
             <div class="col-12 col-sm-10 offset-sm-1 col-lg-6 offset-lg-3 my-5">
                 <div class="sign-form card">
+                    <div class="card-header text-center py-3">
+                    <img src="assets/img/logo-primary.svg" width="150" alt="AntHELP Logo">
+                    </div>
                     <div class="card-body">
                         <div class="text-center">
-                            <img src="assets/img/logo-primary.svg" width="150" alt="AntHELP Logo">
-                            <div class="position-relative py-3">
-                                <h4>Login</h4>
-                            </div>
+                            <h2 class="pb-3"><strong>Login</strong></h2>
                         </div>
                         <form action="action-login.php" method="post" class="needs-validation" novalidate>
                             <div class="form-group">
