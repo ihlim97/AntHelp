@@ -4,15 +4,6 @@ include("header.php");
 ?>
 
 		<div class="banner banner-short d-flex align-items-end" style="background-image: url('assets/img/banners/handhold.jpg')">
-			<div class="wrapper">
-				<div class="container">
-					<div class="row">
-						<div class="col-12 my-5 text-center text-white">
-							<h1>Manage Requests</h1>
-						</div>
-					</div>
-				</div>
-			</div>
 			<div class="overlay"></div>
 		</div>
 
@@ -22,7 +13,7 @@ include("header.php");
 			<div class="col">
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb bg-white m-0">
-						<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+						<li class="breadcrumb-item"><a href="index.php">Home</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Manage Requests</li>
 					</ol>
 				</nav>

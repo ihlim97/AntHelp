@@ -3,15 +3,6 @@ session_start();
 include("header.php"); 
 ?>
         <div class="banner banner-short d-flex align-items-end" style="background-image: url('assets/img/banners/handhold.jpg')">
-            <div class="wrapper">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 my-5 text-center text-white">
-                            <h1>Manage Services</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="overlay"></div>
         </div>
 
@@ -21,7 +12,7 @@ include("header.php");
                 <div class="col d-flex justify-content-between my-3">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Manage Services</li>
                         </ol>
                     </nav>
@@ -56,9 +47,12 @@ include("header.php");
                     <div class="col">
                         <div class="card-body">
                             <h3 class="card-title text-dark"><b>'.$row['service_type'].'</b></h3>
-                            <a href=update-service.php?id='.$row['service_id'].' class="btn btn-secondary cta text-white d-none d-sm-block">Update Service</a>
+                            <div class="cta d-flex">
+                                <a href=action-remove-service.php?id='.$row['service_id'].' class="btn btn-warning mx-1 text-dark d-none d-sm-block">Remove Service</a>
+                                <a href=update-service.php?id='.$row['service_id'].' class="btn btn-secondary text-white mx-1 d-none d-sm-block">Update Service</a>
+                            </div>
                             <div class="rating text-warning">
-                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span> 
                                 <span class="fas fa-star"></span>
                                 <span class="fas fa-star"></span>
                                 <span class="fas fa-star"></span>
