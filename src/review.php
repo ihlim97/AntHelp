@@ -3,15 +3,6 @@ session_start();
 include("header.php");
 ?>
 		<div class="banner banner-short d-flex align-items-end" style="background-image: url('assets/img/banners/handhold.jpg')">
-			<div class="wrapper">
-				<div class="container">
-					<div class="row">
-						<div class="col-12 my-5 text-center text-white">
-							<h1>Reviews</h1>
-						</div>
-					</div>
-				</div>
-			</div>
 			<div class="overlay"></div>
 		</div>
 
@@ -22,7 +13,7 @@ include("header.php");
 	if(isset($_GET['id'])){ // Is a senior user where have been requested for the service
 	echo '<div class="container" id="review">
 	    <div class="mt-5 clearfix">
-	    	<h2>Reviews Service for</h2>
+	    	<h2>Sevice Reviews for</h2>
 	    	<h5>Service Provider: '.getProviderName($_GET['sid']).'</h5>
 	        <button type="button" class="clearfix btn btn-primary btn-lg float-right mb-5" data-toggle="modal" data-target="#submit-review-modal">
 	            Write a review
